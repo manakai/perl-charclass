@@ -86,7 +86,7 @@ $SET{Oriya} = col2list (<<EOH);
 0B 01-03 05-0C 0F-10 13-28 2A-30 32-33 36-39 3E-43 47-48 4B-4D 5C-5D 5F-61
 EOH
 
-$SET{Ta il} = col2list (<<EOH);
+$SET{Tamil} = col2list (<<EOH);
 0B 82-83 85-8A 8E-90 92-95 99-9A 9C 9E-9F A3-A4 A8-AA AE-B5
 0B B7-B9 BE-C2 C6-C8 CA-CD
 EOH
@@ -167,4 +167,4 @@ EOH
 
 &print_module;
 
-## $Date: 2002/10/22 11:03:09 $
+## $Date: 2003/09/07 01:26:15 $

@@ -1,4 +1,4 @@
-PERL = perl5.8.0
+PERL = perl
 RM = rm -fv
 MODULES = Alphabet.pm Han.pm ISOIECTR10176.pm Hiragana.pm JISX0221.pm JISX4051.pm JISX4052.pm Kana.pm Katakana.pm RFC1815.pm UCS.pm
 MKPMLIB = mkpm.pl
