@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS %HSET %KSET %SSET);
 $PROP{module_name} = 'Kana';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
 
@@ -61,6 +61,13 @@ $KSET{Small} = <<EOH;
 ァィゥェォヵㇰヶㇱㇲッㇳㇴㇵㇶㇷㇸㇹㇺャュョㇻㇼㇽㇾㇿヮ
 EOH
 
+$HSET{Digraph} = <<EOH;
+ゟ
+EOH
+$KSET{Digraph} = <<EOH;
+ヿ
+EOH
+
 %SET_ALIAS = ();
 
 my $mode = shift (@main::ARGV);
@@ -79,5 +86,5 @@ if ($mode eq '--hiragana') {
 
 &print_module;
 
-## $Date: 2002/08/23 23:16:32 $
+## $Date: 2002/08/24 02:43:29 $
 ### Kana-src.upl ends here

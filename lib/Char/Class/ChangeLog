@@ -3,6 +3,7 @@
 	* Kana-src.upl: New script.
 	* Makefile: Updated.
 	* mkpm.pl: Support qw(^!.+) line.
+	* Alphabet-src.upl, UCS-src.upl: New scripts.
 
 2002-08-23  Wakaba <w@suika.fam.cx>
 

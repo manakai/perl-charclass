@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.3 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{module_name} = 'FooScript';
 
@@ -18,20 +18,21 @@ EOH
 }
 
 sub table () {
+my $prefix = exists $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name};
 my $r = '';
 my @set;
 for (sort keys %SET) {
   my (@aline,@aitem);
   $SET{$_} =~ s{^#\+(\w+)$}{
-    push @aline, qq(\&In$PROP{module_name}$1.); ''
+    push @aline, qq(\&In${prefix}$1.); ''
   }mge;
   $SET{$_} =~ s{^!(.+)$}{	## Pre-formated
     push @aitem, $1; ''
   }mge;
   $SET{$_} =~ s{^#.+$}{}mg;
   $SET{$_} =~ tr/\x09\x0A\x0D\x20//d;
-  push @set, [qq(In$PROP{module_name}$_) => 
-    join "\n", qq(sub In$PROP{module_name}$_ {),
+  push @set, [qq(In${prefix}$_) => 
+    join "\n", qq(sub In${prefix}$_ {),
                @aline,
                (length $SET{$_}?
                  (q(<<EOH;),
@@ -44,7 +45,7 @@ for (sort keys %SET) {
   ];
 }
 for (sort keys %SET_ALIAS) {
-  push @set, [qq(In$PROP{module_name}$_) => qq(\*In$PROP{module_name}$_ = \\&In$PROP{module_name}$SET_ALIAS{$_};)];
+  push @set, [qq(In${prefix}$_) => qq(\*In${prefix}$_ = \\&In${prefix}$SET_ALIAS{$_};)];
 }
 
 $r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
@@ -56,7 +57,7 @@ sub footer () {
 my $r = <<EOH;
 =head1 NAME
 
-$PROP{module_name}.pm --- @{[ $PROP{script_name} || $PROP{module_name} ]} character sets for C<\\p{In$PROP{module_name}HogeHoge}> regexps
+$PROP{module_name}.pm --- @{[ $PROP{script_name} || $PROP{module_name} ]} character sets for C<\\p{In@{[ exists $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name} ]}HogeHoge}> regexps
 
 @{[$PROP{pod_description}? "=head1 DESCRIPTION
 
@@ -82,6 +83,22 @@ EOH
 $r;
 }
 
+sub col2list ($) {
+  my $s = shift;
+  my @s;
+  $s =~ s{^[\x20\x09]*([0-9A-F][0-9A-F])((?:[\x20\x09]+[0-9A-F][0-9A-F](?:-[0-9A-F][0-9A-F])?)+)}{
+    my ($r, @c) = ($1, grep {length} split /\s+/, $2);
+    for (@c) {
+      if (/([0-9A-F][0-9A-F])-([0-9A-F][0-9A-F])/) {
+        push @s, sprintf '%s%s	%s%s	', $r,$1, $r,$2;
+      } else {
+        push @s, sprintf '%s%s', $r,$_;
+      }
+    }
+  }gem;
+  join ("\n", map {'!'.$_} @s)."\n";
+}
+
 sub print_module () {
   no warnings;
   print &header.&table.&footer;
@@ -101,5 +118,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2002/08/23 23:16:32 $
+1; ## $Date: 2002/08/24 02:43:29 $
 ### mkpm.pl ends here
