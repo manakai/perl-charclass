@@ -1,3 +1,7 @@
+2002-10-22  Wakaba <w@suika.fam.cx>
+
+	* ISOIECTR10176.upl: New script.
+
 2002-09-07  Wakaba <w@suika.fam.cx>
 
 	* UCS-src.upl (SecondEdition): Checked with JIS X 0221-1:2001
@@ -7,6 +11,11 @@
 	- (Senjimon, SenjimonJP): New collection.
 	- (pod SEE ALSO): Added some Senjimon reference URIs.
 	* JISX4051-src.upl, JISX4052-src.upl: New scripts.
+	* mkpm.pl:
+	- Bug fix of pod outputing.
+	- Output DESCRIPTION of pod in header (not footer).
+	- Output description of collection in collection list
+	of pod.
 
 2002-09-02  Wakaba <w@suika.fam.cx>
 

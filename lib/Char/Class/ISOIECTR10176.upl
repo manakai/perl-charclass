@@ -1,0 +1,170 @@
+#!/usr/local/bin/perl
+use strict;
+require 'mkpm.pl';
+use vars qw(%PROP %SET %SET_ALIAS);
+$PROP{module_name} = 'ISOIECTR10176';
+$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{author_name} = 'Wakaba';
+$PROP{author_mail} = 'w@suika.fam.cx';
+
+$PROP{pod_description} = <<EOH;
+Recommended extended repertoire for user-defined Identifier,
+defined by ISO/IEC TR 10176:1998 Annex A.
+
+ISO/IEC TR 10176:1998 Annex A says:
+
+The repertoire recommended consists of characters that
+are used to write different natural langauges of the world,
+and consists of letters, ideographic and syllabic characters,
+digits, and some marks.
+
+Attention is drawn to that using extended repertoire for
+identifiers may impact source code portability.
+EOH
+
+$PROP{pod_see_also} = <<EOH;
+ISO/IEC TR 10176:1998, "Information technology --
+Guidelines for the preparation of programming language
+standards", ISO/IEC, 1998-09-01 (Second edition).
+
+JIS TR X 0031:2000, "Information technology --
+Guidelines for the preparation of programming language
+standards", JISC <http://www.jisc.go.jp/>, 2000-06-01,
+will be expired on 2005-07-31.  (TR type III)
+(IDT with ISO/IEC TR 10176:1998.)
+EOH
+
+$SET{Latin} = col2list (<<EOH);
+00 41-5A 61-7A AA BA C0-D6 D8-F6 F8-FF
+01 00-F5 FA-FF
+02 00-17 50-A8
+1E 00-9B A0-F9
+20 7F
+EOH
+
+$SET{Greek} = col2list (<<EOH);
+03 86 88-8A 8C 8E-A1 A3-CE D0-D6 DA DC DE E0 E2-F3
+1F 00-15 18-1D 20-45 48-4D 50-57 79 5B 5D 5F-7D 80-B4 B6-BC
+1F C2-C4 C6-CC D0-D3 D6-DB E0-EC F2-F4 F6-FC
+EOH
+
+$SET{Cyrillic} = col2list (<<EOH);
+04 01-0C 0E-0F 51-5C 5E-81 90-C4 C7-C8 CB-CC D0-EB EE-F5 F8-F9
+EOH
+
+$SET{Armenian} = col2list (<<EOH);
+05 31-56 61-87
+EOH
+
+$SET{Hebrew} = col2list (<<EOH);
+05 B0-B9 BB-BD BF C1-C2 D0-EA F0-F2
+EOH
+
+$SET{Arabic} = col2list (<<EOH);
+06 21-3A 40-52 70-B7 BA-BE C0-CE D0-DC E5-E8 EA-ED
+EOH
+
+$SET{Devanagari} = col2list (<<EOH);
+09 01-03 05-39 3E-4D 50-52 58-63
+EOH
+
+$SET{Bengali} = col2list (<<EOH);
+09 81-83 85-8C 8F-90 93-A8 AA-B0 B2 B6-B9 BE-C4 C7-C8 CB-CD
+09 DC-DD DF-E3 F0-F1
+EOH
+
+$SET{Gurmukhi} = col2list (<<EOH);
+0A 02 05-0A 0F-10 13-28 2A-30 32-33 35-36 38-39 3E-42 47 48 4B-4D
+0A 59-5C 5E 74
+EOH
+
+$SET{Gujarati} = col2list (<<EOH);
+0A 81-83 85-8B 8D 8F-91 93-A8 AA-B0 B2-B3 B5-B9 BD-C5 C7-C9 CB-CD D0 E0
+EOH
+
+$SET{Oriya} = col2list (<<EOH);
+0B 01-03 05-0C 0F-10 13-28 2A-30 32-33 36-39 3E-43 47-48 4B-4D 5C-5D 5F-61
+EOH
+
+$SET{Ta il} = col2list (<<EOH);
+0B 82-83 85-8A 8E-90 92-95 99-9A 9C 9E-9F A3-A4 A8-AA AE-B5
+0B B7-B9 BE-C2 C6-C8 CA-CD
+EOH
+
+$SET{Telugur} = col2list (<<EOH);
+0C 01-03 05-0C 0E-10 12-28 2A-33 35-39 3E-44 46-48 4A-4D 60-61
+EOH
+
+$SET{Kannada} = col2list (<<EOH);
+0C 82-83 85-8C 8E-90 92-A8 AA-B3 B5-B9 BE-C4 C6-C8 CA-CC CD DE E0-E1
+EOH
+
+$SET{Malayalam} = col2list (<<EOH);
+0D 02-03 05-0C 0E-10 12-28 2A-39 3E-43 46-48 4A-4D 60-61
+EOH
+
+$SET{Thai} = col2list (<<EOH);
+0E 01-3A 40-5B
+EOH
+
+$SET{Lao} = col2list (<<EOH);
+0E 81-82 84 87-88 8A 8D 94-97 99-9F A1-A3 A5 A7 AA-AB AD-AE
+0E B0-B9 BB-BD C0-C4 C6 C8-CD DC-DD
+EOH
+
+$SET{Tibetan} = col2list (<<EOH);
+0F 00 18-19 35 37 39 3E-47 49-69 71-84 86-8B 90-95 97 99-AD B1-B7 B9
+EOH
+
+$SET{Georian} = col2list (<<EOH);
+10 A0-C5  D0-F6
+EOH
+
+$SET{Hiragana} = col2list (<<EOH);
+30 41-93 9B-9C
+EOH
+
+$SET{Katakana} = col2list (<<EOH);
+30 A1-F6 FB-FC
+EOH
+
+$SET{Bopomofo} = col2list (<<EOH);
+31 05-2C
+EOH
+
+$SET{CJKUnifiedIdeographs} = <<EOH;
+4E00	9FA5
+EOH
+
+$SET{Hangul} = <<EOH;
+AC00-D7A3
+EOH
+
+$SET{Digits} = col2list (<<EOH);
+00 30-39
+06 60-69 F0-F9
+09 66-6F E6-EF
+0A 66-6F E6-EF
+0B 66-6F E7-EF
+0C 66-6F E6-EF
+0D 66-6F
+0E 50-59 D0-D9
+0F 20-33
+EOH
+
+$SET{Special} = col2list (<<EOH);
+#DESCRIPTION Special characters
+00 B5 B7
+02 B0-B8 BB BD-C1 D0-D1 E0-E4
+03 7A 59
+09 3D
+0B 3D
+1F BE
+20 3F-40
+21 02 07 0A-13 15 18-1D 24 26 28 2A-31 33-38 60-82
+30 05-07 21-29
+EOH
+
+&print_module;
+
+## $Date: 2002/10/22 11:03:09 $

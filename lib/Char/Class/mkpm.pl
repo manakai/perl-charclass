@@ -1,12 +1,13 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.6 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.7 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{module_name} = 'FooScript';
 
 sub header () {
 <<"EOH";
-## This is auto-generated (at @{[ sprintf '%04d-%02d-%02dT%02d:%02d:%02dZ', (gmtime)[5]+1900, (gmtime)[4]+1, (gmtime)[3,2,1,0] ]}).  Do not edit by hand!
+## This file is auto-generated (at @{[ sprintf '%04d-%02d-%02dT%02d:%02d:%02dZ', (gmtime)[5]+1900, (gmtime)[4]+1, (gmtime)[3,2,1,0] ]}).
+## Do not edit by hand!
 use strict;
 
 package Char::InSet::$PROP{module_name};
@@ -144,5 +145,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2002/09/07 12:55:01 $
+1; ## $Date: 2002/10/22 11:03:09 $
 ### mkpm.pl ends here
