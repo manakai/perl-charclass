@@ -1,5 +1,10 @@
 2003-04-25  Wakaba  <w@offweb.ddo.jp>
 
+	* mkpm.pl: Use exporter and also make aliases to main:: namespace,
+	to avoid a buggy error.
+
+2003-04-25  Wakaba  <w@offweb.ddo.jp>
+
 	* mkpm.pl: Make perl namespace name changable.
 	* XML-src.upl: Added NCNameChar and _NCNameStartChar.
 

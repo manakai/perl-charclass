@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.8 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.9 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{perl_namespace_name} = 'Char::Class::';
 $PROP{module_name} = 'FooScript';
@@ -14,11 +14,11 @@ use strict;
 package $PROP{perl_namespace_name}$PROP{module_name};
 our \$VERSION = '$PROP{version}';
 @{[
-#use Exporter;
-#use vars qw(\@EXPORT_OK \@ISA \$VERSION);
-#\@ISA = qw(Exporter);
+#package main;
 ]}
-package main;
+use Exporter;
+use vars qw(\@EXPORT_OK \@ISA \$VERSION);
+\@ISA = qw(Exporter);
 
 =head1 NAME
 
@@ -29,6 +29,15 @@ $PROP{module_name}.pm --- @{[ $PROP{script_name} || $PROP{module_name} ]} charac
 $PROP{pod_description}":'']}
 
 =cut
+
+sub import (\$;\@) {
+  my (\$self, \@sub) = (shift, \@_);
+  for (\@sub) {
+    no strict 'refs';
+    *{'main::'.\$_} = \\&{\$_};
+  }
+  \$self->SUPER::import (\@_);
+}
 
 EOH
 }
@@ -68,7 +77,7 @@ for (sort keys %SET_ALIAS) {
   push @set, [qq(In${prefix}$_) => qq(\*In${prefix}$_ = \\&In${prefix}$SET_ALIAS{$_};)];
 }
 
-#$r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
+$r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
 $r .= join '', map {$_->[1]."\n\n"} @set;
 
 $r .= "=head1 COLLECTION NAMES\n\n=over 4\n\n";
@@ -156,5 +165,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2003/04/24 22:34:02 $
+1; ## $Date: 2003/04/25 09:53:53 $
 ### mkpm.pl ends here
