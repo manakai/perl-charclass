@@ -3,7 +3,7 @@ use utf8;	## This file is written in UTF-8
 use strict;
 use vars qw($FILENAME $VERSION);
 $FILENAME = 'Han.pm';
-$VERSION=do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 print <<'EOH';
 ## This is auto-generated.  Do not edit by hand!
@@ -344,7 +344,8 @@ for (sort keys %set) {
   push @set, [qq(InHan$_) => 
     join "\n", qq(sub InHan$_ {),
                (@aline), q(<<EOH;),
-               (sort map {sprintf '%04X', ord $_} split //, $set{$_}),
+               (map {sprintf '%04X', $_} sort {$a <=> $b}
+                map {ord $_} split //, $set{$_}),
                q(EOH), q(})
   ];
 }
@@ -389,5 +390,5 @@ although there is no warranty.)
 
 =cut
 
-## $Date: 2002/08/16 06:47:06 $
+## $Date: 2002/08/16 06:50:16 $
 ### mkhan.upl ends here
