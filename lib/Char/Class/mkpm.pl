@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.10 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.11 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{perl_namespace_name} = 'Char::Class::';
 $PROP{module_name} = 'FooScript';
@@ -77,6 +77,7 @@ for (sort keys %SET) {
 }
 for (sort keys %SET_ALIAS) {
   push @set, [qq(In${prefix}$_) => qq(\*In${prefix}$_ = \\&In${prefix}$SET_ALIAS{$_};)];
+  $set_description{qq(In${prefix}$_)} = qq<Alias for In${prefix}$SET_ALIAS{$_}>;
 }
 
 $r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
@@ -167,5 +168,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2003/05/01 23:02:06 $
+1; ## $Date: 2004/06/04 08:29:56 $
 ### mkpm.pl ends here

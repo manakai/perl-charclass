@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'XML';
-$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.3 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
 
@@ -13,38 +13,118 @@ Character classes for XML, the Extensible Markup Language
 EOH
 
 $PROP{pod_see_also} = <<EOH;
+
+=over 2
+
+=item XML 1.0
+
 "Extensible Markup Language (XML) 1.0", W3C Recommendation,
-<http://www.w3.org/TR/REC-xml>.  First Edition, 1998-02-10,
+<http://www.w3.org/TR/REC-xml>.  
+
+First Edition, 1998-02-10,
 <http://www.w3.org/TR/1998/REC-xml-19980210>.
+
+"XML 1.0 Specification Errata", Errata for First Edition,
+<http://www.w3.org/XML/xml-19980210-errata>.
+
 Second Edition, 2000-10-06, <http://www.w3.org/TR/2000/WD-xml-2e-20000814>.
 
-"XML 1.0 Specification Errata", <http://www.w3.org/XML/xml-19980210-errata>.
-The errata list of XML 1.0 First Edition.
-
-"XML 1.0 Second Edition Specification Errata",
+"XML 1.0 Second Edition Specification Errata", Errata for Second Edition,
 <http://www.w3.org/XML/xml-V10-2e-errata>.
-The errata list of XML 1.0 Second Edition.
+
+Third Edition, 2004-02-04, <http://www.w3.org/TR/2004/REC-xml-20040204>.
+
+"XML 1.0 Third Edition Specification Errata",
+<http://www.w3.org/XML/xml-V10-3e-errata>.
+
+=item XML Namespace 1.0
 
 "Namespaces in XML", W3C Recommendation, <http://www.w3.org/TR/REC-xml-names>.
+
 First Edition, 1999-01-14, <http://www.w3.org/TR/1999/REC-xml-names-19990114>.
 
 "Namespaces in XML Errata", <http://www.w3.org/XML/xml-names-19990114-errata>.
+
+=item XML 1.1
+
+"Extensible Markup Language (XML) 1.1", W3C Recommendation,
+<http://www.w3.org/TR/xml11>.
+
+First Edition, 2004-02-04.  Edited 2004-04-15,
+<http://www.w3.org/TR/2004/REC-xml11-20040204/>.
+
+"XML 1.1 First Edition Specification Errata",
+<http://www.w3.org/XML/xml-V11-1e-errata>.
+
+=item XML Namespace 1.1
+
+"Namespaces in XML 1.1", W3C Recommendation,
+<http://www.w3.org/TR/xml-names11>.
+
+First Edition, 2004-04-02,
+<http://www.w3.org/TR/2004/REC-xml-names11-20040204>.
+
+"Namespaces in XML 1.1 Errata",
+<http://www.w3.org/XML/2004/xml-names11-errata>.
+
+=item Misc.
 
 "Unicode in XML and other Markup Languages", Unicode Technical Report #20,
 W3C Note, <http://www.w3.org/TR/unicode-xml/>.  This version of this module
 refers 2003-06-13 version of the W3C Note
 <http://www.w3.org/TR/2003/NOTE-unicode-xml-20030613/>.
+
+=back
+
 EOH
 
-$SET{Char} = <<EOH;
-#DESCRIPTION C<Char> defined in XML 1.0 spec (#2, <http://www.w3.org/TR/REC-xml#NT-Char>)
+$SET{Char10} = <<EOH;
+#DESCRIPTION C<Char> defined in XML 1.0 spec (#2, <http://www.w3.org/TR/REC-xml#N\
+T-Char>)
 !0009
 !000A
 !000D
-!0020	D7FF
+!0020   D7FF
+!E000   FFFD
+!10000  10FFFF
+EOH
+
+$SET{Char11} = <<EOH;
+#DESCRIPTION C<Char> defined in XML 1.1 spec (#2, <http://www.w3.org/TR/xml11#NT-Char>)
+!0001	D7FF
 !E000	FFFD
 !10000	10FFFF
 EOH
+
+$SET_ALIAS{Char} = 'Char11';
+
+$SET{RestrictedChar11} = <<EOH;
+#DESCRIPTION C<RestrictedChar> defined in XML 1.1 spec (#2a, <http://www.w3.org/TR/xml11#NT-RestrictedChar>)
+!0001   0008
+!000B
+!000C
+!000E   001F
+!007F   0084
+!0086   009F
+EOH
+
+$SET_ALIAS{RestrictedChar} = 'RestrictedChar11';
+
+$SET_ALIAS{_UnrestrictedChar10} = 'Char10';
+
+$SET{_UnrestrictedChar11} = <<EOH;
+#DESCRIPTION C<Char11> - C<RestrictedChar11>
+!0009
+!000A
+!000D
+!0020   007E
+!0085
+!00A0   D7FF
+!E000	FFFD
+!10000	10FFFF
+EOH
+
+$SET_ALIAS{_UnrestrictedChar} = '_UnrestrictedChar11';
 
 $SET{S} = <<EOH;
 #DESCRIPTION Characters are elements of C<S> defined in XML 1.0 spec (#3, <http://www.w3.org/TR/REC-xml#NT-S>)
@@ -83,33 +163,125 @@ for (split /\n/, $SET{BaseChar} . $SET{Ideographic}) {
   $SET{Letter} .= $_ . "\n" unless /^\#/;
 }
 
-$SET{NameChar} = <<EOH;
+$SET{NameChar10} = <<EOH;
 #DESCRIPTION Characters are elements of C<NameChar> defined in XML 1.0 spec (#4, <http://www.w3.org/TR/REC-xml#NT-NameChar>)
 .-_:
 EOH
-$SET{_NameStartChar} = <<EOH;
+$SET{_NameStartChar10} = <<EOH;
 #DESCRIPTION Characters can be the first char of C<Name> defined in XML 1.0 spec (#5, <http://www.w3.org/TR/REC-xml#NT-Name>)
 _:
 EOH
-$SET{NCNameChar} = <<EOH;
+$SET{NCNameChar10} = <<EOH;
 #DESCRIPTION Characters are elements of C<NCNameChar> defined in Namespace in XML spec (#5, <http://www.w3.org/TR/REC-xml-names#NT-NCNameChar>)
 .-_
 EOH
-$SET{_NCNameStartChar} = <<EOH;
+$SET{_NCNameStartChar10} = <<EOH;
 #DESCRIPTION Characters can be the first char of C<NCName> defined in Namespace in XML spec (#4, <http://www.w3.org/TR/REC-xml-names#NT-NCName>)
 _
 EOH
 for (split /\n/, $SET{Letter}) {
-  $SET{_NameStartChar} .= $_ . "\n" unless /^\#/;
-  $SET{NameChar} .= $_ . "\n" unless /^\#/;
-  $SET{_NCNameStartChar} .= $_ . "\n" unless /^\#/;
-  $SET{NCNameChar} .= $_ . "\n" unless /^\#/;
+  $SET{_NameStartChar10} .= $_ . "\n" unless /^\#/;
+  $SET{NameChar10} .= $_ . "\n" unless /^\#/;
+  $SET{_NCNameStartChar10} .= $_ . "\n" unless /^\#/;
+  $SET{NCNameChar10} .= $_ . "\n" unless /^\#/;
 }
 for (split /\n/, $SET{Digit} . $SET{CombiningChar} . $SET{Extender}) {
-  $SET{NameChar} .= $_ . "\n" unless /^\#/;
-  $SET{NCNameChar} .= $_ . "\n" unless /^\#/;
+  $SET{NameChar10} .= $_ . "\n" unless /^\#/;
+  $SET{NCNameChar10} .= $_ . "\n" unless /^\#/;
 }
 
+$SET{NameStartChar11} = <<'EOH';
+#DESCRIPTION C<NameStartChar> defined in XML 1.1 spec (#4, <http://www.w3.org/TR/xml11#NT-NameStartChar>)
+!00C0  00D6
+!00D8  00F6
+!00F8  02FF
+!0370  037D
+!037F  1FFF
+!200C  200D
+!2070  218F
+!2C00  2FEF
+!3001  D7FF
+!F900  FDCF
+!FDF0  FFFD
+!10000 EFFFF
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+:_
+EOH
+
+$SET_ALIAS{NameStartChar} = 'NameStartChar11';
+$SET_ALIAS{_NameStartChar} = 'NameStartChar11';
+
+
+$SET{NCNameStartChar11} = <<'EOH';
+#DESCRIPTION C<NCNameStartChar> defined in XML Namespace 1.1 spec
+!00C0  00D6
+!00D8  00F6
+!00F8  02FF
+!0370  037D
+!037F  1FFF
+!200C  200D
+!2070  218F
+!2C00  2FEF
+!3001  D7FF
+!F900  FDCF
+!FDF0  FFFD
+!10000 EFFFF
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_
+EOH
+
+$SET_ALIAS{NCNameStartChar} = 'NCNameStartChar11';
+$SET_ALIAS{_NCNameStartChar} = 'NCNameStartChar11';
+
+$SET{NameChar11} = <<'EOH';
+#DESCRIPTION C<NameChar> defined in XML 1.1 spec (#4a, <http://www.w3.org/TR/xml11#NT-NameChar>)
+!00C0  00D6
+!00D8  00F6
+!00F8  02FF
+!0370  037D
+!037F  1FFF
+!200C  200D
+!2070  218F
+!2C00  2FEF
+!3001  D7FF
+!F900  FDCF
+!FDF0  FFFD
+!10000 EFFFF
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+:_
+
+!00B7
+!0300  036F
+!203F  2040
+-.0123456789
+EOH
+
+$SET_ALIAS{NameChar} = 'NameChar11';
+
+$SET{NCNameChar11} = <<'EOH';
+#DESCRIPTION C<NCNameChar> defined in XML Namespace 1.1 spec
+!00C0  00D6
+!00D8  00F6
+!00F8  02FF
+!0370  037D
+!037F  1FFF
+!200C  200D
+!2070  218F
+!2C00  2FEF
+!3001  D7FF
+!F900  FDCF
+!FDF0  FFFD
+!10000 EFFFF
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_
+
+!00B7
+!0300  036F
+!203F  2040
+-.0123456789
+EOH
+
+$SET_ALIAS{NCNameChar} = 'NCNameChar11';
+
+## TODO: XML 1.1 Appendix I
 
 $SET{PubidChar} = <<'EOH';
 #DESCRIPTION C<PubidChar> defined in XML 1.0 spec (#13, <http://www.w3.org/TR/REC-xml#NT-PubidChar>)
@@ -121,13 +293,13 @@ $SET{PubidChar} = <<'EOH';
 EOH
 
 $SET{VersionNum} = <<'EOH';
-#DESCRIPTION Characters are elements of C<VersionNum> defined in XML 1.0 spec (#26, <http://www.w3.org/TR/REC-xml#NT-PubidChar>)
+#DESCRIPTION Characters are elements of C<VersionNum> defined in First and Second Editions of XML 1.0 spec (#26, <http://www.w3.org/TR/2000/REC-xml-20001006#NT-VersionNum>)
 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 -_.:
 EOH
 
 $SET{_deprecated_noncharacter} = <<'EOH';
-#DESCRIPTION Additional deprecated characters in XML 1.0 SE errata (E46, <http://www.w3.org/XML/xml-V10-2e-errata#E46>) ("noncharacter" in Unicode)
+#DESCRIPTION Additional deprecated characters in XML 1.0 SE errata (E46, <http://www.w3.org/XML/xml-V10-2e-errata#E46>) and TE <http://www.w3.org/TR/REC-xml/#charsets> ("noncharacter" in Unicode)
 !007F	0084
 !0086	009F
 !FD00	FD0F
@@ -194,5 +366,5 @@ sub xml_ebnf_to_charlist ($) {
 
 &print_module;
 
-## $Date: 2003/06/15 01:58:58 $
+## $Date: 2004/06/04 08:29:56 $
 ### XML-src.upl ends here
