@@ -1,3 +1,11 @@
+2003-05-02  Wakaba  <w@offweb.ddo.jp>
+
+	* JaInput-src.upl: New module.
+
+2003-04-27  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Set $Exporter::ExportLevel to work as intended.
+
 2003-04-25  Wakaba  <w@offweb.ddo.jp>
 
 	* mkpm.pl: Use exporter and also make aliases to main:: namespace,

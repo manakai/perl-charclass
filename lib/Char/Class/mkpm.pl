@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.9 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.10 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{perl_namespace_name} = 'Char::Class::';
 $PROP{module_name} = 'FooScript';
@@ -36,7 +36,9 @@ sub import (\$;\@) {
     no strict 'refs';
     *{'main::'.\$_} = \\&{\$_};
   }
+  \$Exporter::ExportLevel = 1;
   \$self->SUPER::import (\@_);
+  \$Exporter::ExportLevel = 0;
 }
 
 EOH
@@ -165,5 +167,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2003/04/25 09:53:53 $
+1; ## $Date: 2003/05/01 23:02:06 $
 ### mkpm.pl ends here
