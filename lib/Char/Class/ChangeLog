@@ -1,0 +1,4 @@
+2002-08-16  Wakaba <w@suika.fam.cx>
+
+	* mkhan.upl: New script.
+	* Makefile, ChangeLog: New files.
