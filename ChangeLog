@@ -1,0 +1,8 @@
+2003-09-07  Wakaba  <wakaba@suika.fam.cx>
+
+	* ChangeLog: New file.
+	* .cvsignore: New file.
+	* Makefile.PL: New script.
+	* t/, lib/: New directory.
+	
+

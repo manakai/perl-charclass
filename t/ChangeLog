@@ -1,0 +1,6 @@
+2003-09-07  Wakaba  <wakaba@suika.fam.cx>
+
+	* xml.t, perlbug.t: New tests.
+	* ChangeLog: New file.
+	
+
