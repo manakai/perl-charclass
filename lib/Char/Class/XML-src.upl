@@ -4,9 +4,37 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'XML';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
+
+$PROP{pod_description} = <<EOH;
+Character classes for XML, the Extensible Markup Language
+EOH
+
+$PROP{pod_see_also} = <<EOH;
+"Extensible Markup Language (XML) 1.0", W3C Recommendation,
+<http://www.w3.org/TR/REC-xml>.  First Edition, 1998-02-10,
+<http://www.w3.org/TR/1998/REC-xml-19980210>.
+Second Edition, 2000-10-06, <http://www.w3.org/TR/2000/WD-xml-2e-20000814>.
+
+"XML 1.0 Specification Errata", <http://www.w3.org/XML/xml-19980210-errata>.
+The errata list of XML 1.0 First Edition.
+
+"XML 1.0 Second Edition Specification Errata",
+<http://www.w3.org/XML/xml-V10-2e-errata>.
+The errata list of XML 1.0 Second Edition.
+
+"Namespaces in XML", W3C Recommendation, <http://www.w3.org/TR/REC-xml-names>.
+First Edition, 1999-01-14, <http://www.w3.org/TR/1999/REC-xml-names-19990114>.
+
+"Namespaces in XML Errata", <http://www.w3.org/XML/xml-names-19990114-errata>.
+
+"Unicode in XML and other Markup Languages", Unicode Technical Report #20,
+W3C Note, <http://www.w3.org/TR/unicode-xml/>.  This version of this module
+refers 2003-06-13 version of the W3C Note
+<http://www.w3.org/TR/2003/NOTE-unicode-xml-20030613/>.
+EOH
 
 $SET{Char} = <<EOH;
 #DESCRIPTION C<Char> defined in XML 1.0 spec (#2, <http://www.w3.org/TR/REC-xml#NT-Char>)
@@ -98,6 +126,60 @@ $SET{VersionNum} = <<'EOH';
 -_.:
 EOH
 
+$SET{_deprecated_noncharacter} = <<'EOH';
+#DESCRIPTION Additional deprecated characters in XML 1.0 SE errata (E46, <http://www.w3.org/XML/xml-V10-2e-errata#E46>) ("noncharacter" in Unicode)
+!007F	0084
+!0086	009F
+!FD00	FD0F
+!1FFFE	1FFFF
+!2FFFE	2FFFF
+!3FFFE	3FFFF
+!4FFFE	4FFFF
+!5FFFE	5FFFF
+!6FFFE	6FFFF
+!7FFFE	7FFFF
+!8FFFE	8FFFF
+!9FFFE	9FFFF
+!AFFFE	AFFFF
+!BFFFE	BFFFF
+!CFFFE	CFFFF
+!DFFFE	DFFFF
+!EFFFE	EFFFF
+!FFFFE	FFFFF
+!10FFFE	10FFFF
+EOH
+
+$SET{_unicode_xml_not_suitable} = <<'EOH';
+#DESCRIPTION Characters not suitable for use with markup (Table 3.1 of <http://www.w3.org/TR/unicode-xml/#Charlist>)
+!2028	202E
+!206A	206F
+!FEFF
+!FFF9	FFFC
+!1D173	1D17A
+!E0000	E007F
+EOH
+
+$SET{_unicode_xml_suitable_format_character} = <<'EOH';
+#DESCRIPTION Some characters that affect text format but are suitable for use with markup (Table 4.1 of <http://www.w3.org/TR/unicode-xml/#Charlist>)
+!00A0
+!00AD
+!0363
+!0600	0603
+!06DD
+!070C
+!0F0C
+!180B	180E
+!200C	200F
+!2011
+!202F
+!2044
+!2060	2063
+!2FF0	2FFB
+!303E
+!FE00	FE0F
+!E0100	E01DF
+EOH
+
 sub xml_ebnf_to_charlist ($) {
   my $r = '';
   for my $p (split /\s*\|\s*/, shift) {
@@ -112,5 +194,5 @@ sub xml_ebnf_to_charlist ($) {
 
 &print_module;
 
-## $Date: 2003/04/24 22:34:02 $
+## $Date: 2003/06/15 01:58:58 $
 ### XML-src.upl ends here
