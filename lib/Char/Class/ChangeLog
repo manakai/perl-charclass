@@ -1,3 +1,8 @@
+2002-09-07  Wakaba <w@suika.fam.cx>
+
+	* UCS-src.upl (SecondEdition): Checked with JIS X 0221-1:2001
+	(IDT ISO/IEC 10646-1:2000) A.3.3.
+
 2002-09-02  Wakaba <w@suika.fam.cx>
 
 	* RFC1815-src.upl: New script.

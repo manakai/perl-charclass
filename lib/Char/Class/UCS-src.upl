@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'UCS';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
 
@@ -304,16 +304,15 @@ EOH
 EOH
 
 ## 302 BMP SECOND EDITION (ISO/IEC 10646-1:2000 A.3.3)
-## Warning: This list is taken from draft of 10646, so it can be incorrect.
 $SET_ALIAS{302} = '_BMPSecondEdition';
 $SET{_BMPSecondEdition} = col2list (<<EOH) . <<EOH;
 00 20-7E A0-FF
 01 00-FF
 02 00-33 50-AD B0-EE
 03 00-4E 60-62 74-75 7A 7E 84-8A 8C 8E-A1 A3-CE D0-D7 DA-F3
-04 00-86 88-89 8C-CE D0-F5 F8-F9
+04 00-86 88-89 8C-C4 C7-C8 CB-CC D0-F5 F8-F9
 05 31-56 59-5F 61-87 89-8A 91-A1 A3-B9 BB-C4 D0-EA F0-F4
-06 0C 1B 1F 21-3A 40-55 60-6D 70-ED..F0-FE
+06 0C 1B 1F 21-3A 40-55 60-6D 70-ED F0-FE
 07 00-0D 0F-2C 30-4A 80-BF
 09 01-03 05-39 3C-4D 50-54 58-70 81-83 85-8C 8F-90 93-A8 AA-B0
 09 B2 B6-B9 BC BE-C4 C7-C8 CB-CD D7 DC-DD DF-E3 E6-FA
@@ -322,7 +321,7 @@ $SET{_BMPSecondEdition} = col2list (<<EOH) . <<EOH;
 0A 8D 8F-91 93-A8 AA-B0 B2-B3 B5-B9 BC-C5 C7-C9 CB-CD D0 E0 E6-EF
 0B 01-03 05-0C 0F-10 13-28 2A-30 32-33 36-39
 0B 3C-43 47-48 4B-4D 56-57 5C-5D 5F-61 66-70
-0B 82-83 85-8A 8E-90 92-25 99-9A 9C 9E-9F
+0B 82-83 85-8A 8E-90 92-95 99-9A 9C 9E-9F
 0B A3-A4 A8-AA AE-B5 B7-B9 BE-C2 C6-C8 CA-CD D7 E7-F2
 0C 01-03 05-0C 0E-10 12-28 2A-33 35-39 3E-44
 0C 46-48 4A-4D 55-56 60-61 66-6F 82-83 85-8C
@@ -455,5 +454,5 @@ $SET_ALIAS{500} = 'PrivateUseGroups';
 
 &print_module;
 
-## $Date: 2002/08/24 02:43:29 $
+## $Date: 2002/09/07 09:09:59 $
 ### UCS-src.upl ends here
