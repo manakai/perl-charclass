@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.4 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.5 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{module_name} = 'FooScript';
 
@@ -59,7 +59,7 @@ $r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
 $r .= join '', map {$_->[1]."\n\n"} @set;
 
 $r .= "=head1 COLLECTION NAMES\n\n=over 4\n\n";
-for (@set) {
+for (sort @set) {
   $r .= sprintf "=item %s\n\n", $_->[0];
 }
 $r .= "=cut\n\n";
@@ -131,5 +131,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2002/08/31 11:17:10 $
+1; ## $Date: 2002/09/07 10:33:52 $
 ### mkpm.pl ends here

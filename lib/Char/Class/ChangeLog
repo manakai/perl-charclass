@@ -2,6 +2,10 @@
 
 	* UCS-src.upl (SecondEdition): Checked with JIS X 0221-1:2001
 	(IDT ISO/IEC 10646-1:2000) A.3.3.
+	* Han-src.upl:
+	- (_JP_*): Renamed to "JP_*".
+	- (Senjimon, SenjimonJP): New collection.
+	- (pod SEE ALSO): Added some Senjimon reference URIs.
 
 2002-09-02  Wakaba <w@suika.fam.cx>
 
