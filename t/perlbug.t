@@ -12,14 +12,18 @@ my @test = (
     ok (scalar ($s =~ /\p{InBasicLatin}+/), '\p+ support of perl');
     ok (scalar ($s =~ /^\p{InBasicLatin}+$/), '^\p+$ support of perl');
       ## perl 5.8.0 has bug??
-  },'',
+    ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}+$/), '^\p\p+$ support of perl');
+    ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}*$/), '^\p\p*$ support of  perl');
+  },1..4,
   sub {
     package foo;
     my $s = 'NAME';
     main::ok (scalar ($s =~ /\p{InBasicLatin}/), 'NSed \p support of perl');
     main::ok (scalar ($s =~ /\p{InBasicLatin}+/), 'NSed \p+ support of perl');
     main::ok (scalar ($s =~ /^\p{InBasicLatin}+$/), 'NSed ^\p+$ support of perl');
-  }, '','','',
+    main::ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}+$/), 'NSed ^\p\p+$ support of perl');
+    main::ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}*$/), 'NSed ^\p\p*$ support of perl');
+  }, 1..3,
 );
 $case += @test;
 $case += @test;
@@ -45,4 +49,4 @@ modify it under the same terms as Perl itself.
 
 =cut
 
-1; # $Date: 2003/09/07 02:52:04 $
+1; # $Date: 2004/02/14 11:27:44 $
