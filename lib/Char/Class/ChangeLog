@@ -1,8 +1,14 @@
+2002-08-24  Wakaba <w@suika.fam.cx>
+
+	* Kana-src.upl: New script.
+	* Makefile: Updated.
+	* mkpm.pl: Support qw(^!.+) line.
+
 2002-08-23  Wakaba <w@suika.fam.cx>
 
 	* mkhan.pl: Removed.
 	* Han-src.upl: New script.
-	* mkpm.pm: New library.
+	* mkpm.pl: New library.
 	* Makefile: Updated.
 
 2002-08-16  Wakaba <w@suika.fam.cx>

@@ -1,0 +1,83 @@
+#!/usr/local/bin/perl
+use utf8;	## This file is written in UTF-8
+use strict;
+require 'mkpm.pl';
+use vars qw(%PROP %SET %SET_ALIAS %HSET %KSET %SSET);
+$PROP{module_name} = 'Kana';
+$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{author_name} = 'Wakaba';
+$PROP{author_mail} = 'w@suika.fam.cx';
+
+$HSET{All} = <<EOH;
+!3041	3096	
+!309D	309F	
+EOH
+$KSET{All} = <<EOH;
+!30A1	30FA	
+!30FD	30FF	
+!31F0	31FF	
+EOH
+$SSET{All} = <<EOH;
+!3099	309C	
+!3031	3035	
+!303B
+!30FC
+EOH
+
+$HSET{Seion} = <<EOH;
+あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほ
+まみむめもやゆよらりるれろわゐゑを
+EOH
+$KSET{Seion} = <<EOH;
+アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ
+マミムメモヤユヨラリルレロワヰヱヲ
+EOH
+
+$HSET{Hatsuon} = <<EOH;
+!3098
+EOH
+$KSET{Hatsuon} = <<EOH;
+!30F3
+EOH
+
+$HSET{Voiced} = <<EOH;
+ゔがぎぐげござじずぜぞだぢづでどばびぶべぼ
+EOH
+$KSET{Voiced} = <<EOH;
+ヴガギグゲゴザジズゼゾダヂヅデドバビブベボヷヸヹヺ
+EOH
+
+$HSET{SemiVoiced} = <<EOH;
+ぱぴぷぺぽ
+EOH
+$KSET{SemiVoiced} = <<EOH;
+パピプペポ
+EOH
+
+$HSET{Small} = <<EOH;
+ぁぃぅぇぉゕゖっゃゅょゎ
+EOH
+$KSET{Small} = <<EOH;
+ァィゥェォヵㇰヶㇱㇲッㇳㇴㇵㇶㇷㇸㇹㇺャュョㇻㇼㇽㇾㇿヮ
+EOH
+
+%SET_ALIAS = ();
+
+my $mode = shift (@main::ARGV);
+if ($mode eq '--hiragana') {
+  $PROP{module_name} = 'Hiragana';
+  %SET = %HSET;
+} elsif ($mode eq '--katakana') {
+  $PROP{module_name} = 'Katakana';
+  %SET = %KSET;
+} else {
+  my $prev = '';
+  for (grep $_ ne $prev && ($prev = $_), sort (keys %HSET, keys %KSET, keys %SSET)) {
+    $SET{$_} ||= $HSET{$_} . $KSET{$_} . $SSET{$_};
+  }
+}
+
+&print_module;
+
+## $Date: 2002/08/23 23:16:32 $
+### Kana-src.upl ends here

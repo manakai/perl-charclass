@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'Han';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 ## 当用漢字表 日本国内閣告示 (1946, 1850 characters)
 ## ammended by 当用漢字字体表 日本国内閣告示 (1949)
@@ -358,5 +358,5 @@ although there is no warranty.)
 
 &print_module;
 
-## $Date: 2002/08/23 13:35:34 $
-### mkhan.upl ends here
+## $Date: 2002/08/23 23:16:32 $
+### Han-src.upl ends here
