@@ -1,26 +1,14 @@
 #!/usr/local/bin/perl
 use utf8;	## This file is written in UTF-8
 use strict;
-use vars qw($FILENAME $VERSION);
-$FILENAME = 'Han.pm';
-$VERSION=do{my @r=(q$Revision: 1.3 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
-
-print <<'EOH';
-## This is auto-generated.  Do not edit by hand!
-use strict;
-
-package Char::InSet::Han;
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
-EOH
-print qq(\$VERSION = '$VERSION';\n);
-
-my %set;
+require 'mkpm.pl';
+use vars qw(%PROP %SET %SET_ALIAS);
+$PROP{module_name} = 'Han';
+$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 ## 当用漢字表 日本国内閣告示 (1946, 1850 characters)
 ## ammended by 当用漢字字体表 日本国内閣告示 (1949)
-$set{_JP_Touyou1949} = <<EOH;
+$SET{_JP_Touyou1949} = <<EOH;
 一丁七丈三上下不且世丘丙中丸丹主久乏乗乙九乳乾乱了事二互五井亜亡交享京
 人仁今介仕他付代令以仰仲件任企伏伐休伯伴伸伺似但位低住佐何仏作佳使来例
 侍供依侮侯侵便係促俊俗保信修俳俵併倉個倍倒候借倣値倫仮偉偏停健側偶傍傑
@@ -77,12 +65,12 @@ $set{_JP_Touyou1949} = <<EOH;
 EOH
 
 ## 当用漢字表補正試案 日本国国語審議会報告 (1954, +28+1 -28-1 characters)
-$set{_JP_TouyouDraft1954} = $set{_JP_Touyou1949};
-$set{_JP_TouyouDraft1954} =~ tr/且丹但劾又唐嚇堪奴寡悦朕濫煩爵璽箇罷脹虞謁迅逓遵錬附隷頒燈//d;
-$set{_JP_TouyouDraft1954} .= q/亭俸偵僕厄堀壌宵尚戻披挑据朴杉桟殻汁泥洪涯渦溪矯酌釣斉竜灯/;
+$SET{_JP_TouyouDraft1954} = $SET{_JP_Touyou1949};
+$SET{_JP_TouyouDraft1954} =~ tr/且丹但劾又唐嚇堪奴寡悦朕濫煩爵璽箇罷脹虞謁迅逓遵錬附隷頒燈//d;
+$SET{_JP_TouyouDraft1954} .= q/亭俸偵僕厄堀壌宵尚戻披挑据朴杉桟殻汁泥洪涯渦溪矯酌釣斉竜灯/;
 
 ## 常用漢字表 日本国内閣告示 (1981, 1945 characters)
-$set{_JP_Jouyou1981} = <<EOH;
+$SET{_JP_Jouyou1981} = <<EOH;
 亜哀愛悪握圧扱安暗案以位依偉囲委威尉意慰易為異移維緯胃衣違遺医井域育一
 壱逸稲芋印員因姻引飲院陰隠韻右宇羽雨渦浦運雲営影映栄永泳英衛詠鋭液疫益
 駅悦謁越閲円園宴延援沿演炎煙猿縁遠鉛塩汚凹央奥往応押横欧殴王翁黄沖億屋
@@ -143,7 +131,7 @@ EOH
 
 ## 学年別漢字配当表 (part of 小学校学習指導要領) 日本国文部省告示
 ## (1989 == 1998, total 1006 characters) (aka 教育漢字)
-$set{_JP_Kyouiku1989} = <<EOH;
+$SET{_JP_Kyouiku1989} = <<EOH;
 #+_JP_Kyouiku1st1989
 #+_JP_Kyouiku2nd1989
 #+_JP_Kyouiku3rd1989
@@ -152,13 +140,13 @@ $set{_JP_Kyouiku1989} = <<EOH;
 #+_JP_Kyouiku6th1989
 EOH
 ## -- 第一学年 (80 characters)
-$set{_JP_Kyouiku1st1989} = <<EOH;
+$SET{_JP_Kyouiku1st1989} = <<EOH;
 一右雨円王音下火花貝学気九休玉金空月犬見五口校左三山子四糸字耳七車手十
 出女小上森人水正生青夕石赤千川先早草足村大男竹中虫町天田土二日入年白八
 百文木本名目立力林六
 EOH
 ## -- 第二学年 (160 characters)
-$set{_JP_Kyouiku2nd1989} = <<EOH;
+$SET{_JP_Kyouiku2nd1989} = <<EOH;
 引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教近兄形
 計元言原戸古午後語工公広交光考行高黄合谷国黒今才細作算止市矢姉思紙寺自
 時室社弱首秋週春書少場色食心新親図数西声星晴切雪船線前組走多太体台地池
@@ -166,7 +154,7 @@ $set{_JP_Kyouiku2nd1989} = <<EOH;
 歩母方北毎妹万明鳴毛門夜野友用曜来里理話
 EOH
 ## -- 第三学年 (200 characters)
-$set{_JP_Kyouiku3rd1989} = <<EOH;
+$SET{_JP_Kyouiku3rd1989} = <<EOH;
 悪安暗医委意育員院飲運泳駅央横屋温化荷界開階寒感漢館岸起期客究急級宮球
 去橋業曲局銀区苦具君係軽血決研県庫湖向幸港号根祭皿仕死使始指歯詩次事持
 式実写者主守取酒受州拾終習集住重宿所暑助昭消商章勝乗植申身神真深進世整
@@ -175,7 +163,7 @@ $set{_JP_Kyouiku3rd1989} = <<EOH;
 命面問役薬由油有遊予羊洋葉陽様落流旅両緑礼列練路和
 EOH
 ## -- 第四学年 (200 characters)
-$set{_JP_Kyouiku4th1989} = <<EOH;
+$SET{_JP_Kyouiku4th1989} = <<EOH;
 愛案以衣位囲胃印英栄塩億加果貨課芽改械害街各覚完官管関観願希季紀喜旗器
 機議求泣救給挙漁共協鏡競極訓軍郡径型景芸欠結建健験固功好候航康告差菜最
 材昨札刷殺察参産散残士氏史司試児治辞失借種周祝順初松笑唱焼象照賞臣信成
@@ -184,7 +172,7 @@ $set{_JP_Kyouiku4th1989} = <<EOH;
 満未脈民無約勇要養浴利陸良料量輪類令冷例歴連老労録
 EOH
 ## -- 第五学年 (185 characters)
-$set{_JP_Kyouiku5th1989} = <<EOH;
+$SET{_JP_Kyouiku5th1989} = <<EOH;
 圧移因永営衛易益液演応往桜恩可仮価河過賀快解格確額刊幹慣眼基寄規技義逆
 久旧居許境均禁句群経潔件券険検限現減故個護効厚耕鉱構興講混査再災妻採際
 在財罪雑酸賛支志枝師資飼示似識質舎謝授修述術準序招承証条状常情織職制性
@@ -193,7 +181,7 @@ $set{_JP_Kyouiku5th1989} = <<EOH;
 夢迷綿輸余預容略留領
 EOH
 ## -- 第六学年 (181 characters)
-$set{_JP_Kyouiku6th1989} = <<EOH;
+$SET{_JP_Kyouiku6th1989} = <<EOH;
 異遺域宇映延沿我灰拡革閣割株干巻看簡危机揮貴疑吸供胸郷勤筋系敬警劇激穴
 絹権憲源厳己呼誤后孝皇紅降鋼刻穀骨困砂座済裁策冊蚕至私姿視詞誌磁射捨尺
 若樹収宗就衆従縦縮熟純処署諸除将傷障城蒸針仁垂推寸盛聖誠宣専泉洗染善奏
@@ -203,18 +191,18 @@ $set{_JP_Kyouiku6th1989} = <<EOH;
 EOH
 
 ## 人名用漢字別表 日本国内閣告示 (1951, 92 characters)
-$set{_JP_Jimmei1951} = <<EOH;
+$SET{_JP_Jimmei1951} = <<EOH;
 丑丞乃之也亙亥亦亨亮仙伊匡卯只吾呂哉嘉圭奈宏寅尚巌巳庄弘弥彦悌敦昌晃晋
 智暢朋杉桂桐楠橘欣欽毅浩淳熊爾猪玲碑瑞甚睦磨磯祐禄禎稔穣綾惣聡肇胤艶蔦
 藤蘭虎蝶輔辰郁酉錦鎌靖須馨駒鯉鯛鶴鹿麿斉龍亀
 EOH
 ## 人名用漢字追加表 日本国内閣告示 (1976, +28 characters)
-$set{_JP_Jimmei1976} = <<EOH;
+$SET{_JP_Jimmei1976} = <<EOH;
 #+_JP_Jimmei1951
 佑允冴喬怜悠旭杏梓梢梨沙漢瑠瞳紗紘絢翠耶芙茜葵藍那阿隼鮎
 EOH
 ## 人名用漢字別表 日本国法務省令 (1981)
-$set{_JP_Jimmei1981} = <<EOH;
+$SET{_JP_Jimmei1981} = <<EOH;
 丑丞乃之也亘亥亦亨亮伊伍伶佑侑允冴匡卯只吾呂哉喬嘉圭尭奈孟宏寅峻嵩嶺巌
 巳巴庄弘弥彦彬怜悌惇惟惣慧敦斐旦旭昂昌晃晋智暢朋李杏栗桂桐梓梢梨楓楠槙
 橘欣欽毅汐沙洵洸浩淳渚渥熊爾猪玲琢瑛瑞瑠瑶璃甫皓眸睦瞳矩碧磯祐禄禎稔穣
@@ -222,7 +210,7 @@ $set{_JP_Jimmei1981} = <<EOH;
 迪遥遼那郁酉錦鎌阿隼霞靖須頌馨駒駿鮎鯉鯛鳩鶴鷹鹿麿亀
 EOH
 ## 人名用漢字別表 日本国法務省令 (1990, +118 characters)
-$set{_JP_Jimmei1990} = <<EOH;
+$SET{_JP_Jimmei1990} = <<EOH;
 +_JP_Jimmei1981
 伎伽侃倖倭偲冶凌凛凪凱勁叡叶唄啄奎媛嬉宥崚嵐嵯巽彗彪恕憧拳捷捺於旺昴晏
 晟晨暉曙朔杜柊柚柾栞梧椋椎椰椿楊榛槻樺檀毬汀汰洲湧滉漱澪熙燎燦燿爽玖琳
@@ -230,12 +218,12 @@ $set{_JP_Jimmei1990} = <<EOH;
 邑醇采雛鞠颯魁鳳鴻鵬麟黎黛
 EOH
 ## 人名用漢字別表 日本国法務省令 (1997, +1 character)
-$set{_JP_Jimmei1997} = <<EOH;
+$SET{_JP_Jimmei1997} = <<EOH;
 +_JP_Jimmei1990
 琉
 EOH
 ## 人名用漢字許容字体表 日本国法務省令 (1981, 205 characters)
-$set{_JP_JimmeiKyoyou1981} = <<EOH;
+$SET{_JP_JimmeiKyoyou1981} = <<EOH;
 亞惡爲難衞謹緣應櫻奧橫溫價禎悔渚壞懷樂渴卷陷寬煮氣祐器僞戲虛峽狹頻曉勤
 賓勳薰惠揭鷄藝擊縣儉劍險圈檢顯驗嚴廣恆黃國黑突碎雜祈謁兒濕祉臭爫壽收艹
 從澁獸縱禍暑者緖諸敍將祥涉燒獎條狀乘淨剩疊孃讓釀神眞寢愼盡粹醉穗瀨齊靜
@@ -246,14 +234,14 @@ $set{_JP_JimmeiKyoyou1981} = <<EOH;
 EOH
 
 ## 表外漢字字体表 日本国第22期国語審議会答申 (2000)
-$set{_JP_Hyougai2000} = <<EOH;
+$SET{_JP_Hyougai2000} = <<EOH;
 #+_JP_HyougaiStandard2000
 #+_JP_HyougaiSimplified2000
 EOH
 ## -- 印刷標準字体 (1022 characters)
 ## NOTE: Since Hyougai table unifies multiple UCS code points,
 ##       the list below includes more than 1022 characters.
-$set{_JP_HyougaiStandard2000} = <<EOH;
+$SET{_JP_HyougaiStandard2000} = <<EOH;
 啞蛙鴉埃挨曖靄軋斡按庵鞍闇已夷畏韋帷萎椅葦彙飴謂閾溢鰯尹咽殷
 淫隕蔭于迂盂烏鬱云暈穢曳洩裔穎嬰翳腋曰奄宛怨俺冤袁婉焉堰淵焰
 筵厭鳶燕閻嚥嗚凰嘔鴨甕襖謳鶯鷗鸚臆俤瓜呵苛珂迦訛訶跏嘩瑕榎窩
@@ -305,11 +293,11 @@ $set{_JP_HyougaiStandard2000} = <<EOH;
 蠟籠聾肋勒漉麓窪歪猥隈或罠椀碗彎
 EOH
 ## -- 簡易慣用字体
-$set{_JP_HyougaiSimplified2000} = <<EOH;
+$SET{_JP_HyougaiSimplified2000} = <<EOH;
 唖頴鴎撹麹鹸噛繍蒋醤曽掻痩祷屏并桝麺沪芦蝋弯
 EOH
 
-my %set_alias = (
+%SET_ALIAS = (
 	_JP_Hyougai	=> '_JP_Hyougai2000',
 	_JP_HyougaiStandard	=> '_JP_HyougaiStandard2000',
 	_JP_HyougaiSimplified	=> '_JP_HyougaiSimplified2000',
@@ -333,36 +321,7 @@ my %set_alias = (
 	_JP_Touyou	=> '_JP_Touyou1949',
 );
 
-my @set;
-for (sort keys %set) {
-  my @aline;
-  $set{$_} =~ s{^#\+(\w+)$}{
-    push @aline, qq(\&InHan$1.); ''
-  }mge;
-  $set{$_} =~ s{^#.+$}{}mg;
-  $set{$_} =~ tr/\x09\x0A\x0D\x20//d;
-  push @set, [qq(InHan$_) => 
-    join "\n", qq(sub InHan$_ {),
-               (@aline), q(<<EOH;),
-               (map {sprintf '%04X', $_} sort {$a <=> $b}
-                map {ord $_} split //, $set{$_}),
-               q(EOH), q(})
-  ];
-}
-for (sort keys %set_alias) {
-  push @set, [qq(InHan$_) => qq(\*InHan$_ = \\&InHan$set_alias{$_};)];
-}
-
-print qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
-print map {$_->[1]."\n\n"} @set;
-
-print <<EOH;
-=head1 NAME
-
-Han.pm --- Han character sets for C<\p{InHogeHoge}> regex
-
-=head1 EXAMPLE
-
+$PROP{pod_example} = <<'EOH';
   use utf8;
   use 5.7.3;
   use Char::InSet::Han qw(InHan_JP_Jimmei InHan_JP_JimmeiKyoyou);
@@ -370,27 +329,16 @@ Han.pm --- Han character sets for C<\p{InHogeHoge}> regex
   ## Marks han characters included in 人名用漢字表・人名用漢字許容字体表
   $s =~ s/(\p{InHan_JP_Jimmei}|\p{InHan_JP_JimmeiKyoyou})/*$1/g;
   print $s;	## *琉球諸島
-
-=cut
 EOH
 
-print qq(1;\n### $FILENAME ends here\n);
-
-=head1 NAME
-
-mkhan.pl --- Generator (and data) of Char::InSet::Han module
-
-=head1 SEE ALSO
-
-perlunicode
+$PROP{pod_see_also} = 'perlunicode
 
 漢字表一覧 (List of Kanji tables) <http://www.aozora.gr.jp/kanji_table/>
 
 学年別漢字配当表 <http://www.mext.go.jp/b_menu/houdou/11/03/990302j.htm>
+';
 
-=head1 LICENSE
-
-Copyright 2002 わかば (Wakaba) <w@suika.fam.cx>
+$PROP{pod_license} = "Copyright @{[(gmtime)[5]+1900]} Wakaba <w\@suika.fam.cx>
 
 This library and the library generated by it is free software;
 you can redistribute them and/or modify them under the same
@@ -406,8 +354,9 @@ It claims that:
 
 (You can use, modify, redistribute this resource freely,
 although there is no warranty.)
+";
 
-=cut
+&print_module;
 
-## $Date: 2002/08/23 12:56:13 $
+## $Date: 2002/08/23 13:35:34 $
 ### mkhan.upl ends here

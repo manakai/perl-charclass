@@ -1,10 +1,11 @@
-#PERL = perl5.8.0
-MKHAN_SCRIPT = mkhan.upl
-MKHAN = $(PERL) ./$(MKHAN_SCRIPT)
+PERL = perl5.8.0
 RM = rm -fv
+MODULES = Han.pm
 
-Han.pm: $(MKHAN_SCRIPT)
-	$(MKHAN) > $@
+all: $(MODULES)
+
+%.pm: %-src.upl
+	$(PERL) $< > $@
 
 clean:
-	$(RM) *~ .*~ *.BAK .*.BAK Han.pm
+	$(RM) *~ .*~ *.BAK .*.BAK $(MODULES)
