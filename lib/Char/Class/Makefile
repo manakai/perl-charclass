@@ -1,6 +1,6 @@
 PERL = perl5.8.0
 RM = rm -fv
-MODULES = Han.pm Kana.pm Hiragana.pm Katakana.pm Alphabet.pm UCS.pm
+MODULES = Alphabet.pm Han.pm Hiragana.pm JISX0221.pm Kana.pm Katakana.pm UCS.pm
 MKPMLIB = mkpm.pl
 
 all: $(MODULES)
