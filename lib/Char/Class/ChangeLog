@@ -1,3 +1,8 @@
+2002-08-31  Wakaba <w@suika.fam.cx>
+
+	* JISX0221-src.upl: New script.
+	* mkpm.pl: Output a bit better pod documentation:-).
+
 2002-08-24  Wakaba <w@suika.fam.cx>
 
 	* Kana-src.upl: New script.
