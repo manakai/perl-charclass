@@ -1,3 +1,14 @@
+2003-04-25  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Make perl namespace name changable.
+	* XML-src.upl: Added NCNameChar and _NCNameStartChar.
+
+2003-04-24  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Bug fix of removing comment.
+	* Makefile: Check whether generated perl module is valid syntax.
+	* mkpm.pl: Don't use Exporter.
+
 2002-10-22  Wakaba <w@suika.fam.cx>
 
 	* ISOIECTR10176.upl: New script.
