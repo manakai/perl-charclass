@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.5 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.6 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{module_name} = 'FooScript';
 
@@ -18,6 +18,10 @@ use vars qw(\@EXPORT_OK \@ISA \$VERSION);
 =head1 NAME
 
 $PROP{module_name}.pm --- @{[ $PROP{script_name} || $PROP{module_name} ]} character sets for C<\\p{In@{[ exists $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name} ]}HogeHoge}> regexps
+@{[$PROP{pod_description}? "
+=head1 DESCRIPTION
+
+$PROP{pod_description}":'']}
 
 =cut
 
@@ -28,6 +32,7 @@ sub table () {
 my $prefix = exists $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name};
 my $r = '';
 my @set;
+my %set_description;
 for (sort keys %SET) {
   my (@aline,@aitem);
   $SET{$_} =~ s{^#\+(\w+)$}{
@@ -36,6 +41,9 @@ for (sort keys %SET) {
   $SET{$_} =~ s{^!(.+)$}{	## Pre-formated
     push @aitem, $1; ''
   }mge;
+  $SET{$_} =~ s{^#DESCRIPTION\x20(.+)$}{
+    $set_description{qq(In${prefix}$_)} = $1;
+  }me;
   $SET{$_} =~ s{^#.+$}{}mg;
   $SET{$_} =~ tr/\x09\x0A\x0D\x20//d;
   push @set, [qq(In${prefix}$_) => 
@@ -59,8 +67,10 @@ $r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
 $r .= join '', map {$_->[1]."\n\n"} @set;
 
 $r .= "=head1 COLLECTION NAMES\n\n=over 4\n\n";
-for (sort @set) {
+for (sort {$a->[0] cmp $b->[0]} @set) {
   $r .= sprintf "=item %s\n\n", $_->[0];
+  $r .= sprintf "%s\n\n", $set_description{ $_->[0] }
+    if $set_description{ $_->[0] };
 }
 $r .= "=cut\n\n";
 
@@ -69,9 +79,7 @@ $r;
 
 sub footer () {
 my $r = <<EOH;
-@{[$PROP{pod_description}? "=head1 DESCRIPTION
-
-$PROP{pod_description}":'']}@{[$PROP{pod_example}? "
+@{[$PROP{pod_example}? "
 =head1 EXAMPLE
 
 $PROP{pod_example}":'']}@{[$PROP{pod_see_also}? "
@@ -80,7 +88,8 @@ $PROP{pod_example}":'']}@{[$PROP{pod_see_also}? "
 $PROP{pod_see_also}":'']}@{[$PROP{pod_license}? "
 =head1 LICENSE
 
-$PROP{pod_license}":"=head1 LICENSE
+$PROP{pod_license}":"
+=head1 LICENSE
 
 Copyright @{[(gmtime)[5]+1900]} $PROP{author_name} <$PROP{author_mail}>
 
@@ -99,6 +108,10 @@ $r;
 sub col2list ($) {
   my $s = shift;
   my @s;
+  my @c;
+  $s =~ s{^(#.+)}{
+    push @c, $1; '';
+  }gem;
   $s =~ s{^[\x20\x09]*([0-9A-F][0-9A-F])((?:[\x20\x09]+[0-9A-F][0-9A-F](?:-[0-9A-F][0-9A-F])?)+)}{
     my ($r, @c) = ($1, grep {length} split /\s+/, $2);
     for (@c) {
@@ -109,7 +122,7 @@ sub col2list ($) {
       }
     }
   }gem;
-  join ("\n", map {'!'.$_} @s)."\n";
+  join ("\n", @c, map {'!'.$_} @s)."\n";
 }
 
 sub print_module () {
@@ -131,5 +144,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2002/09/07 10:33:52 $
+1; ## $Date: 2002/09/07 12:55:01 $
 ### mkpm.pl ends here

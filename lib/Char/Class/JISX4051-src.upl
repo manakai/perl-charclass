@@ -1,0 +1,163 @@
+#!/usr/local/bin/perl
+use utf8;	## This file is written in UTF-8
+use strict;
+require 'mkpm.pl';
+use vars qw(%PROP %SET %SET_ALIAS);
+$PROP{module_name} = 'JISX4051';
+$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{author_name} = 'わかば Wakaba';
+$PROP{author_mail} = 'w@suika.fam.cx';
+
+$PROP{pod_description} = <<EOH;
+JIS X 4051 character classes represented in UCS,
+defined by JIS X 4051 Appendix
+EOH
+
+$PROP{pod_see_also} = <<EOH;
+JIS X 4051-1995, 『日本語文書の行組版方法 Line composition rules
+for Japanese documents』, 日本工業標準調査会 Japanese Industrial 
+Standard Commitee (JISC <http://www.jisc.go.jp/>), 1995.
+EOH
+
+$SET{OpenBracket} = col2list (<<EOH);
+#DESCRIPTION (1) 始め括弧類
+00 28 5B 7B
+20 18 1B 1C 1F
+30 08 0A 0C 0E 10 14 16 18 1A 1D
+EOH
+
+$SET{CloseBracket} = col2list (<<EOH);
+#DESCRIPTION (2) 終わり括弧類
+00 29 2C 5D 7D
+20 19 1A 1D 1E
+30 01 09 0B 0D 0F 11 15 17 19 1B 1E 1F
+EOH
+
+$SET{LineStartKinsokuJapaneseCharacter} = col2list (<<EOH);
+#DESCRIPTION (3) 行頭禁則和字
+20 3C 44
+30 1C 41 43 45 47 49 63 83 85 87 8E 9D 9E
+30 A1 A3 A5 A7 A9 C3 E3 E5 E7 EE F5 F6 FC FD FE
+EOH
+## U+2044: 処理系定義 implemention-defined
+## U+30FC: 処理系定義
+## U+3041-U+308E: 処理系定義。このクラスから削除した場合は
+##                平仮名クラスに編入。 When these characters
+##                are removed from this class, they shall be included
+##                in Hiragana class. (JIS X 4051-1995 4.1.1)
+
+$SET{SeparationSymbol} = col2list (<<EOH);
+#DESCRIPTION (4) 区切り約物
+00 21 3F
+EOH
+
+$SET{MiddleDot} = col2list (<<EOH);
+#DESCRIPTION (5) 中点類
+00 3A 3B FB
+EOH
+
+$SET{FullStop} = col2list (<<EOH);
+#DESCRIPTION (6) 句点類
+00 2E
+30 02
+EOH
+
+$SET{UnseparatableCharacter} = col2list (<<EOH);
+#DESCRIPTION (7) 分離禁止文字
+20 14 24-26
+EOH
+
+$SET{PreShortenedSymbol} = col2list (<<EOH);
+#DESCRIPTION (8) 前置省略記号
+00 24 A3 A5
+21 16
+EOH
+
+$SET{PostShortenedSymbol} = col2list (<<EOH);
+#DESCRIPTION (9) 後置省略記号
+00 25 A2 B0
+20 30-33
+EOH
+
+$SET{JapaneseSpace} = <<EOH;
+#DESCRIPTION (10) 和字間隔
+\x{3000}
+EOH
+
+$SET{Hiragana} = col2list (<<EOH);
+#DESCRIPTION (11) 平仮名
+30 42 44 46 48 4A-62 64-82 84 86 88-8D 8F-94
+EOH
+
+$SET{MiscJapaneseCharacter} = col2list (<<EOH).<<EOH;
+#DESCRIPTION (12) (1)〜(11)以外の和字
+00 2B 2D 3C 3D 3E A7 A9 AE B1 B6 D7 F7
+20 3B
+21 60-7F 90-EA
+24 60-EA
+25 00-7F 80-95 A0-EF
+26 00-13 1A-6E
+27 01-04 06-09 0C-27 29-4B 4D 4F-52 56 58-5E 61-67 76-94 98-AF B1-BE
+30 03 04 06 07 12 13 20 36 A2 A4 A6 A8 AA-C2 C4-E2 E4 E6 E8-ED EF-F4 F7-FA
+32 20-43 80-B0 D0-FE
+33 00-57 71-76 80-DD
+EOH
+!4E00	9FA5
+EOH
+
+## (13) 添え字付き親文字群中の文字
+## (14) ルビ付き親文字群中の文字
+## -- 文字指定無し。
+
+$SET{CharacterInDigits} = <<EOH;
+#DESCRIPTION (15) 連数字中の文字
+!0030	0039
+\x{0020}\x{002C}\x{002E}
+EOH
+
+$SET{CharacterInUnitSymbol} = <<EOH;
+#DESCRIPTION (16) 単位記号中の文字
+!0041	005A
+!0061	007A
+!2126
+EOH
+
+$SET{AlphabeticSpace} = <<EOH;
+#DESCRIPTION (17) 欧文間隔
+!0020
+EOH
+
+$SET{AlphabeticExceptSpace} = col2list (<<EOH);
+#DESCRIPTION (18) 欧文間隔以外の欧文用文字
+00 21-7E
+00 A1-FF
+01 00-7F
+02 50-A8
+03 74-75 7A 7E 84-8A 8C 8E-A1 A3-CE
+04 01-0C 0E-4F 51-5C 5E-7F 80-86 90-C4 C7-C8 CB-CC D0-EB EE-F5 F8-F9
+20 00-2E 30-46 70 74-8E A0-AA
+21 00-38 53-82 90-EA
+22 00-7F 80-F1
+23 12
+24 60-EA
+25 00-7F 80-95 A0-EF
+26 00-13 1A-6F
+27 01-04 06-09 0C-27 29-4B 4D 4F-52 56 58-5E 61-67 76-94 98-AF B1-BE
+EOH
+
+$SET{WarichuuOpenBracket} = col2list (<<EOH);
+#DESCRIPTION (19) 割注始め括弧類
+00 28 5B
+30 14
+EOH
+
+$SET{WarichuuCloseBracket} = col2list (<<EOH);
+#DESCRIPTION (20) 割注終わり括弧類
+00 29 5D
+30 15
+EOH
+
+&print_module;
+
+## $Date: 2002/09/07 12:55:01 $
+### JISX4051-src.upl ends here
