@@ -1,3 +1,17 @@
+2007-07-19  Wakaba  <wakaba@suika.fam.cx>
+
+	* Makefile.PL: Updated.
+
+	* readme.en.html: New document.
+
+	* .htaccess: New file.
+
+	* release/: New directory.
+
+	* MANIFEST.SKIP: New file.
+
+	* cvscommit.sh: New file.
+
 2003-09-07  Wakaba  <wakaba@suika.fam.cx>
 
 	* ChangeLog: New file.

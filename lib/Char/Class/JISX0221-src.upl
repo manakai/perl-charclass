@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'JISX0221';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
 
@@ -100,6 +100,10 @@ JIS X 0221-1:2001, Japanese Industrial Standard Commitee
 
 ISO/IEC 646:1991, JIS X 0201:1997, JIS X 0208:1997, JIS X 0212-1990,
 JIS X 0213:2000 are also related.
+
+L<Char::Class::UCS>
+
+L<Char::Class::RFC1815>
 EOH
 
 ## BASIC JAPANESE
@@ -2750,5 +2754,5 @@ EOH
 
 &print_module;
 
-## $Date: 2002/08/31 11:17:10 $
+## $Date: 2007/07/19 13:26:22 $
 ### UCS-src.upl ends here

@@ -1,0 +1,541 @@
+## This file is auto-generated (at 2007-07-19T12:15:39Z).
+## Do not edit by hand!
+use strict;
+
+package Char::Class::ISOIECTR10176;
+our $VERSION = '1.01';
+
+use Exporter;
+use vars qw(@EXPORT_OK @ISA $VERSION);
+@ISA = qw(Exporter);
+
+=head1 NAME
+
+Char::Class::ISOIECTR10176 - Regular Expression Character Classes - C<ISOIECTR10176>
+
+=head1 DESCRIPTION
+
+Recommended extended repertoire for user-defined Identifier,
+defined by ISO/IEC TR 10176:1998 Annex A.
+
+ISO/IEC TR 10176:1998 Annex A says:
+
+The repertoire recommended consists of characters that
+are used to write different natural langauges of the world,
+and consists of letters, ideographic and syllabic characters,
+digits, and some marks.
+
+Attention is drawn to that using extended repertoire for
+identifiers may impact source code portability.
+
+
+=cut
+
+sub import ($;@) {
+  my ($self, @sub) = (shift, @_);
+  for (@sub) {
+    no strict 'refs';
+    *{'main::'.$_} = \&{$_};
+  }
+  $Exporter::ExportLevel = 1;
+  $self->SUPER::import (@_);
+  $Exporter::ExportLevel = 0;
+}
+
+@EXPORT_OK = qw(InISOIECTR10176Arabic InISOIECTR10176Armenian InISOIECTR10176Bengali InISOIECTR10176Bopomofo InISOIECTR10176CJKUnifiedIdeographs InISOIECTR10176Cyrillic InISOIECTR10176Devanagari InISOIECTR10176Digits InISOIECTR10176Georian InISOIECTR10176Greek InISOIECTR10176Gujarati InISOIECTR10176Gurmukhi InISOIECTR10176Hangul InISOIECTR10176Hebrew InISOIECTR10176Hiragana InISOIECTR10176Kannada InISOIECTR10176Katakana InISOIECTR10176Lao InISOIECTR10176Latin InISOIECTR10176Malayalam InISOIECTR10176Oriya InISOIECTR10176Special InISOIECTR10176Tamil InISOIECTR10176Telugur InISOIECTR10176Thai InISOIECTR10176Tibetan);
+
+sub InISOIECTR10176Arabic {
+<<EOH;
+0621	063A	
+0640	0652	
+0670	06B7	
+06BA	06BE	
+06C0	06CE	
+06D0	06DC	
+06E5	06E8	
+06EA	06ED	
+EOH
+}
+
+sub InISOIECTR10176Armenian {
+<<EOH;
+0531	0556	
+0561	0587	
+EOH
+}
+
+sub InISOIECTR10176Bengali {
+<<EOH;
+0981	0983	
+0985	098C	
+098F	0990	
+0993	09A8	
+09AA	09B0	
+09B2
+09B6	09B9	
+09BE	09C4	
+09C7	09C8	
+09CB	09CD	
+09DC	09DD	
+09DF	09E3	
+09F0	09F1	
+EOH
+}
+
+sub InISOIECTR10176Bopomofo {
+<<EOH;
+3105	312C	
+EOH
+}
+
+sub InISOIECTR10176CJKUnifiedIdeographs {
+<<EOH;
+0030
+0030
+0034
+0035
+0039
+0041
+0045
+0046
+EOH
+}
+
+sub InISOIECTR10176Cyrillic {
+<<EOH;
+0401	040C	
+040E	040F	
+0451	045C	
+045E	0481	
+0490	04C4	
+04C7	04C8	
+04CB	04CC	
+04D0	04EB	
+04EE	04F5	
+04F8	04F9	
+EOH
+}
+
+sub InISOIECTR10176Devanagari {
+<<EOH;
+0901	0903	
+0905	0939	
+093E	094D	
+0950	0952	
+0958	0963	
+EOH
+}
+
+sub InISOIECTR10176Digits {
+<<EOH;
+0030	0039	
+0660	0669	
+06F0	06F9	
+0966	096F	
+09E6	09EF	
+0A66	0A6F	
+0AE6	0AEF	
+0B66	0B6F	
+0BE7	0BEF	
+0C66	0C6F	
+0CE6	0CEF	
+0D66	0D6F	
+0E50	0E59	
+0ED0	0ED9	
+0F20	0F33	
+EOH
+}
+
+sub InISOIECTR10176Georian {
+<<EOH;
+10A0	10C5	
+10D0	10F6	
+EOH
+}
+
+sub InISOIECTR10176Greek {
+<<EOH;
+0386
+0388	038A	
+038C
+038E	03A1	
+03A3	03CE	
+03D0	03D6	
+03DA
+03DC
+03DE
+03E0
+03E2	03F3	
+1F00	1F15	
+1F18	1F1D	
+1F20	1F45	
+1F48	1F4D	
+1F50	1F57	
+1F79
+1F5B
+1F5D
+1F5F	1F7D	
+1F80	1FB4	
+1FB6	1FBC	
+1FC2	1FC4	
+1FC6	1FCC	
+1FD0	1FD3	
+1FD6	1FDB	
+1FE0	1FEC	
+1FF2	1FF4	
+1FF6	1FFC	
+EOH
+}
+
+sub InISOIECTR10176Gujarati {
+<<EOH;
+0A81	0A83	
+0A85	0A8B	
+0A8D
+0A8F	0A91	
+0A93	0AA8	
+0AAA	0AB0	
+0AB2	0AB3	
+0AB5	0AB9	
+0ABD	0AC5	
+0AC7	0AC9	
+0ACB	0ACD	
+0AD0
+0AE0
+EOH
+}
+
+sub InISOIECTR10176Gurmukhi {
+<<EOH;
+0A02
+0A05	0A0A	
+0A0F	0A10	
+0A13	0A28	
+0A2A	0A30	
+0A32	0A33	
+0A35	0A36	
+0A38	0A39	
+0A3E	0A42	
+0A47
+0A48
+0A4B	0A4D	
+0A59	0A5C	
+0A5E
+0A74
+EOH
+}
+
+sub InISOIECTR10176Hangul {
+<<EOH;
+002D
+0030
+0030
+0033
+0037
+0041
+0041
+0043
+0044
+EOH
+}
+
+sub InISOIECTR10176Hebrew {
+<<EOH;
+05B0	05B9	
+05BB	05BD	
+05BF
+05C1	05C2	
+05D0	05EA	
+05F0	05F2	
+EOH
+}
+
+sub InISOIECTR10176Hiragana {
+<<EOH;
+3041	3093	
+309B	309C	
+EOH
+}
+
+sub InISOIECTR10176Kannada {
+<<EOH;
+0C82	0C83	
+0C85	0C8C	
+0C8E	0C90	
+0C92	0CA8	
+0CAA	0CB3	
+0CB5	0CB9	
+0CBE	0CC4	
+0CC6	0CC8	
+0CCA	0CCC	
+0CCD
+0CDE
+0CE0	0CE1	
+EOH
+}
+
+sub InISOIECTR10176Katakana {
+<<EOH;
+30A1	30F6	
+30FB	30FC	
+EOH
+}
+
+sub InISOIECTR10176Lao {
+<<EOH;
+0E81	0E82	
+0E84
+0E87	0E88	
+0E8A
+0E8D
+0E94	0E97	
+0E99	0E9F	
+0EA1	0EA3	
+0EA5
+0EA7
+0EAA	0EAB	
+0EAD	0EAE	
+0EB0	0EB9	
+0EBB	0EBD	
+0EC0	0EC4	
+0EC6
+0EC8	0ECD	
+0EDC	0EDD	
+EOH
+}
+
+sub InISOIECTR10176Latin {
+<<EOH;
+0041	005A	
+0061	007A	
+00AA
+00BA
+00C0	00D6	
+00D8	00F6	
+00F8	00FF	
+0100	01F5	
+01FA	01FF	
+0200	0217	
+0250	02A8	
+1E00	1E9B	
+1EA0	1EF9	
+207F
+EOH
+}
+
+sub InISOIECTR10176Malayalam {
+<<EOH;
+0D02	0D03	
+0D05	0D0C	
+0D0E	0D10	
+0D12	0D28	
+0D2A	0D39	
+0D3E	0D43	
+0D46	0D48	
+0D4A	0D4D	
+0D60	0D61	
+EOH
+}
+
+sub InISOIECTR10176Oriya {
+<<EOH;
+0B01	0B03	
+0B05	0B0C	
+0B0F	0B10	
+0B13	0B28	
+0B2A	0B30	
+0B32	0B33	
+0B36	0B39	
+0B3E	0B43	
+0B47	0B48	
+0B4B	0B4D	
+0B5C	0B5D	
+0B5F	0B61	
+EOH
+}
+
+sub InISOIECTR10176Special {
+<<EOH;
+00B5
+00B7
+02B0	02B8	
+02BB
+02BD	02C1	
+02D0	02D1	
+02E0	02E4	
+037A
+0359
+093D
+0B3D
+1FBE
+203F	2040	
+2102
+2107
+210A	2113	
+2115
+2118	211D	
+2124
+2126
+2128
+212A	2131	
+2133	2138	
+2160	2182	
+3005	3007	
+3021	3029	
+EOH
+}
+
+sub InISOIECTR10176Tamil {
+<<EOH;
+0B82	0B83	
+0B85	0B8A	
+0B8E	0B90	
+0B92	0B95	
+0B99	0B9A	
+0B9C
+0B9E	0B9F	
+0BA3	0BA4	
+0BA8	0BAA	
+0BAE	0BB5	
+0BB7	0BB9	
+0BBE	0BC2	
+0BC6	0BC8	
+0BCA	0BCD	
+EOH
+}
+
+sub InISOIECTR10176Telugur {
+<<EOH;
+0C01	0C03	
+0C05	0C0C	
+0C0E	0C10	
+0C12	0C28	
+0C2A	0C33	
+0C35	0C39	
+0C3E	0C44	
+0C46	0C48	
+0C4A	0C4D	
+0C60	0C61	
+EOH
+}
+
+sub InISOIECTR10176Thai {
+<<EOH;
+0E01	0E3A	
+0E40	0E5B	
+EOH
+}
+
+sub InISOIECTR10176Tibetan {
+<<EOH;
+0F00
+0F18	0F19	
+0F35
+0F37
+0F39
+0F3E	0F47	
+0F49	0F69	
+0F71	0F84	
+0F86	0F8B	
+0F90	0F95	
+0F97
+0F99	0FAD	
+0FB1	0FB7	
+0FB9
+EOH
+}
+
+=head1 COLLECTION NAMES
+
+=over 4
+
+=item C<InISOIECTR10176Arabic>
+
+=item C<InISOIECTR10176Armenian>
+
+=item C<InISOIECTR10176Bengali>
+
+=item C<InISOIECTR10176Bopomofo>
+
+=item C<InISOIECTR10176CJKUnifiedIdeographs>
+
+=item C<InISOIECTR10176Cyrillic>
+
+=item C<InISOIECTR10176Devanagari>
+
+=item C<InISOIECTR10176Digits>
+
+=item C<InISOIECTR10176Georian>
+
+=item C<InISOIECTR10176Greek>
+
+=item C<InISOIECTR10176Gujarati>
+
+=item C<InISOIECTR10176Gurmukhi>
+
+=item C<InISOIECTR10176Hangul>
+
+=item C<InISOIECTR10176Hebrew>
+
+=item C<InISOIECTR10176Hiragana>
+
+=item C<InISOIECTR10176Kannada>
+
+=item C<InISOIECTR10176Katakana>
+
+=item C<InISOIECTR10176Lao>
+
+=item C<InISOIECTR10176Latin>
+
+=item C<InISOIECTR10176Malayalam>
+
+=item C<InISOIECTR10176Oriya>
+
+=item C<InISOIECTR10176Special>
+
+Special characters
+
+=item C<InISOIECTR10176Tamil>
+
+=item C<InISOIECTR10176Telugur>
+
+=item C<InISOIECTR10176Thai>
+
+=item C<InISOIECTR10176Tibetan>
+
+=back
+
+=cut
+
+
+=head1 EXAMPLE
+
+ use Char::Class::ISOIECTR10176;
+ if ($s =~ /\p{InGujarati}/) {
+   print "Match!\n";
+ }
+
+=head1 SEE ALSO
+
+ISO/IEC TR 10176:1998, "Information technology --
+Guidelines for the preparation of programming language
+standards", ISO/IEC, 1998-09-01 (Second edition).
+
+JIS TR X 0031:2000, "Information technology --
+Guidelines for the preparation of programming language
+standards", JISC <http://www.jisc.go.jp/>, 2000-06-01,
+will be expired on 2005-07-31.  (TR type III)
+(IDT with ISO/IEC TR 10176:1998.)
+
+=head1 LICENSE
+
+Copyright 2007 Wakaba <w@suika.fam.cx>
+
+This library and the library generated by it is free software;
+you can redistribute them and/or modify them under the same
+terms as Perl itself.
+
+=cut
+
+1;
+### ISOIECTR10176.pm ends here

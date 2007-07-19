@@ -4,7 +4,7 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'RFC1815';
-$PROP{version} = do{my @r=(q$Revision: 1.1 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = do{my @r=(q$Revision: 1.2 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 $PROP{author_name} = 'Wakaba';
 $PROP{author_mail} = 'w@suika.fam.cx';
 
@@ -59,7 +59,9 @@ EOH
 $PROP{pod_see_also} = <<EOH;
 RFC 1815 <urn:ietf:rfc:1815>
 
-Char::InSet::JISX0221
+L<Char::Class::UCS>
+
+L<Char::Class::JISX0221>
 EOH
 
 ## ISO-10646
@@ -883,5 +885,5 @@ EOH
 
 &print_module;
 
-## $Date: 2002/09/02 08:13:52 $
+## $Date: 2007/07/19 13:26:22 $
 ### RFC1815-src.upl ends here

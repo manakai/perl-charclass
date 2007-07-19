@@ -4,10 +4,9 @@ use ExtUtils::MakeMaker;
 
 `cd lib/Char/Class && make all`;
 WriteMakefile (
-    NAME         => 'Char::Class',
-    DISTNAME     => 'Char-Class',      
-    VERSION      => '1.00',        
-    #VERSION_FROM => 'lib/Char/Class.pm',
+    NAME         => 'CharClass',
+    DISTNAME     => 'charclass',      
+    VERSION      => '1.0',
     PREREQ_PM    => {
                      'utf8' => 0,
                     },

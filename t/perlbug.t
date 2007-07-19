@@ -23,7 +23,7 @@ my @test = (
     main::ok (scalar ($s =~ /^\p{InBasicLatin}+$/), 'NSed ^\p+$ support of perl');
     main::ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}+$/), 'NSed ^\p\p+$ support of perl');
     main::ok (scalar ($s =~ /^\p{InBasicLatin}\p{InBasicLatin}*$/), 'NSed ^\p\p*$ support of perl');
-  }, 1..3,
+  }, 1..4,
 );
 $case += @test;
 $case += @test;
@@ -42,11 +42,11 @@ exit;
 
 =head1 LICENSE
 
-Copyright 2003 Wakaba <w@suika.fam.cx>
+Copyright 2003, 2007 Wakaba <w@suika.fam.cx>
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
 
 =cut
 
-1; # $Date: 2004/02/14 11:27:44 $
+1; # $Date: 2007/07/19 13:26:22 $

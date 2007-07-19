@@ -1,3 +1,26 @@
+2007-07-19  Wakaba  <wakaba@suika.fam.cx>
+
+	* JISX0221-src.upl (SEE ALSO): Links to |Char::Class::UCS|
+	and |Char::Class::RFC1815| are added.
+
+	* Makefile (%.html): New rule.
+	(all): Make HTML files.
+	(MODULES): |JaInput.pm| was missing.
+	(clean): Call |clean-pod|.  Don't delete generated Perl modules.
+	(clean-pod): New rule.
+	(distclean): New.  (Note that the rule name is incorrect!)
+
+	* RFC1815-src.upl (SEE ALSO): Links to |Char::Class::UCS|
+	and |Char::Class::JISX0221| are added.
+
+	* UCS-src.upl (SEE ALSO): Links to |Char::Class::JISX0221|
+	and |Char::Class::RFC1815| are added.
+
+	* mkpm.pl (generated pod's NAME): Was generated with a bad style.
+	(generated pod's COLLECTION NAMES): |=back| was missing.
+	(generated pod's EXAMPLE): Use a real class name.  Note that
+	this does not work for e.g. Kana.
+
 2004-06-04  Wakaba  <wakaba@suika.fam.cx>
 
 	* XML-src.upl: XML 1.1 support.

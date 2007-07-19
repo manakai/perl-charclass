@@ -1,6 +1,6 @@
 use strict;
 use vars qw(%PROP %SET %SET_ALIAS $VERSION);
-$VERSION=do{my @r=(q$Revision: 1.11 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$VERSION=do{my @r=(q$Revision: 1.12 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
 
 $PROP{perl_namespace_name} = 'Char::Class::';
 $PROP{module_name} = 'FooScript';
@@ -22,7 +22,7 @@ use vars qw(\@EXPORT_OK \@ISA \$VERSION);
 
 =head1 NAME
 
-$PROP{module_name}.pm --- @{[ $PROP{script_name} || $PROP{module_name} ]} character set classes for C<\\p{In@{[ exists $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name} ]}HogeHoge}> regexps
+$PROP{perl_namespace_name}$PROP{module_name} - Regular Expression Character Classes - C<@{[ length $PROP{prefix_name} ? $PROP{prefix_name} : $PROP{module_name} ]}>
 @{[$PROP{pod_description}? "
 =head1 DESCRIPTION
 
@@ -77,7 +77,7 @@ for (sort keys %SET) {
 }
 for (sort keys %SET_ALIAS) {
   push @set, [qq(In${prefix}$_) => qq(\*In${prefix}$_ = \\&In${prefix}$SET_ALIAS{$_};)];
-  $set_description{qq(In${prefix}$_)} = qq<Alias for In${prefix}$SET_ALIAS{$_}>;
+  $set_description{qq(In${prefix}$_)} = qq<An alias for In${prefix}$SET_ALIAS{$_}.>;
 }
 
 $r = qq(\@EXPORT_OK = qw(@{[map {$_->[0]} @set]});\n\n);
@@ -85,11 +85,11 @@ $r .= join '', map {$_->[1]."\n\n"} @set;
 
 $r .= "=head1 COLLECTION NAMES\n\n=over 4\n\n";
 for (sort {$a->[0] cmp $b->[0]} @set) {
-  $r .= sprintf "=item %s\n\n", $_->[0];
+  $r .= sprintf "=item C<%s>\n\n", $_->[0];
   $r .= sprintf "%s\n\n", $set_description{ $_->[0] }
     if $set_description{ $_->[0] };
 }
-$r .= "=cut\n\n";
+$r .= "=back\n\n=cut\n\n";
 
 $r;
 }
@@ -103,7 +103,7 @@ $PROP{pod_example}":"
 =head1 EXAMPLE
 
  use $PROP{perl_namespace_name}$PROP{module_name};
- if (\$s =~ /\\p{In$PROP{module_name}HogeHoge}/) {
+ if (\$s =~ /\\p{In@{[[each %SET]->[0]]}}/) {
    print \"Match!\\n\";
  }
 "]}@{[$PROP{pod_see_also}? "
@@ -168,5 +168,5 @@ terms as Perl itself.
 
 =cut
 
-1; ## $Date: 2004/06/04 08:29:56 $
+1; ## $Date: 2007/07/19 13:26:22 $
 ### mkpm.pl ends here
