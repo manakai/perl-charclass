@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Char::Class::JISX0221 - Regular Expression Character Classes - C&lt;JISX0221&gt;</title>
+<link rel="stylesheet" href="http://suika.fam.cx/www/style/html/pod.css" type="text/css" />
+<link rev="made" href="mailto:admin@suika.fam.cx" />
+</head>
+
+<body>
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#collection_names">COLLECTION NAMES</a></li>
+	<li><a href="#example">EXAMPLE</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Char::Class::JISX0221 - Regular Expression Character Classes - <code>JISX0221</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>Japanese character sub-repertories, defined by JIS X 0221-1:2001
+Appendix 1</p>
+<p>Appendix 1 (informative) of JIS X 0221-1:2001 defines seven
+Japanese character sub-repertories:</p>
+<dl>
+<dt><strong><a name="item_japanese">a) BASIC JAPANESE (基本日本文字集合)</a></strong><br />
+</dt>
+<dd>
+This sub-repertory contains of graphic characters defined by
+JIS X 0201, ISO/IEC 646 IRV and JIS X 0208.  Han characters
+are defined in main part of ISO/IEC 10646-1 27. (CJK Unified Ideographs)
+with source JIS X 0208 code point.  Non-han charactrers
+are listed in Appendix 1 table 1.
+</dd>
+<p></p>
+<dt><strong><a name="item_supplement">b) JAPANESE NON IDEOGRAPHICS SUPPLEMENT (追加非漢字集合)</a></strong><br />
+</dt>
+<dd>
+This sub-repertory contains of non-Han JIS X 0212 character
+and additional symbols used in Japanese documents that
+does not included in JIS X 0201, JIS X 0208 and JIS X 0212.
+Characters are listed in Appendix 1 table 2.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE.</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_1">c) JAPANESE IDEOGRAPHICS SUPPLEMENT 1 (追加漢字集合)</a></strong><br />
+</dt>
+<dd>
+This sub-repertory contains of Han characters defined by JIS X 0212
+and being more frequently used.  Characters are listed in
+Appendix 1 table 3.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE.</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_2">d) JAPANESE IDEOGRAPHICS SUPPLEMENT 2 (補助漢字集合)</a></strong><br />
+</dt>
+<dd>
+This sub-repertory contains of Han characters defined by JIS X 0212,
+except those included of JAPANESE IDEOGRAPHICS SUPPLEMENT 1.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE
+and JAPANESE IDEOGRAPHICS SUPPLEMENT 1.</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_3">e) JAPANESE IDEOGRAPHICS SUPPLEMENT 3 (その他の漢字集合)</a></strong><br />
+</dt>
+<dd>
+Han characters defined in CJK UNIFIED IDEOGRAPHS, except
+those included in BASIC JAPANESE and JAPANESE IDEOGRAPHICS SUPPLEMENT
+1 and 2.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE
+and JAPANESE IDEOGRAPHICS SUPPLEMENT 1 and 2.</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_alphanumerics">f) FULLWIDTH ALPHANUMERICS (互換用全角英数字集合)</a></strong><br />
+</dt>
+<dd>
+Fullwidth variants of ISO/IEC 646 IRV characters, listed in
+Appendix 1 table 4.  This sub-repertory is intended to be used
+for and only for keeping compatibility with old idiomatic Japanese
+character repertory or presentation form.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE
+and BASIC LATIN (ISO/IEC 10646-1 Appendix A.1).</p>
+</dd>
+<p></p>
+<dt><strong><a name="item_katakana">g) HALFWIDTH KATAKANA (互換用半角片仮名集合)</a></strong><br />
+</dt>
+<dd>
+Halfwidth variants of Katakana characters defined by JIS X 0201,
+listed in Appendix 1 table 5.  This sub-repertory is intended to be used
+for and only for keeping compatibility with old idiomatic Japanese
+character repertory or presentation form.
+</dd>
+<dd>
+<p>This sub-repertory is intended to be used with BASIC JAPANESE.</p>
+</dd>
+<p></p></dl>
+<p>Only a character, TILDE (U+007E) is doubly included in both
+BASIC JAPANESE and JAPANESE NON IDEOGRAPHICS SUPPLEMENT.
+Any other characters belong to one sub-repertory.</p>
+<p>
+</p>
+<hr />
+<h1><a name="collection_names">COLLECTION NAMES</a></h1>
+<dl>
+<dt><strong><a name="item_injisx0221basicjapanese"><code>InJISX0221BasicJapanese</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221fullwidthalphanumeric"><code>InJISX0221FullwidthAlphanumeric</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221halfwidthkatakana"><code>InJISX0221HalfwidthKatakana</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221japaneseideographicssupplement1"><code>InJISX0221JapaneseIdeographicsSupplement1</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221japaneseideographicssupplement2"><code>InJISX0221JapaneseIdeographicsSupplement2</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221japaneseideographicssupplement3"><code>InJISX0221JapaneseIdeographicsSupplement3</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_injisx0221japanesenonideographicssupplement"><code>InJISX0221JapaneseNonIdeographicsSupplement</code></a></strong><br />
+</dt>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="example">EXAMPLE</a></h1>
+<pre>
+ use Char::Class::JISX0221;
+ if ($s =~ /\p{InFullwidthAlphanumeric}/) {
+   print &quot;Match!\n&quot;;
+ }</pre>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p>ISO/IEC 10646-1:1993, ISO/IEC JTC1, 1993.  Obsoleted by ISO/IEC 10646-1:2000.</p>
+<p>ISO/IEC 10646-1:2000, ISO/IEC JTC1, 2000.  Revision of ISO/IEC 10646-1:1993.</p>
+<p>JIS X 0221-1995, Japanese Industrial Standard Commitee
+(JISC &lt;http://www.jisc.go.jp/&gt;), 1995.  Obsoleted by JIS X 0221-1:2001.</p>
+<p>JIS X 0221-1:2001, Japanese Industrial Standard Commitee
+(JISC &lt;http://www.jisc.go.jp/&gt;), 2001.  JIS version of ISO/IEC
+10646-1:2000.  Revision of JIS X 0221-1995.</p>
+<p>ISO/IEC 646:1991, JIS X 0201:1997, JIS X 0208:1997, JIS X 0212-1990,
+JIS X 0213:2000 are also related.</p>
+<p><a href="../../Char/Class/UCS.html">the Char::Class::UCS manpage</a></p>
+<p><a href="../../Char/Class/RFC1815.html">the Char::Class::RFC1815 manpage</a></p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>Copyright 2007 Wakaba &lt;<a href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>&gt;</p>
+<p>This library and the library generated by it is free software;
+you can redistribute them and/or modify them under the same
+terms as Perl itself.</p>
+
+</body>
+
+</html>

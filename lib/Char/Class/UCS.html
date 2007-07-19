@@ -1,0 +1,1235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Char::Class::UCS - Regular Expression Character Classes - C&lt;UCS&gt;</title>
+<link rel="stylesheet" href="http://suika.fam.cx/www/style/html/pod.css" type="text/css" />
+<link rev="made" href="mailto:admin@suika.fam.cx" />
+</head>
+
+<body>
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#collection_names">COLLECTION NAMES</a></li>
+	<li><a href="#example">EXAMPLE</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Char::Class::UCS - Regular Expression Character Classes - <code>UCS</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="collection_names">COLLECTION NAMES</a></h1>
+<dl>
+<dt><strong><a name="item_inucs1"><code>InUCS1</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicLatin.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs10"><code>InUCS10</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCyrillic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs100"><code>InUCS100</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSKatakanaPhoneticExtensions.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1000"><code>InUCS1000</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSmp.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1001"><code>InUCS1001</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSEtruscan.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1002"><code>InUCS1002</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGothic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1003"><code>InUCS1003</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSDeseret.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1004"><code>InUCS1004</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSByzantineMusicalSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1005"><code>InUCS1005</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSWesternMusicalSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1007"><code>InUCS1007</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLinearBSyllabary.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1008"><code>InUCS1008</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLinearBIdeograms.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1009"><code>InUCS1009</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSAeganNumbers.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs101"><code>InUCS101</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSVariationSelectors.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1010"><code>InUCS1010</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSUgaritic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1011"><code>InUCS1011</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSShavian.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1012"><code>InUCS1012</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSOsmanya.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs1013"><code>InUCS1013</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCypriotSyllabary.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs104"><code>InUCS104</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLimbu.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs105"><code>InUCS105</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTaiLe.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs106"><code>InUCS106</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSupplementalArrowsC.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs10646"><code>InUCS10646</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSUnicode.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs107"><code>InUCS107</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSupplementalCJKCompatibility.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs108"><code>InUCS108</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSYijingHexagramSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs11"><code>InUCS11</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSArmenian.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs12"><code>InUCS12</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicHebrew.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs13"><code>InUCS13</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHebrewExtended.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs14"><code>InUCS14</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicArabic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs15"><code>InUCS15</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSArabicExtended.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs16"><code>InUCS16</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSDevanagari.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs17"><code>InUCS17</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBengali.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs18"><code>InUCS18</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGurmukhi.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs180"><code>InUCS180</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKUnifiedIdeographsAll.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs19"><code>InUCS19</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGujarati.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs2"><code>InUCS2</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLatin1Supplement.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs20"><code>InUCS20</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSOriya.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs200"><code>InUCS200</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSZeroWidthBoundaryIndicators.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs2000"><code>InUCS2000</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSip.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs2001"><code>InUCS2001</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKUnifiedIdeographsExtensionB.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs2002"><code>InUCS2002</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKCompatibilityIdeographsSupplement.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs201"><code>InUCS201</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSFormatSeparators.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs202"><code>InUCS202</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBiDirectionalFormatMarks.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs203"><code>InUCS203</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBiDirectionalFormatEmbeddings.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs204"><code>InUCS204</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHangulFillCharacters.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs205"><code>InUCS205</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCharacterShapingSelectors.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs206"><code>InUCS206</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSNumericShapeSelectors.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs207"><code>InUCS207</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSIdeographicDescriptionCharacters.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs21"><code>InUCS21</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTamil.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs22"><code>InUCS22</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTelugu.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs23"><code>InUCS23</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSKannada.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs24"><code>InUCS24</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMalayalam.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs25"><code>InUCS25</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSThai.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs250"><code>InUCS250</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGeneralFormatCharacters.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs251"><code>InUCS251</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSScriptSpecificFormatCharacters.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs26"><code>InUCS26</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLao.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs27"><code>InUCS27</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicGeorgian.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs28"><code>InUCS28</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGeorgianExtended.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs281"><code>InUCS281</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_MES1.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs282"><code>InUCS282</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_MES2.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs283"><code>InUCS283</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_MES3A.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs284"><code>InUCS284</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_MES3B.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs29"><code>InUCS29</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHangulJamo.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs299"><code>InUCS299</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_BMPFirstEdition.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs3"><code>InUCS3</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLatinExtendedA.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs30"><code>InUCS30</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLatinExtendedAdditional.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs300"><code>InUCS300</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_BMP.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs3000"><code>InUCS3000</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSpp.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs3001"><code>InUCS3001</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTags.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs3002"><code>InUCS3002</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSVariationSelectorsSupplement.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs301"><code>InUCS301</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_BMP_AMD7.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs302"><code>InUCS302</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_BMPSecondEdition.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs31"><code>InUCS31</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGreekExtended.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs32"><code>InUCS32</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGeneralPunctuation.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs33"><code>InUCS33</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSuperscriptsAndSubscripts.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs34"><code>InUCS34</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCurrencySymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs35"><code>InUCS35</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCombiningDiacriticalMarksForSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs36"><code>InUCS36</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLetterlikeSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs37"><code>InUCS37</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSNumberForms.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs38"><code>InUCS38</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSArrows.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs39"><code>InUCS39</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMathematicalOperators.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs4"><code>InUCS4</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSLatinExtendedB.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs40"><code>InUCS40</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMiscellaneousTechnical.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs4000"><code>InUCS4000</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSPart2.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs41"><code>InUCS41</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSControlPictures.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs42"><code>InUCS42</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSOpticalCharacterRecognition.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs43"><code>InUCS43</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSEnclosedAlphanumerics.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs44"><code>InUCS44</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBoxDrawing.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs45"><code>InUCS45</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBlockElements.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs46"><code>InUCS46</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGeometricShapes.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs47"><code>InUCS47</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMiscellaneousSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs48"><code>InUCS48</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSDingbats.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs49"><code>InUCS49</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKSymbolsAndPunctuation.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs5"><code>InUCS5</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSIPAExtensions.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs50"><code>InUCS50</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHiragana.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs500"><code>InUCS500</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSPrivateUseGroups.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs51"><code>InUCS51</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSKatakana.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs52"><code>InUCS52</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBopomofo.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs53"><code>InUCS53</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHangulCompatibilityJamo.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs54"><code>InUCS54</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKMiscellaneous.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs55"><code>InUCS55</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSEnclosedCJKLettersAndMonths.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs56"><code>InUCS56</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKCompatibility.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs57"><code>InUCS57</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicHangul.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs58"><code>InUCS58</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSupplementalHangulB.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs6"><code>InUCS6</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSpacingModifierLetters.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs60"><code>InUCS60</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKUnifiedIdeographs.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs61"><code>InUCS61</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSPrivateUseArea.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs62"><code>InUCS62</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKCompatibilityIdeographs.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs63"><code>InUCS63</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSAlphabeticPresentationForms.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs64"><code>InUCS64</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSArabicPresentationFormsA.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs65"><code>InUCS65</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCombiningHalfMarks.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs66"><code>InUCS66</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKCompatibilityForms.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs67"><code>InUCS67</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSmallFormVariants.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs68"><code>InUCS68</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSArabicPresentationFormsB.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs69"><code>InUCS69</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHalfwidthAndFullwidthForms.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs7"><code>InUCS7</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCombiningDiacriticalMarks.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs70"><code>InUCS70</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSpecials.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs71"><code>InUCS71</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHangulSyllables.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs72"><code>InUCS72</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicTibetan.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs73"><code>InUCS73</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSEthiopic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs74"><code>InUCS74</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSUnifiedCanadianAboriginalSyllabics.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs75"><code>InUCS75</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCherokee.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs76"><code>InUCS76</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSYiSyllables.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs77"><code>InUCS77</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSYiRadicals.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs78"><code>InUCS78</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSKangxiRadicals.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs79"><code>InUCS79</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKRadicalsSupplement.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs8"><code>InUCS8</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicGreek.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs80"><code>InUCS80</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBraillePatterns.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs81"><code>InUCS81</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCS_CJKUnifiedIdeographsExtensionA.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs82"><code>InUCS82</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSOgham.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs83"><code>InUCS83</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSRunic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs84"><code>InUCS84</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSinhala.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs85"><code>InUCS85</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSyriac.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs86"><code>InUCS86</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSThaana.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs87"><code>InUCS87</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBasicMyanmar.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs88"><code>InUCS88</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSKhmer.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs89"><code>InUCS89</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMongolian.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs9"><code>InUCS9</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSGreekSymbolsAndCoptic.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs90"><code>InUCS90</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSExtendedMyanmar.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs91"><code>InUCS91</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTibetan.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs92"><code>InUCS92</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSCyrillicSupplementary.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs93"><code>InUCS93</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTagalog.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs94"><code>InUCS94</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSHanunoo.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs95"><code>InUCS95</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSBuhid.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs96"><code>InUCS96</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSTagbanwa.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs97"><code>InUCS97</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSupplementalArrows.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs98"><code>InUCS98</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSMiscllaneousMathmaticalSymbols.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucs99"><code>InUCS99</code></a></strong><br />
+</dt>
+<dd>
+An alias for InUCSSupplementalMathmaticalOperators.
+</dd>
+<p></p>
+<dt><strong><a name="item_inucsaegannumbers"><code>InUCSAeganNumbers</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsalphabeticpresentationforms"><code>InUCSAlphabeticPresentationForms</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsalternateformatcharactersextended"><code>InUCSAlternateFormatCharactersExtended</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsarabicextended"><code>InUCSArabicExtended</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsarabicpresentationformsa"><code>InUCSArabicPresentationFormsA</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsarabicpresentationformsb"><code>InUCSArabicPresentationFormsB</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsarmenian"><code>InUCSArmenian</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsarrows"><code>InUCSArrows</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasicarabic"><code>InUCSBasicArabic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasicgeorgian"><code>InUCSBasicGeorgian</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasicgreek"><code>InUCSBasicGreek</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasichangul"><code>InUCSBasicHangul</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasichebrew"><code>InUCSBasicHebrew</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasiclatin"><code>InUCSBasicLatin</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasicmyanmar"><code>InUCSBasicMyanmar</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbasictibetan"><code>InUCSBasicTibetan</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbengali"><code>InUCSBengali</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbidirectionalformatembeddings"><code>InUCSBiDirectionalFormatEmbeddings</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbidirectionalformatmarks"><code>InUCSBiDirectionalFormatMarks</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsblockelements"><code>InUCSBlockElements</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbopomofo"><code>InUCSBopomofo</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsboxdrawing"><code>InUCSBoxDrawing</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbraillepatterns"><code>InUCSBraillePatterns</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbuhid"><code>InUCSBuhid</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsbyzantinemusicalsymbols"><code>InUCSByzantineMusicalSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscharactershapingselectors"><code>InUCSCharacterShapingSelectors</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscherokee"><code>InUCSCherokee</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscombiningdiacriticalmarks"><code>InUCSCombiningDiacriticalMarks</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscombiningdiacriticalmarksforsymbols"><code>InUCSCombiningDiacriticalMarksForSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscombininghalfmarks"><code>InUCSCombiningHalfMarks</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscontrolpictures"><code>InUCSControlPictures</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscurrencysymbols"><code>InUCSCurrencySymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscypriotsyllabary"><code>InUCSCypriotSyllabary</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscyrillic"><code>InUCSCyrillic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucscyrillicsupplementary"><code>InUCSCyrillicSupplementary</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsdeseret"><code>InUCSDeseret</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsdevanagari"><code>InUCSDevanagari</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsdingbats"><code>InUCSDingbats</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsenclosedalphanumerics"><code>InUCSEnclosedAlphanumerics</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsenclosedcjklettersandmonths"><code>InUCSEnclosedCJKLettersAndMonths</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsethiopic"><code>InUCSEthiopic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsetruscan"><code>InUCSEtruscan</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsextendedmyanmar"><code>InUCSExtendedMyanmar</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsformatseparators"><code>InUCSFormatSeparators</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgeneralformatcharacters"><code>InUCSGeneralFormatCharacters</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgeneralpunctuation"><code>InUCSGeneralPunctuation</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgeometricshapes"><code>InUCSGeometricShapes</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgeorgianextended"><code>InUCSGeorgianExtended</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgothic"><code>InUCSGothic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgreekextended"><code>InUCSGreekExtended</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgreeksymbolsandcoptic"><code>InUCSGreekSymbolsAndCoptic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgujarati"><code>InUCSGujarati</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsgurmukhi"><code>InUCSGurmukhi</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshalfwidthandfullwidthforms"><code>InUCSHalfwidthAndFullwidthForms</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshangulcompatibilityjamo"><code>InUCSHangulCompatibilityJamo</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshangulfillcharacters"><code>InUCSHangulFillCharacters</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshanguljamo"><code>InUCSHangulJamo</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshangulsyllables"><code>InUCSHangulSyllables</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshanunoo"><code>InUCSHanunoo</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshebrewextended"><code>InUCSHebrewExtended</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucshiragana"><code>InUCSHiragana</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsipaextensions"><code>InUCSIPAExtensions</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsideographicdescriptioncharacters"><code>InUCSIdeographicDescriptionCharacters</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucskangxiradicals"><code>InUCSKangxiRadicals</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucskannada"><code>InUCSKannada</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucskatakana"><code>InUCSKatakana</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucskatakanaphoneticextensions"><code>InUCSKatakanaPhoneticExtensions</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucskhmer"><code>InUCSKhmer</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslao"><code>InUCSLao</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslatin1supplement"><code>InUCSLatin1Supplement</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslatinextendeda"><code>InUCSLatinExtendedA</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslatinextendedadditional"><code>InUCSLatinExtendedAdditional</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslatinextendedb"><code>InUCSLatinExtendedB</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsletterlikesymbols"><code>InUCSLetterlikeSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslimbu"><code>InUCSLimbu</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslinearbideograms"><code>InUCSLinearBIdeograms</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucslinearbsyllabary"><code>InUCSLinearBSyllabary</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmalayalam"><code>InUCSMalayalam</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmathematicaloperators"><code>InUCSMathematicalOperators</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmiscellaneoussymbols"><code>InUCSMiscellaneousSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmiscellaneoustechnical"><code>InUCSMiscellaneousTechnical</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmiscllaneousmathmaticalsymbols"><code>InUCSMiscllaneousMathmaticalSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsmongolian"><code>InUCSMongolian</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsnumberforms"><code>InUCSNumberForms</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsnumericshapeselectors"><code>InUCSNumericShapeSelectors</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsogham"><code>InUCSOgham</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsopticalcharacterrecognition"><code>InUCSOpticalCharacterRecognition</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsoriya"><code>InUCSOriya</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsosmanya"><code>InUCSOsmanya</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucspart2"><code>InUCSPart2</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsprivateusearea"><code>InUCSPrivateUseArea</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsprivateusegroups"><code>InUCSPrivateUseGroups</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsprivateuseplanes"><code>InUCSPrivateUsePlanes</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsrunic"><code>InUCSRunic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsscriptspecificformatcharacters"><code>InUCSScriptSpecificFormatCharacters</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsshavian"><code>InUCSShavian</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssinhala"><code>InUCSSinhala</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssip"><code>InUCSSip</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssmallformvariants"><code>InUCSSmallFormVariants</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssmp"><code>InUCSSmp</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsspacingmodifierletters"><code>InUCSSpacingModifierLetters</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsspecials"><code>InUCSSpecials</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsspp"><code>InUCSSpp</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssuperscriptsandsubscripts"><code>InUCSSuperscriptsAndSubscripts</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalarrows"><code>InUCSSupplementalArrows</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalarrowsc"><code>InUCSSupplementalArrowsC</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalcjkcompatibility"><code>InUCSSupplementalCJKCompatibility</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalhangula"><code>InUCSSupplementalHangulA</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalhangulb"><code>InUCSSupplementalHangulB</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssupplementalmathmaticaloperators"><code>InUCSSupplementalMathmaticalOperators</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucssyriac"><code>InUCSSyriac</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstagalog"><code>InUCSTagalog</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstagbanwa"><code>InUCSTagbanwa</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstags"><code>InUCSTags</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstaile"><code>InUCSTaiLe</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstamil"><code>InUCSTamil</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstelugu"><code>InUCSTelugu</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsthaana"><code>InUCSThaana</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsthai"><code>InUCSThai</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucstibetan"><code>InUCSTibetan</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsugaritic"><code>InUCSUgaritic</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsunicode"><code>InUCSUnicode</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsunifiedcanadianaboriginalsyllabics"><code>InUCSUnifiedCanadianAboriginalSyllabics</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsvariationselectors"><code>InUCSVariationSelectors</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsvariationselectorssupplement"><code>InUCSVariationSelectorsSupplement</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucswesternmusicalsymbols"><code>InUCSWesternMusicalSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsyiradicals"><code>InUCSYiRadicals</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsyisyllables"><code>InUCSYiSyllables</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucsyijinghexagramsymbols"><code>InUCSYijingHexagramSymbols</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucszerowidthboundaryindicators"><code>InUCSZeroWidthBoundaryIndicators</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_bmp"><code>InUCS_BMP</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_bmpfirstedition"><code>InUCS_BMPFirstEdition</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_bmpsecondedition"><code>InUCS_BMPSecondEdition</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_bmp_amd7"><code>InUCS_BMP_AMD7</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkcompatibility"><code>InUCS_CJKCompatibility</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkcompatibilityforms"><code>InUCS_CJKCompatibilityForms</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkcompatibilityideographs"><code>InUCS_CJKCompatibilityIdeographs</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkcompatibilityideographssupplement"><code>InUCS_CJKCompatibilityIdeographsSupplement</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkmiscellaneous"><code>InUCS_CJKMiscellaneous</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkradicalssupplement"><code>InUCS_CJKRadicalsSupplement</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjksymbolsandpunctuation"><code>InUCS_CJKSymbolsAndPunctuation</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkunifiedideographs"><code>InUCS_CJKUnifiedIdeographs</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkunifiedideographsall"><code>InUCS_CJKUnifiedIdeographsAll</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkunifiedideographsextensiona"><code>InUCS_CJKUnifiedIdeographsExtensionA</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_cjkunifiedideographsextensionb"><code>InUCS_CJKUnifiedIdeographsExtensionB</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_mes1"><code>InUCS_MES1</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_mes2"><code>InUCS_MES2</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_mes3a"><code>InUCS_MES3A</code></a></strong><br />
+</dt>
+<dt><strong><a name="item_inucs_mes3b"><code>InUCS_MES3B</code></a></strong><br />
+</dt>
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="example">EXAMPLE</a></h1>
+<pre>
+ use Char::Class::UCS;
+ if ($s =~ /\p{InIPAExtensions}/) {
+   print &quot;Match!\n&quot;;
+ }</pre>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p><a href="../../Char/Class/JISX0221.html">the Char::Class::JISX0221 manpage</a></p>
+<p><a href="../../Char/Class/RFC1815.html">the Char::Class::RFC1815 manpage</a></p>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>Copyright 2007 Wakaba &lt;<a href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>&gt;</p>
+<p>This library and the library generated by it is free software;
+you can redistribute them and/or modify them under the same
+terms as Perl itself.</p>
+
+</body>
+
+</html>
