@@ -1,3 +1,11 @@
+2008-11-24  Wakaba  <wakaba@suika.fam.cx>
+
+	* mkcommitfeed.pl: New script (copied from Harusame).
+
+	* cvscommit.sh: New script (copied from Harusame).
+
+	* Makefile.PL: Version changed to 2.0.
+
 2007-07-19  Wakaba  <wakaba@suika.fam.cx>
 
 	* Makefile.PL: Updated.

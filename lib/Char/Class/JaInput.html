@@ -1,15 +1,19 @@
+<?xml version="1.0" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Char::Class::JaInput - Regular Expression Character Classes - C&lt;JaInput&gt;</title>
 <link rel="stylesheet" href="http://suika.fam.cx/www/style/html/pod.css" type="text/css" />
-<link rev="made" href="mailto:admin@suika.fam.cx" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:wakaba@suika.fam.cx" />
 </head>
 
 <body>
 
-<p><a name="__index__"></a></p>
+
 <!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
 
 <ul>
 
@@ -20,9 +24,11 @@
 	<li><a href="#see_also">SEE ALSO</a></li>
 	<li><a href="#license">LICENSE</a></li>
 </ul>
+
+<hr name="index" />
+</div>
 <!-- INDEX END -->
 
-<hr />
 <p>
 </p>
 <h1><a name="name">NAME</a></h1>
@@ -37,84 +43,85 @@
 <hr />
 <h1><a name="collection_names">COLLECTION NAMES</a></h1>
 <dl>
-<dt><strong><a name="item_injainputboin"><code>InJaInputBoin</code></a></strong><br />
-</dt>
+<dt><strong><a name="injainputboin" class="item"><code>InJaInputBoin</code></a></strong>
+
 <dd>
-母音字 (JIS X 4063:2000 3.c))
+<p>母音字 (JIS X 4063:2000 3.c))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputdigit"><code>InJaInputDigit</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputdigit" class="item"><code>InJaInputDigit</code></a></strong>
+
 <dd>
-数字 (JIS X 4064:2002 5.e))
+<p>数字 (JIS X 4064:2002 5.e))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputenglishsymbol"><code>InJaInputEnglishSymbol</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputenglishsymbol" class="item"><code>InJaInputEnglishSymbol</code></a></strong>
+
 <dd>
-英字用特殊文字 (JIS X 6002-1980 4.2.4 (1))
+<p>英字用特殊文字 (JIS X 6002-1980 4.2.4 (1))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputhiraganamin"><code>InJaInputHiraganaMin</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputhiraganamin" class="item"><code>InJaInputHiraganaMin</code></a></strong>
+
 <dd>
-平仮名 (最小集合) (JIS X 4064:2002 5.a))
+<p>平仮名 (最小集合) (JIS X 4064:2002 5.a))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputkanasymbol"><code>InJaInputKanaSymbol</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputkanasymbol" class="item"><code>InJaInputKanaSymbol</code></a></strong>
+
 <dd>
-仮名記号 (JIS X 4064:2002 5.c))
+<p>仮名記号 (JIS X 4064:2002 5.c))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputkatakana"><code>InJaInputKatakana</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputkatakana" class="item"><code>InJaInputKatakana</code></a></strong>
+
 <dd>
-片仮名 (最小集合) (JIS X 4064:2002 5.b))
+<p>片仮名 (最小集合) (JIS X 4064:2002 5.b))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputkatakanasymbol"><code>InJaInputKatakanaSymbol</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputkatakanasymbol" class="item"><code>InJaInputKatakanaSymbol</code></a></strong>
+
 <dd>
-片仮名用特殊文字 (JIS X 6002-1980 4.2.4 (2))
+<p>片仮名用特殊文字 (JIS X 6002-1980 4.2.4 (2))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputkeykatakana"><code>InJaInputKeyKatakana</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputkeykatakana" class="item"><code>InJaInputKeyKatakana</code></a></strong>
+
 <dd>
-片仮名 (鍵盤) (JIS X 6002-1980 4.2.2)
+<p>片仮名 (鍵盤) (JIS X 6002-1980 4.2.2)</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputlatin"><code>InJaInputLatin</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputlatin" class="item"><code>InJaInputLatin</code></a></strong>
+
 <dd>
-英字 (JIS X 4064:2002 5.d))
+<p>英字 (JIS X 4064:2002 5.d))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputlatincapital"><code>InJaInputLatinCapital</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputlatincapital" class="item"><code>InJaInputLatinCapital</code></a></strong>
+
 <dd>
-英字 (大文字) (JIS X 6002-1980 4.2.1 (1))
+<p>英字 (大文字) (JIS X 6002-1980 4.2.1 (1))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputlatinsmall"><code>InJaInputLatinSmall</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputlatinsmall" class="item"><code>InJaInputLatinSmall</code></a></strong>
+
 <dd>
-英字 (小文字) (JIS X 6002-1980 4.2.1 (2))
+<p>英字 (小文字) (JIS X 6002-1980 4.2.1 (2))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputshiin"><code>InJaInputShiin</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputshiin" class="item"><code>InJaInputShiin</code></a></strong>
+
 <dd>
-子音字 (JIS X 4063:2000 3.b))
+<p>子音字 (JIS X 4063:2000 3.b))</p>
 </dd>
-<p></p>
-<dt><strong><a name="item_injainputyomi"><code>InJaInputYomi</code></a></strong><br />
-</dt>
+</li>
+<dt><strong><a name="injainputyomi" class="item"><code>InJaInputYomi</code></a></strong>
+
 <dd>
-よみ文字列として交換を保証する文字 (JIS X 4062:1998 表1)
+<p>よみ文字列として交換を保証する文字 (JIS X 4062:1998 表1)</p>
 </dd>
-<p></p></dl>
+</li>
+</dl>
 <p>
 </p>
 <hr />
@@ -144,7 +151,7 @@ Using the JIS 7 Bit Coded Character Set)』,
 </p>
 <hr />
 <h1><a name="license">LICENSE</a></h1>
-<p>Copyright 2007 わかば (Wakaba) &lt;<a href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>&gt;</p>
+<p>Copyright 2008 わかば (Wakaba) &lt;<a href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>&gt;</p>
 <p>This library and the library generated by it is free software;
 you can redistribute them and/or modify them under the same
 terms as Perl itself.</p>

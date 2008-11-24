@@ -6,7 +6,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile (
     NAME         => 'CharClass',
     DISTNAME     => 'charclass',      
-    VERSION      => '1.0',
+    VERSION      => '2.0',
     PREREQ_PM    => {
                      'utf8' => 0,
                     },

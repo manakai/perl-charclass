@@ -1,0 +1,103 @@
+=head1 NAME
+
+Char::Normalize::FullwidthHalfwidth - Fullwidth/halfwidth character
+normalization
+
+=head1 SYNOPSIS
+
+  use Char::Normalize::FullwidthHalfwidth qw/normalize_width/;
+  
+  $s = <>;
+  normalize_width (\$s);
+  print $s;
+
+=head1 DESCRIPTION
+
+The C<Char::Normalize::FullwidthHalfwidth> module provides a function
+that normalizes fullwidth/halfwidth compatibility characters into
+their canonical representations.
+
+=head1 FUNCTION
+
+This module provides a function, C<normalize_width>.  It can be
+imported to a package by standard C<Exporter> method, as:
+
+  use Char::Normalize::FullwidthHalfwidth qw/normalize_width/;
+
+Note that the C<use> statement does not export anything unless the
+function name was explicitly specified.
+
+Alternatively, you can invoke the function in its fully qualified form
+as:
+
+  require Char::Normalize::FullwidthHalfwidth;
+  Char::Normalize::FullwidthHalfwidth::normalize_width (\$scalarref);
+
+=over 4
+
+=item C<normalize_width (I<$scalarref>)>
+
+Normalize the fullwidth/halfwidth characters in the scalar referenced
+by the argument into their preferable form.  The argument must be a
+scalar reference.  The scalar is treated as a character string
+(possibly with the utf8 flag set), not a byte string.  The function
+returns the scalar reference.
+
+The function performs the following conversions:
+
+=over 4
+
+=item A character C<U+3000> C<IDEOGRAPHIC SPACE> (so-called fullwidth space)
+
+Replaced by a C<U+0020> C<SPACE> (so-called halfwidth space)
+character.
+
+=item Characters in the range C<U+FF01>..C<U+FF5E> (so-called fullwidth ASCII characters)
+
+Replaced by a character in the range C<U+0021>..C<U+007E> (so-called
+halfwidth ASCII characters).
+
+=item Characters in the range C<U+FF61>..C<U+FF9F> (halfwidth Katakana)
+
+Replaced by a corresponding so-called fullwidth Katakana (or
+ideographic punctuation).  Note that C<U+FF9E> C<HALFWIDTH KATAKANA
+VOICED SOUND MARK> and C<U+FF9F> C<HALFWIDTH KATAKANA SEMI-VOICED
+SOUND MARK> are replaced by C<U+3099> C<COMBINING KATAKANA-HIRAGANA
+VOICED SOUND MARK> and C<U+309A> C<COMBINING KATAKANA-HIRAGANA
+SEMI-VOICED SOUND MARK> respectively, not their spacing variants.
+
+=item Characters in the range C<U+FFE0>..C<U+FFE6> (fullwidth symbols)
+
+Replaced by a corresponding canonical character.
+
+=back
+
+=back
+
+=head1 BUGS
+
+Not all compatibility characters in the fullwidth and halfwidth block
+of the Unicode Standard are currently supported - especially,
+halfwidth Hangul syllables are not converted to their fullwidth
+equivalents.  A future version of this module is expected to address
+this issue by extending the conversion table.
+
+=head1 AUTHOR
+
+Wakaba <w@suika.fam.cx>.
+
+=head1 HISTORY
+
+This module was originally developed as part of SuikaWiki
+L<http://suika.fam.cx/~wakaba/wiki/sw/n/SuikaWiki>.
+
+=head1 LICENSE
+
+Copyright 2008 Wakaba <w@suika.fam.cx>
+
+This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+
+=cut
+
+## $Date: 2008/11/24 04:25:10 $
