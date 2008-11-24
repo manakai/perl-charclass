@@ -1,0 +1,26 @@
+<feed xmlns="http://www.w3.org/2005/Atom"><link href="http://suika.fam.cx/www/harusame/charclass-commit" hreflang="en" rel="self" type="application/atom+xml"></link><link href="http://suika.fam.cx/www/charclass/readme" rel="related"></link><link href="http://suika.fam.cx/www/charclass/readme#license" rel="license"></link><rights>This feed is free software; you can redistribute it and/or modify it under the same terms as Perl itself.</rights><entry xml:id="entry-1227500713"><id>http://suika.fam.cx/www/harusame/charclass-commit#entry-1227500713</id><title>2008-11-24 Wakaba</title><updated>2008-11-24T04:25:12Z</updated><author><name>Wakaba</name><email>wakaba@suika.fam.cx</email></author><content type="text">++ ChangeLog	24 Nov 2008 04:24:23 -0000
+2008-11-24  Wakaba  &lt;wakaba@suika.fam.cx&gt;
+
+	* mkcommitfeed.pl: New script (copied from Harusame).
+
+	* cvscommit.sh: New script (copied from Harusame).
+
+	* Makefile.PL: Version changed to 2.0.
+
+++ charclass/lib/Char/ChangeLog	24 Nov 2008 01:52:26 -0000
+2008-11-24  Wakaba  &lt;wakaba@suika.fam.cx&gt;
+
+	* Normalize/: New directory.
+
+++ charclass/lib/Char/Normalize/ChangeLog	24 Nov 2008 04:20:30 -0000
+2008-11-24  Wakaba  &lt;wakaba@suika.fam.cx&gt;
+
+	* FullwidthHalfwidth.pod: New documentation.
+
+	* FullwidthHalfwidth.pm: New module (content from SuikaWiki4
+	sw.cgi).
+
+	* ChangeLog: New file.
+
+
+</content></entry></feed>
