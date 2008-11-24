@@ -6,7 +6,7 @@ perl \
     -I../manakai-core/lib/ \
     -I/home/httpd/html/www/markup/html/whatpm/ \
     mkcommitfeed.pl --file-name charclass-commit.en.atom.u8 \
-    --feed-url http://suika.fam.cx/www/harusame/charclass-commit \
+    --feed-url http://suika.fam.cx/www/charclass/charclass-commit \
     --feed-title "CharClass ChangeLog diffs" \
     --feed-lang en \
     --feed-related-url "http://suika.fam.cx/www/charclass/readme" \
@@ -16,5 +16,5 @@ perl \
 cvs commit -m "" charclass-commit.en.atom.u8
 rm .cvslog.tmp
 
-## $Date: 2008/11/24 04:25:10 $
+## $Date: 2008/11/24 04:44:50 $
 ## License: Public Domain

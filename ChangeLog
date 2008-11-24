@@ -1,5 +1,14 @@
 2008-11-24  Wakaba  <wakaba@suika.fam.cx>
 
+	* .htaccess: Added directives for the Atom feed.
+
+	* cvscommit.sh: Fixed a typo.
+
+	* readme.en.html: Added #news section.  Added link to the
+	normalization module.
+
+2008-11-24  Wakaba  <wakaba@suika.fam.cx>
+
 	* mkcommitfeed.pl: New script (copied from Harusame).
 
 	* cvscommit.sh: New script (copied from Harusame).
