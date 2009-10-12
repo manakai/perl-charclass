@@ -1,5 +1,9 @@
 AddCharset utf-8 .html .u8
 AddType application/atom+xml .atom
 
+Redirect /www/charclass/charclass-commit.en.atom.u8 http://suika.fam.cx/gate/git/wi/charclass.git/atom
+Redirect /www/charclass/charclass-commit.en.atom http://suika.fam.cx/gate/git/wi/charclass.git/atom
+Redirect /www/charclass/charclass-commit.en http://suika.fam.cx/gate/git/wi/charclass.git/atom
+Redirect /www/charclass/charclass-commit http://suika.fam.cx/gate/git/wi/charclass.git/atom
+
 ## License: Public Domain.
-## $Date: 2008/11/24 04:44:50 $
