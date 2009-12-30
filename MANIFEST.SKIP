@@ -2,7 +2,9 @@
 \bRCS\b
 \bCVS\b
 ,v$
+.git\b
 \.cvsignore$
+\.gitignore$
 ^cvscommit\.sh$
 
 # For HTTP
@@ -26,3 +28,4 @@
 
 # Old releases
 ^release/
+^charclass-.*\.tar\.gz$

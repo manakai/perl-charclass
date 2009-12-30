@@ -7,6 +7,7 @@ WriteMakefile (
     NAME         => 'CharClass',
     DISTNAME     => 'charclass',      
     VERSION      => '2.0',
+    AUTHOR       => 'Wakaba <w@suika.fam.cx>',
     PREREQ_PM    => {
                      'utf8' => 0,
                     },
