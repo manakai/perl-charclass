@@ -1,4 +1,7 @@
 use strict;
+use warnings;
+use Path::Class;
+use lib file (__FILE__)->dir->parent->subdir ('lib')->stringify;
 
 require Test::Simple;
 my $case = 0;
@@ -26,10 +29,10 @@ my @test = (
     main::ok (scalar ($s =~ /^\p{InXML_NameStartChar}\p{InXMLNameChar}*$/), '^{NameStartChar}{NameChar}*$');
   }, 1..4,
   sub {
-    eval q{use Char::Class::XML qw/InXMLNCNameChar InXML_NCNameStartChar/; 1}
+    eval q{use Char::Class::XML qw/InXMLNCNameChar10 InXML_NCNameStartChar10/; 1}
       or die $@;
     my $s = 'NAME';
-    my $ncname = qr/\p{InXML_NCNameStartChar}\p{InXMLNCNameChar}*/;
+    my $ncname = qr/\p{InXML_NCNameStartChar10}\p{InXMLNCNameChar10}*/;
     ok (scalar ($s =~ /^$ncname$/), 'ncname check');
     ok (scalar ($s =~ /^$ncname(?::$ncname)?$/), 'qname check');
     
@@ -51,14 +54,13 @@ for (1,2) {
 for (@test) {&$_ if ref $_}
 }
 
+1;
 
 =head1 LICENSE
 
-Copyright 2003 Wakaba <w@suika.fam.cx>
+Copyright 2003-2010 Wakaba <w@suika.fam.cx>.
 
-This program is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
-
-1; # $Date: 2004/02/14 11:27:44 $
