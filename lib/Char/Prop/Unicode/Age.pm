@@ -1,9 +1,9 @@
 package Char::Prop::Unicode::Age;
 use strict;
 use warnings;
-our $VERSION = '1.1303017172';
+our $VERSION = '1.1303018119';
 
-## This file is auto-generated (at 2011-04-17T05:12:52Z).
+## This file is auto-generated (at 2011-04-17T05:28:39Z).
 ## Do not edit by hand!
 
 our $UnicodeVersion = '6.0.0';
@@ -90,55 +90,55 @@ The functions return one of following property values:
 
 
 
-=item unassigned
+=item - C<unassigned>
 
   
 
-=item 1.1
+=item - C<1.1>
 
   
 
-=item 2.0
+=item - C<2.0>
 
   
 
-=item 2.1
+=item - C<2.1>
 
   
 
-=item 3.0
+=item - C<3.0>
 
   
 
-=item 3.1
+=item - C<3.1>
 
   
 
-=item 3.2
+=item - C<3.2>
 
   
 
-=item 4.0
+=item - C<4.0>
 
   
 
-=item 4.1
+=item - C<4.1>
 
   
 
-=item 5.0
+=item - C<5.0>
 
   
 
-=item 5.1
+=item - C<5.1>
 
   
 
-=item 5.2
+=item - C<5.2>
 
   
 
-=item 6.0
+=item - C<6.0>
 
   
 

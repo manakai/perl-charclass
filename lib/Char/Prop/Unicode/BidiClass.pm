@@ -1,9 +1,9 @@
 package Char::Prop::Unicode::BidiClass;
 use strict;
 use warnings;
-our $VERSION = '1.1303017173';
+our $VERSION = '1.1303018119';
 
-## This file is auto-generated (at 2011-04-17T05:12:53Z).
+## This file is auto-generated (at 2011-04-17T05:28:39Z).
 ## Do not edit by hand!
 
 our $UnicodeVersion = '6.0.0';
@@ -96,79 +96,79 @@ The functions return one of following property values:
 
 
 
-=item L
+=item - C<L>
 
   
 
-=item R
+=item - C<R>
 
   
 
-=item EN
+=item - C<EN>
 
   
 
-=item ES
+=item - C<ES>
 
   
 
-=item ET
+=item - C<ET>
 
   
 
-=item AN
+=item - C<AN>
 
   
 
-=item CS
+=item - C<CS>
 
   
 
-=item B
+=item - C<B>
 
   
 
-=item S
+=item - C<S>
 
   
 
-=item WS
+=item - C<WS>
 
   
 
-=item ON
+=item - C<ON>
 
   
 
-=item BN
+=item - C<BN>
 
   
 
-=item NSM
+=item - C<NSM>
 
   
 
-=item AL
+=item - C<AL>
 
   
 
-=item LRO
+=item - C<LRO>
 
   
 
-=item RLO
+=item - C<RLO>
 
   
 
-=item LRE
+=item - C<LRE>
 
   
 
-=item RLE
+=item - C<RLE>
 
   
 
-=item PDF
+=item - C<PDF>
 
   
 

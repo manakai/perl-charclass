@@ -181,7 +181,7 @@ The functions return one of following property values:
 for my $value (@$values) {
   print qq{
 
-=item $value
+=item - C<$value>
 
   };
 }
