@@ -1,0 +1,36 @@
+#!/usr/local/bin/perl
+use utf8;	## This file is written in UTF-8
+use strict;
+use warnings;
+require 'mkpm.pl';
+use vars qw(%PROP %SET %SET_ALIAS);
+$PROP{module_name} = 'IDNBlacklist';
+$PROP{version} = '1.0.' . time;
+$PROP{author_name} = 'わかば (Wakaba)';
+$PROP{author_mail} = 'w@suika.fam.cx';
+
+$PROP{pod_description} = <<EOH;
+IDN blacklisted characters, as maintained by the Mozilla project
+EOH
+
+$PROP{pod_see_also} = <<EOH;
+<http://mxr.mozilla.org/mozilla-central/source/modules/libpref/src/init/all.js>.
+EOH
+
+my $list = '';
+my @char;
+while (<>) {
+  if (m{pref\("network.IDN.blacklist_chars", "([^"]+)"\)}) {
+    my $chars = $1;
+    $chars =~ s/\\u([0-9A-Fa-f]{4})/chr hex $1/ge;
+    push @char, split //, $chars;
+  }
+}
+$list .= sprintf "!%04X\n", ord $_ for sort { $a cmp $b } @char;
+
+$SET{Chars} = <<EOH;
+#DESCRIPTION Blacklisted characters
+$list
+EOH
+
+&print_module;

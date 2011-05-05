@@ -95,6 +95,7 @@ $r;
 }
 
 sub footer () {
+  my $example = [each %SET]->[0];
 my $r = <<EOH;
 @{[$PROP{pod_example}? "
 =head1 EXAMPLE
@@ -102,8 +103,8 @@ my $r = <<EOH;
 $PROP{pod_example}":"
 =head1 EXAMPLE
 
- use $PROP{perl_namespace_name}$PROP{module_name};
- if (\$s =~ /\\p{In@{[[each %SET]->[0]]}}/) {
+ use $PROP{perl_namespace_name}$PROP{module_name} qw(In$PROP{module_name}@{[$example]});
+ if (\$s =~ /\\p{In$PROP{module_name}@{[$example]}}/) {
    print \"Match!\\n\";
  }
 "]}@{[$PROP{pod_see_also}? "
