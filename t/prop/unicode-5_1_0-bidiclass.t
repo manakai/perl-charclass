@@ -89,6 +89,10 @@ sub _unicode_6_0 : Test(2) {
   is unicode_5_1_0_bidi_class_c "\x{065F}", 'AL'; # NSM
 } # _unicode_6_0
 
+sub _misc : Test(1) {
+  is unicode_5_1_0_bidi_class_n 0x1E800, 'L';
+} # _misc
+
 __PACKAGE__->runtests;
 
 1;

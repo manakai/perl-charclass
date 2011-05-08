@@ -84,6 +84,10 @@ sub _cs : Test(3) {
   is unicode_bidi_class_c "\x{002C}", 'CS';
 } # _cs
 
+sub _misc : Test(1) {
+  is unicode_bidi_class_n 0x1E800, 'R';
+} # _misc
+
 __PACKAGE__->runtests;
 
 1;
