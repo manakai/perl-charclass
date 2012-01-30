@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>CharClass &mdash; A Perl Regular Expression Character Class 
+Library</title>
+<link rel=stylesheet href="http://suika.fam.cx/www/style/html/xhtml">
+<link rel=license href="#license">
+<link rel=author href="http://suika.fam.cx/~wakaba/who?" title="わかば" lang=ja>
+<link rel=feed type="application/atom+xml" href=charclass-commit title="CharClass ChangeLog diffs">
+</head>
+<body>
+<h1><i>CharClass</i> &mdash; A Perl Regular Expression Character Class 
+Library</h1>
+
+<div class=section id=news>
+<h2>What's new?</h2>
+
+<p id=feed>An <a href=charclass-commit rel=feed
+type="application/atom+xml">Atom feed for ChangeLog diffs</a> is
+available.
+
+<ol>
+
+<li><time>2011-05-05</time> <a
+href="#module-char-class-idnblacklist">A new module for IDN
+blacklisted characters</a> is added.
+
+<li><time>2011-04-17</time> Modules for <a
+href="#module-char-prop">Unicode character properties</a> are added.
+
+<li><time>2009-10-12</time> We moved the master repository from CVS to
+<a href="#git">git</a>.
+
+<li><time>2008-11-24</time> <a
+href="#module-char-normalize-fullwidthhalfwidth">A new module for
+fullwidth/halfwidth character normalization</a> is added.
+
+<li><time>2008-11-24</time> <a href="#feed">An Atom feed for commit
+logs</a> is available.
+
+</ol>
+
+</div>
+
+<div class="section" id="modules">
+<h2>Modules</h2>
+
+<p>Modules defining character classes:
+
+<dl>
+<dt><a href="lib/Char/Class/Alphabet.html"><code>Char::Class::Alphabet</code></a></dt>
+    <dd>Character classes for alphabetical letters.</dd>
+<dt><a href="lib/Char/Class/Han.html"><code>Char::Class::Han</code></a></dt>
+    <dd>Han character (CJK ideograph) classes.</dd>
+<dt><a href="lib/Char/Class/Hiragana.html"><code>Char::Class::Hiragana</code></a></dt>
+    <dd>Hiragana classes.</dd>
+<dt id=module-char-class-idnblacklist><a href="lib/Char/Class/IDNBlacklist.html"><code>Char::Class::IDNBlacklist</code></a>
+  <dd>Characters in IDN blacklist, as maintainted by the Mozilla project
+  for display of IDNs in their product.
+<dt><a href="lib/Char/Class/JaInput.html"><code>Char::Class::JaInput</code></a></dt>
+    <dd>Character classes defined in JIS input method standards.</dd>
+<dt><a href="lib/Char/Class/ISOIECTR10176.html"><code>Char::Class::ISOIECTR10176</code></a></dt>
+    <dd>ISO/IEC TR 10176 character repertoires.</dd>
+<dt><a href="lib/Char/Class/JISX0221.html"><code>Char::Class::JISX0221</code></a></dt>
+    <dd>JIS X 0221 character collections.</dd>
+<dt><a href="lib/Char/Class/JISX4051.html"><code>Char::Class::JISX4051</code></a></dt>
+    <dd>JIS X 4051 character classes.</dd>
+<dt><a href="lib/Char/Class/JISX4052.html"><code>Char::Class::JISX4052</code></a></dt>
+    <dd>JIS X 4052 character classes.</dd>
+<dt><a href="lib/Char/Class/Katakana.html"><code>Char::Class::Katakana</code></a></dt>
+    <dd>Katakana classes.</dd>
+<dt><a href="lib/Char/Class/Kana.html"><code>Char::Class::Kana</code></a></dt>
+    <dd>Kana (hiragana, katakana, and additions) classes.</dd>
+<dt><a href="lib/Char/Class/RFC1815.html"><code>Char::Class::RFC1815</code></a></dt>
+    <dd><a href="urn:ietf:rfc:1815">RFC 1815</a> character sets.</dd>
+<dt><a href="lib/Char/Class/UCS.html"><code>Char::Class::UCS</code></a></dt>
+    <dd>UCS (ISO/IEC 10646) character collections.</dd>
+<dt><a href="lib/Char/Class/XML.html"><code>Char::Class::XML</code></a></dt>
+    <dd>XML-related character classes such as <code>InXML_NameStartChar10</code>
+    (XML 1.0 name start characters) and
+    <code>InXMLNameChar</code> (XML 1.1 name characters).</dd>
+</dl>
+
+<p>A module for normalization:
+
+<dl>
+
+<dt id=module-char-normalize-fullwidthhalfwidth><a
+href="lib/Char/Normalize/FullwidthHalfwidth.html"><code>Char::Normalize::FullwidthHalfwidth</code></a>
+
+<dd>Normalization of ideographic space, fullwidth alphanumeric
+characters, and halfwidth Kakatana.
+
+</dl>
+
+<p id=module-char-prop>Modules for Unicode character properties:
+
+<dl>
+
+<dt id=module-char-prop-unicode-age><a
+href="lib/Char/Prop/Unicode/Age.html"><code>Char::Prop::Unicode::Age</code></a>
+
+<dd>Unicode "Age" property.
+
+<dt id=module-char-prop-unicode-bidiclass><a
+href="lib/Char/Prop/Unicode/BidiClass.html"><code>Char::Prop::Unicode::BidiClass</code></a>
+
+<dd>Unicode "BidiClass" property.
+
+<dt id=module-char-prop-unicode-5_1_0-bidiclass><a
+href="lib/Char/Prop/Unicode/5_1_0/BidiClass.html"><code>Char::Prop::Unicode::5_1_0::BidiClass</code></a>
+
+<dd>Unicode 5.1.0 "BidiClass" property.
+
+</dl>
+
+</div>
+
+<div class="section" id="install">
+<h2>Install</h2>
+
+<ol>
+<li>Download the <a href="#download">tarball</a> and extract it.</li>
+<li><kbd>perl Makefile.PL</kbd></li>
+<li><kbd>make</kbd></li>
+<li><kbd>make install</kbd></li>
+</ol>
+
+<p>Alternatively, just putting all files in the directory <code>lib</code>
+into your directory for Perl modules should work as well.
+All Perl modules in this package are written in pure Perl.</p>
+</div>
+
+<div class="section" id="example">
+<h2>Example</h2>
+
+<div class="fig example">
+<pre class="perl"><code>use Char::Class::XML qw/InXML_NameStartChar10 InXMLNameChar10/;
+
+if ($name !~ /\A<strong>\p{InXML_NameStartChar10}</strong><strong>\p{InXMLNameChar10}</strong>*\z/) {
+  die "$0: $name: This is not an XML 1.0 Name";
+}</code></pre>
+</div>
+</div>
+
+<div class="section" id="download">
+<h2>Distribution</h2>
+
+<div id=git>
+<p>The latest version is always available in <a
+href="http://suika.fam.cx/gate/git/wi/charclass.git">the git
+repository</a>.
+
+<p>You can clone the git repository by:
+<pre>
+$ <kbd>git clone http://suika.fam.cx/gate/git/bare/charclass.git/</kbd>
+</pre>
+
+<p>There is also <a
+href="https://github.com/wakaba/perl-charclass">the GitHub
+repository</a>.
+
+</div>
+
+<!--
+<p>The development version is available in the 
+<a href="http://suika.fam.cx/gate/cvs/perl/charclass/">CVS repository</a>.
+-->
+
+<p>There was a snapshot release version, which is
+<strong>outdated</strong> and should not be used:</p>
+
+<del>
+<p>Snapshot release versions are available as follows:
+
+<ul>
+<li><a href="http://suika.fam.cx/www/charclass/release/latest-stable.tar.gz">CharClass Latest Stable Release
+(tar + gzip)</a></li>
+<li><a href="http://suika.fam.cx/www/charclass/release/charclass-1.0.tar.gz">CharClass Version 1.0, 
+<time datetime="2007-07-19">July 19, 2007</time>
+(tar + gzip, 244<abbr title="kilooctets">ko</abbr>)</a></li>
+</ul>
+</del>
+
+</div>
+
+<div class="section" id="todo">
+<h2>TODO</h2>
+
+<ul>
+<li>Some classes are no longer up-to-date.  Need to update.</li>
+<li>Need to improve documentation.</li>
+</ul>
+
+<p id=bts>Note that there is <a
+href="http://manakai.g.hatena.ne.jp/task/16/">a bug tracking
+system</a>.
+
+</div>
+
+<div class="section" id="license">
+<h2>License</h2>
+
+<p>&copy; 2003‐2011 <a href="http://suika.fam.cx/~wakaba/who?"
+lang=ja>わかば (Wakaba)</a> <code class="mail">&lt;<a
+href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>></code></p>
+
+<p>This library and the library generated by it is free software; you
+can redistribute them and/or modify them under the same terms as Perl
+itself.</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+2008-11-24  Wakaba  <wakaba@suika.fam.cx>
+
+	* .htaccess: Added directives for the Atom feed.
+
+	* cvscommit.sh: Fixed a typo.
+
+	* readme.en.html: Added #news section.  Added link to the
+	normalization module.
+
+2008-11-24  Wakaba  <wakaba@suika.fam.cx>
+
+	* mkcommitfeed.pl: New script (copied from Harusame).
+
+	* cvscommit.sh: New script (copied from Harusame).
+
+	* Makefile.PL: Version changed to 2.0.
+
+2007-07-19  Wakaba  <wakaba@suika.fam.cx>
+
+	* Makefile.PL: Updated.
+
+	* readme.en.html: New document.
+
+	* .htaccess: New file.
+
+	* release/: New directory.
+
+	* MANIFEST.SKIP: New file.
+
+	* cvscommit.sh: New file.
+
+2003-09-07  Wakaba  <wakaba@suika.fam.cx>
+
+	* ChangeLog: New file.
+	* .cvsignore: New file.
+	* Makefile.PL: New script.
+	* t/, lib/: New directory.
+	
+

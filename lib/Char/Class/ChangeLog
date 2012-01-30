@@ -1,0 +1,109 @@
+2007-07-19  Wakaba  <wakaba@suika.fam.cx>
+
+	* JISX0221-src.upl (SEE ALSO): Links to |Char::Class::UCS|
+	and |Char::Class::RFC1815| are added.
+
+	* Makefile (%.html): New rule.
+	(all): Make HTML files.
+	(MODULES): |JaInput.pm| was missing.
+	(clean): Call |clean-pod|.  Don't delete generated Perl modules.
+	(clean-pod): New rule.
+	(distclean): New.  (Note that the rule name is incorrect!)
+
+	* RFC1815-src.upl (SEE ALSO): Links to |Char::Class::UCS|
+	and |Char::Class::JISX0221| are added.
+
+	* UCS-src.upl (SEE ALSO): Links to |Char::Class::JISX0221|
+	and |Char::Class::RFC1815| are added.
+
+	* mkpm.pl (generated pod's NAME): Was generated with a bad style.
+	(generated pod's COLLECTION NAMES): |=back| was missing.
+	(generated pod's EXAMPLE): Use a real class name.  Note that
+	this does not work for e.g. Kana.
+
+2004-06-04  Wakaba  <wakaba@suika.fam.cx>
+
+	* XML-src.upl: XML 1.1 support.
+
+	* mkpm.pl (table): Generates description for aliases.
+
+2003-09-07  Wakaba  <wakaba@suika.fam.cx>
+
+	* .cvsignore: New file.
+
+2003-06-15  Wakaba  <w@suika.fam.cx>
+
+	* XML-src.upl: New classes from unicode-xml is added.
+	(pod_description, pod_seealso): New section.
+	(_deprecated_noncharacter): New class.
+
+2003-05-02  Wakaba  <w@offweb.ddo.jp>
+
+	* JaInput-src.upl: New module.
+
+2003-04-27  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Set $Exporter::ExportLevel to work as intended.
+
+2003-04-25  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Use exporter and also make aliases to main:: namespace,
+	to avoid a buggy error.
+
+2003-04-25  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Make perl namespace name changable.
+	* XML-src.upl: Added NCNameChar and _NCNameStartChar.
+
+2003-04-24  Wakaba  <w@offweb.ddo.jp>
+
+	* mkpm.pl: Bug fix of removing comment.
+	* Makefile: Check whether generated perl module is valid syntax.
+	* mkpm.pl: Don't use Exporter.
+
+2002-10-22  Wakaba <w@suika.fam.cx>
+
+	* ISOIECTR10176.upl: New script.
+
+2002-09-07  Wakaba <w@suika.fam.cx>
+
+	* UCS-src.upl (SecondEdition): Checked with JIS X 0221-1:2001
+	(IDT ISO/IEC 10646-1:2000) A.3.3.
+	* Han-src.upl:
+	- (_JP_*): Renamed to "JP_*".
+	- (Senjimon, SenjimonJP): New collection.
+	- (pod SEE ALSO): Added some Senjimon reference URIs.
+	* JISX4051-src.upl, JISX4052-src.upl: New scripts.
+	* mkpm.pl:
+	- Bug fix of pod outputing.
+	- Output DESCRIPTION of pod in header (not footer).
+	- Output description of collection in collection list
+	of pod.
+
+2002-09-02  Wakaba <w@suika.fam.cx>
+
+	* RFC1815-src.upl: New script.
+
+2002-08-31  Wakaba <w@suika.fam.cx>
+
+	* JISX0221-src.upl: New script.
+	* mkpm.pl: Output a bit better pod documentation:-).
+
+2002-08-24  Wakaba <w@suika.fam.cx>
+
+	* Kana-src.upl: New script.
+	* Makefile: Updated.
+	* mkpm.pl: Support qw(^!.+) line.
+	* Alphabet-src.upl, UCS-src.upl: New scripts.
+
+2002-08-23  Wakaba <w@suika.fam.cx>
+
+	* mkhan.pl: Removed.
+	* Han-src.upl: New script.
+	* mkpm.pl: New library.
+	* Makefile: Updated.
+
+2002-08-16  Wakaba <w@suika.fam.cx>
+
+	* mkhan.upl: New script.
+	* Makefile, ChangeLog: New files.

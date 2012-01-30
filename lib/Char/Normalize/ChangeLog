@@ -1,0 +1,10 @@
+2008-11-24  Wakaba  <wakaba@suika.fam.cx>
+
+	* FullwidthHalfwidth.pod: New documentation.
+
+	* FullwidthHalfwidth.pm: New module (content from SuikaWiki4
+	sw.cgi).
+
+	* ChangeLog: New file.
+
+

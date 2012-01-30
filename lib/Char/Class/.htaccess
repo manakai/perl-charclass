@@ -1,0 +1,4 @@
+AddCharset utf-8 .html .upl
+AddType application/x-perl .upl .pm .pl
+
+## License: Public Domain.

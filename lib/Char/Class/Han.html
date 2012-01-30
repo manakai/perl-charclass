@@ -1,0 +1,262 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Char::Class::Han - Regular Expression Character Classes - C&lt;Han&gt;</title>
+<link rel="stylesheet" href="http://suika.fam.cx/www/style/html/pod.css" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:wakaba@suika.fam.cx" />
+</head>
+
+<body>
+
+
+<!-- INDEX BEGIN -->
+<div name="index">
+<p><a name="__index__"></a></p>
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#collection_names">COLLECTION NAMES</a></li>
+	<li><a href="#example">EXAMPLE</a></li>
+	<li><a href="#see_also">SEE ALSO</a></li>
+	<li><a href="#license">LICENSE</a></li>
+</ul>
+
+<hr name="index" />
+</div>
+<!-- INDEX END -->
+
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>Char::Class::Han - Regular Expression Character Classes - <code>Han</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="collection_names">COLLECTION NAMES</a></h1>
+<dl>
+<dt><strong><a name="inhanjp_hyougai" class="item"><code>InHanJP_Hyougai</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Hyougai2000.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_hyougai2000" class="item"><code>InHanJP_Hyougai2000</code></a></strong>
+
+<dt><strong><a name="inhanjp_hyougaisimplified" class="item"><code>InHanJP_HyougaiSimplified</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_HyougaiSimplified2000.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_hyougaisimplified2000" class="item"><code>InHanJP_HyougaiSimplified2000</code></a></strong>
+
+<dt><strong><a name="inhanjp_hyougaistandard" class="item"><code>InHanJP_HyougaiStandard</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_HyougaiStandard2000.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_hyougaistandard2000" class="item"><code>InHanJP_HyougaiStandard2000</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmei" class="item"><code>InHanJP_Jimmei</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Jimmei1997.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_jimmei1951" class="item"><code>InHanJP_Jimmei1951</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmei1976" class="item"><code>InHanJP_Jimmei1976</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmei1981" class="item"><code>InHanJP_Jimmei1981</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmei1990" class="item"><code>InHanJP_Jimmei1990</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmei1997" class="item"><code>InHanJP_Jimmei1997</code></a></strong>
+
+<dt><strong><a name="inhanjp_jimmeikyoyou" class="item"><code>InHanJP_JimmeiKyoyou</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_JimmeiKyoyou1981.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_jimmeikyoyou1981" class="item"><code>InHanJP_JimmeiKyoyou1981</code></a></strong>
+
+<dt><strong><a name="inhanjp_jouyou" class="item"><code>InHanJP_Jouyou</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Jouyou1981.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_jouyou1981" class="item"><code>InHanJP_Jouyou1981</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku" class="item"><code>InHanJP_Kyouiku</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku1989" class="item"><code>InHanJP_Kyouiku1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku1998" class="item"><code>InHanJP_Kyouiku1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku1st" class="item"><code>InHanJP_Kyouiku1st</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku1st1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku1st1989" class="item"><code>InHanJP_Kyouiku1st1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku1st1998" class="item"><code>InHanJP_Kyouiku1st1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku1st1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku2nd" class="item"><code>InHanJP_Kyouiku2nd</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku2nd1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku2nd1989" class="item"><code>InHanJP_Kyouiku2nd1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku2nd1998" class="item"><code>InHanJP_Kyouiku2nd1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku2nd1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku3rd" class="item"><code>InHanJP_Kyouiku3rd</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku3rd1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku3rd1989" class="item"><code>InHanJP_Kyouiku3rd1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku3rd1998" class="item"><code>InHanJP_Kyouiku3rd1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku3rd1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku4th" class="item"><code>InHanJP_Kyouiku4th</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku4th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku4th1989" class="item"><code>InHanJP_Kyouiku4th1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku4th1998" class="item"><code>InHanJP_Kyouiku4th1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku4th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku5th" class="item"><code>InHanJP_Kyouiku5th</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku5th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku5th1989" class="item"><code>InHanJP_Kyouiku5th1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku5th1998" class="item"><code>InHanJP_Kyouiku5th1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku5th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku6th" class="item"><code>InHanJP_Kyouiku6th</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku6th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_kyouiku6th1989" class="item"><code>InHanJP_Kyouiku6th1989</code></a></strong>
+
+<dt><strong><a name="inhanjp_kyouiku6th1998" class="item"><code>InHanJP_Kyouiku6th1998</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Kyouiku6th1989.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_touyou" class="item"><code>InHanJP_Touyou</code></a></strong>
+
+<dd>
+<p>An alias for InHanJP_Touyou1949.</p>
+</dd>
+</li>
+<dt><strong><a name="inhanjp_touyou1949" class="item"><code>InHanJP_Touyou1949</code></a></strong>
+
+<dt><strong><a name="inhanjp_touyoudraft1954" class="item"><code>InHanJP_TouyouDraft1954</code></a></strong>
+
+<dt><strong><a name="inhansenjimon" class="item"><code>InHanSenjimon</code></a></strong>
+
+<dd>
+<p>An alias for InHanSenjimonJP.</p>
+</dd>
+</li>
+<dt><strong><a name="inhansenjimonjp" class="item"><code>InHanSenjimonJP</code></a></strong>
+
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="example">EXAMPLE</a></h1>
+<pre>
+  use utf8;
+  use 5.7.3;
+  use Char::InSet::Han qw(InHanJP_Jimmei InHanJP_JimmeiKyoyou);
+  $s = q(琉球諸島);
+  ## Marks han characters included in 人名用漢字表・人名用漢字許容字体表
+  $s =~ s/(\p{InHanJP_Jimmei}|\p{InHanJP_JimmeiKyoyou})/*$1/g;
+  print $s;     ## *琉球諸島</pre>
+<p>
+</p>
+<hr />
+<h1><a name="see_also">SEE ALSO</a></h1>
+<p>perlunicode</p>
+<p>漢字表一覧 (List of Kanji tables) &lt;http://www.aozora.gr.jp/kanji_table/&gt;</p>
+<p>学年別漢字配当表 &lt;http://www.mext.go.jp/b_menu/houdou/11/03/990302j.htm&gt;</p>
+<p>千字文:</p>
+<dl>
+<dt><strong><a name="http_www_asahi_net_or_jp_de3m_ozw_kansi_02senji_senji02_htm" class="item">&lt;http://www.asahi-net.or.jp/~de3m-ozw/kansi/02senji/senji02.htm&gt;</a></strong>
+
+<dt><strong><a name="http_www_jls_co_kr_japan_qna_cheonjamun_htm" class="item">&lt;http://www.jls.co.kr/japan/qna/cheonjamun.htm&gt;</a></strong>
+
+<dt><strong><a name="http_www2_odn_ne_jp_sasabomb_tables_1000characters_html" class="item">&lt;http://www2.odn.ne.jp/sasabomb/tables/1000characters.html&gt;</a></strong>
+
+<dt><strong><a name="http_www_l_h_co_jp_lhcontents_l_hlib_senji_newjis_html" class="item">&lt;http://www.l-h.co.jp/lhcontents/l-hlib/senji_newjis.html&gt;</a></strong>
+
+</dl>
+<p>
+</p>
+<hr />
+<h1><a name="license">LICENSE</a></h1>
+<p>Copyright 2008 Wakaba &lt;<a href="mailto:w@suika.fam.cx">w@suika.fam.cx</a>&gt;</p>
+<p>This library and the library generated by it is free software;
+you can redistribute them and/or modify them under the same
+terms as Perl itself.</p>
+<p>This library uses tables made by Aozora Bunko &lt;http://www.aozora.gr.jp/&gt;.
+It claims that:</p>
+<p>この資料は、自由に使ってください。加工、再配布に際しても、
+青空文庫への連絡は必要ありません。校正には努めましたが、
+信頼性は保証できません。この資料を利用したことで何らかの不利益が生じても、
+責任は負えません。</p>
+<p>(You can use, modify, redistribute this resource freely,
+although there is no warranty.)</p>
+
+</body>
+
+</html>
