@@ -2,3 +2,4 @@
 .*~
 *.BAK
 .*.BAK
+lib/Char/Class/mozilla-pref.js
