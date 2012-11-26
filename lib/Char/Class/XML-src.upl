@@ -4,9 +4,9 @@ use strict;
 require 'mkpm.pl';
 use vars qw(%PROP %SET %SET_ALIAS);
 $PROP{module_name} = 'XML';
-$PROP{version} = do{my @r=(q$Revision: 1.3 $=~/\d+/g);sprintf "%d."."%02d" x $#r,@r};
+$PROP{version} = '1.4';
 $PROP{author_name} = 'Wakaba';
-$PROP{author_mail} = 'w@suika.fam.cx';
+$PROP{author_mail} = 'wakaba@suikawiki.org';
 
 $PROP{pod_description} = <<EOH;
 Character classes for XML, the Extensible Markup Language
@@ -37,13 +37,26 @@ Third Edition, 2004-02-04, <http://www.w3.org/TR/2004/REC-xml-20040204>.
 "XML 1.0 Third Edition Specification Errata",
 <http://www.w3.org/XML/xml-V10-3e-errata>.
 
+Fourth Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-20060816/>.
+
+Fifth Edition, 2008-11-26,
+<http://www.w3.org/TR/2008/REC-xml-20081126/>.
+
 =item XML Namespace 1.0
 
-"Namespaces in XML", W3C Recommendation, <http://www.w3.org/TR/REC-xml-names>.
+"Namespaces in XML 1.0", W3C Recommendation,
+<http://www.w3.org/TR/REC-xml-names>.
 
 First Edition, 1999-01-14, <http://www.w3.org/TR/1999/REC-xml-names-19990114>.
 
 "Namespaces in XML Errata", <http://www.w3.org/XML/xml-names-19990114-errata>.
+
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-names-20060816/>.
+
+Third Edition, 2009-12-08,
+<http://www.w3.org/TR/2009/REC-xml-names-20091208/>.
 
 =item XML 1.1
 
@@ -56,6 +69,9 @@ First Edition, 2004-02-04.  Edited 2004-04-15,
 "XML 1.1 First Edition Specification Errata",
 <http://www.w3.org/XML/xml-V11-1e-errata>.
 
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml11-20060816/>.
+
 =item XML Namespace 1.1
 
 "Namespaces in XML 1.1", W3C Recommendation,
@@ -66,6 +82,9 @@ First Edition, 2004-04-02,
 
 "Namespaces in XML 1.1 Errata",
 <http://www.w3.org/XML/2004/xml-names11-errata>.
+
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-names11-20060816/>.
 
 =item Misc.
 
@@ -163,31 +182,31 @@ for (split /\n/, $SET{BaseChar} . $SET{Ideographic}) {
   $SET{Letter} .= $_ . "\n" unless /^\#/;
 }
 
-$SET{NameChar10} = <<EOH;
-#DESCRIPTION Characters are elements of C<NameChar> defined in XML 1.0 spec (#4, <http://www.w3.org/TR/REC-xml#NT-NameChar>)
+$SET{NameChar10_1} = <<EOH;
+#DESCRIPTION Characters are elements of C<NameChar> defined in original XML 1.0 spec (#4, <http://www.w3.org/TR/2006/REC-xml-20060816/#NT-NameChar>)
 .-_:
 EOH
-$SET{_NameStartChar10} = <<EOH;
-#DESCRIPTION Characters can be the first char of C<Name> defined in XML 1.0 spec (#5, <http://www.w3.org/TR/REC-xml#NT-Name>)
+$SET{_NameStartChar10_1} = <<EOH;
+#DESCRIPTION Characters can be the first char of C<Name> defined in original XML 1.0 spec (#5, <http://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name>)
 _:
 EOH
-$SET{NCNameChar10} = <<EOH;
-#DESCRIPTION Characters are elements of C<NCNameChar> defined in Namespace in XML spec (#5, <http://www.w3.org/TR/REC-xml-names#NT-NCNameChar>)
+$SET{NCNameChar10_1} = <<EOH;
+#DESCRIPTION Characters are elements of C<NCNameChar> defined in original Namespace in XML spec (#5, <http://www.w3.org/TR/2006/REC-xml-names-20060816/#NT-NCNameChar>)
 .-_
 EOH
-$SET{_NCNameStartChar10} = <<EOH;
-#DESCRIPTION Characters can be the first char of C<NCName> defined in Namespace in XML spec (#4, <http://www.w3.org/TR/REC-xml-names#NT-NCName>)
+$SET{_NCNameStartChar10_1} = <<EOH;
+#DESCRIPTION Characters can be the first char of C<NCName> defined in original Namespace in XML spec (#4, <http://www.w3.org/TR/2006/REC-xml-names-20060816/#NT-NCName>)
 _
 EOH
 for (split /\n/, $SET{Letter}) {
-  $SET{_NameStartChar10} .= $_ . "\n" unless /^\#/;
-  $SET{NameChar10} .= $_ . "\n" unless /^\#/;
-  $SET{_NCNameStartChar10} .= $_ . "\n" unless /^\#/;
-  $SET{NCNameChar10} .= $_ . "\n" unless /^\#/;
+  $SET{_NameStartChar10_1} .= $_ . "\n" unless /^\#/;
+  $SET{NameChar10_1} .= $_ . "\n" unless /^\#/;
+  $SET{_NCNameStartChar10_1} .= $_ . "\n" unless /^\#/;
+  $SET{NCNameChar10_1} .= $_ . "\n" unless /^\#/;
 }
 for (split /\n/, $SET{Digit} . $SET{CombiningChar} . $SET{Extender}) {
-  $SET{NameChar10} .= $_ . "\n" unless /^\#/;
-  $SET{NCNameChar10} .= $_ . "\n" unless /^\#/;
+  $SET{NameChar10_1} .= $_ . "\n" unless /^\#/;
+  $SET{NCNameChar10_1} .= $_ . "\n" unless /^\#/;
 }
 
 $SET{NameStartChar11} = <<'EOH';
@@ -208,10 +227,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 :_
 EOH
 
-$SET_ALIAS{NameStartChar} = 'NameStartChar11';
-$SET_ALIAS{_NameStartChar} = 'NameStartChar11';
-
-
 $SET{NCNameStartChar11} = <<'EOH';
 #DESCRIPTION C<NCNameStartChar> defined in XML Namespace 1.1 spec
 !00C0  00D6
@@ -228,9 +243,6 @@ $SET{NCNameStartChar11} = <<'EOH';
 !10000 EFFFF
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_
 EOH
-
-$SET_ALIAS{NCNameStartChar} = 'NCNameStartChar11';
-$SET_ALIAS{_NCNameStartChar} = 'NCNameStartChar11';
 
 $SET{NameChar11} = <<'EOH';
 #DESCRIPTION C<NameChar> defined in XML 1.1 spec (#4a, <http://www.w3.org/TR/xml11#NT-NameChar>)
@@ -255,8 +267,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 -.0123456789
 EOH
 
-$SET_ALIAS{NameChar} = 'NameChar11';
-
 $SET{NCNameChar11} = <<'EOH';
 #DESCRIPTION C<NCNameChar> defined in XML Namespace 1.1 spec
 !00C0  00D6
@@ -279,7 +289,52 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_
 -.0123456789
 EOH
 
-$SET_ALIAS{NCNameChar} = 'NCNameChar11';
+$SET{NameChar10_5} = <<EOH
+#DESCRIPTION Characters are elements of C<NameChar> defined in XML 1.0 spec (#4, <http://www.w3.org/TR/REC-xml#NT-NameChar>)
+-.0123456789
+:_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+EOH
+.xml_ebnf_to_charlist(<<'EOH');
+#xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+[#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+EOH
+$SET{NameStartChar10_5} = <<EOH
+#DESCRIPTION Characters can be the first char of C<Name> defined in XML 1.0 spec (#5, <http://www.w3.org/TR/REC-xml#NT-Name>)
+:_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+EOH
+.xml_ebnf_to_charlist(<<'EOH');
+[#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+EOH
+$SET{NCNameChar10_5} = <<EOH
+#DESCRIPTION Characters are elements of C<NCNameChar> defined in Namespace in XML spec (#5, <http://www.w3.org/TR/REC-xml-names#NT-NCNameChar>)
+-.0123456789
+_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+EOH
+.xml_ebnf_to_charlist(<<'EOH');
+#xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+[#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+EOH
+$SET{NCNameStartChar10_5} = <<EOH
+#DESCRIPTION Characters can be the first char of C<NCName> defined in Namespace in XML spec (#4, <http://www.w3.org/TR/REC-xml-names#NT-NCName>)
+_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+EOH
+.xml_ebnf_to_charlist(<<'EOH');
+[#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+EOH
+
+$SET_ALIAS{NameStartChar10} = 'NameStartChar10_5';
+$SET_ALIAS{_NameStartChar10} = 'NameStartChar10_5';
+$SET_ALIAS{NCNameStartChar10} = 'NCNameStartChar10_5';
+$SET_ALIAS{_NCNameStartChar10} = 'NCNameStartChar10_5';
+$SET_ALIAS{NameChar10} = 'NameChar10_5';
+$SET_ALIAS{NCNameChar10} = 'NCNameChar10_5';
+
+$SET_ALIAS{NameStartChar} = 'NameStartChar10_5';
+$SET_ALIAS{_NameStartChar} = 'NameStartChar10_5';
+$SET_ALIAS{NCNameStartChar} = 'NCNameStartChar10_5';
+$SET_ALIAS{_NCNameStartChar} = 'NCNameStartChar10_5';
+$SET_ALIAS{NameChar} = 'NameChar10_5';
+$SET_ALIAS{NCNameChar} = 'NCNameChar10_5';
 
 ## TODO: XML 1.1 Appendix I
 
@@ -366,5 +421,11 @@ sub xml_ebnf_to_charlist ($) {
 
 &print_module;
 
-## $Date: 2004/06/04 08:29:56 $
-### XML-src.upl ends here
+=head1 LICENSE
+
+Copyright 2007-2012 Wakaba <wakaba@suikawiki.org>.
+
+This library is free software; you can redistribute them and/or modify
+them under the same terms as Perl itself.
+
+=cut
