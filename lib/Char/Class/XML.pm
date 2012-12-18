@@ -1,9 +1,9 @@
-## This file is auto-generated (at 2008-11-24T04:21:28Z).
+## This file is auto-generated (at 2012-11-26T15:03:22Z).
 ## Do not edit by hand!
 use strict;
 
 package Char::Class::XML;
-our $VERSION = '1.03';
+our $VERSION = '1.4';
 
 use Exporter;
 use vars qw(@EXPORT_OK @ISA $VERSION);
@@ -31,7 +31,7 @@ sub import ($;@) {
   $Exporter::ExportLevel = 0;
 }
 
-@EXPORT_OK = qw(InXMLBaseChar InXMLChar10 InXMLChar11 InXMLCombiningChar InXMLDigit InXMLExtender InXMLIdeographic InXMLLetter InXMLNCNameChar10 InXMLNCNameChar11 InXMLNCNameStartChar11 InXMLNameChar10 InXMLNameChar11 InXMLNameStartChar11 InXMLPubidChar InXMLRestrictedChar11 InXMLS InXMLVersionNum InXML_NCNameStartChar10 InXML_NameStartChar10 InXML_UnrestrictedChar11 InXML_deprecated_noncharacter InXML_unicode_xml_not_suitable InXML_unicode_xml_suitable_format_character InXMLChar InXMLNCNameChar InXMLNCNameStartChar InXMLNameChar InXMLNameStartChar InXMLRestrictedChar InXML_NCNameStartChar InXML_NameStartChar InXML_UnrestrictedChar InXML_UnrestrictedChar10);
+@EXPORT_OK = qw(InXMLBaseChar InXMLChar10 InXMLChar11 InXMLCombiningChar InXMLDigit InXMLExtender InXMLIdeographic InXMLLetter InXMLNCNameChar10_1 InXMLNCNameChar10_5 InXMLNCNameChar11 InXMLNCNameStartChar10_5 InXMLNCNameStartChar11 InXMLNameChar10_1 InXMLNameChar10_5 InXMLNameChar11 InXMLNameStartChar10_5 InXMLNameStartChar11 InXMLPubidChar InXMLRestrictedChar11 InXMLS InXMLVersionNum InXML_NCNameStartChar10_1 InXML_NameStartChar10_1 InXML_UnrestrictedChar11 InXML_deprecated_noncharacter InXML_unicode_xml_not_suitable InXML_unicode_xml_suitable_format_character InXMLChar InXMLNCNameChar InXMLNCNameChar10 InXMLNCNameStartChar InXMLNCNameStartChar10 InXMLNameChar InXMLNameChar10 InXMLNameStartChar InXMLNameStartChar10 InXMLRestrictedChar InXML_NCNameStartChar InXML_NCNameStartChar10 InXML_NameStartChar InXML_NameStartChar10 InXML_UnrestrictedChar InXML_UnrestrictedChar10);
 
 sub InXMLBaseChar {
 <<EOH;
@@ -621,7 +621,7 @@ AC00	D7A3
 EOH
 }
 
-sub InXMLNCNameChar10 {
+sub InXMLNCNameChar10_1 {
 <<EOH;
 0041	005A	
 0061	007A	
@@ -955,6 +955,90 @@ AC00	D7A3
 EOH
 }
 
+sub InXMLNCNameChar10_5 {
+<<EOH;
+B7
+0300	036F	
+203F	2040	
+D8	F6	
+F8	2FF	
+370	37D	
+37F	1FFF	
+200C	200D	
+2070	218F	
+2C00	2FEF	
+3001	D7FF	
+F900	FDCF	
+FDF0	FFFD	
+10000	EFFFF	
+002D
+002E
+0030
+0031
+0032
+0033
+0034
+0035
+0036
+0037
+0038
+0039
+0041
+0042
+0043
+0044
+0045
+0046
+0047
+0048
+0049
+004A
+004B
+004C
+004D
+004E
+004F
+0050
+0051
+0052
+0053
+0054
+0055
+0056
+0057
+0058
+0059
+005A
+005F
+0061
+0062
+0063
+0064
+0065
+0066
+0067
+0068
+0069
+006A
+006B
+006C
+006D
+006E
+006F
+0070
+0071
+0072
+0073
+0074
+0075
+0076
+0077
+0078
+0079
+007A
+EOH
+}
+
 sub InXMLNCNameChar11 {
 <<EOH;
 00C0  00D6
@@ -984,6 +1068,76 @@ FDF0  FFFD
 0037
 0038
 0039
+0041
+0042
+0043
+0044
+0045
+0046
+0047
+0048
+0049
+004A
+004B
+004C
+004D
+004E
+004F
+0050
+0051
+0052
+0053
+0054
+0055
+0056
+0057
+0058
+0059
+005A
+005F
+0061
+0062
+0063
+0064
+0065
+0066
+0067
+0068
+0069
+006A
+006B
+006C
+006D
+006E
+006F
+0070
+0071
+0072
+0073
+0074
+0075
+0076
+0077
+0078
+0079
+007A
+EOH
+}
+
+sub InXMLNCNameStartChar10_5 {
+<<EOH;
+C0	D6	
+D8	F6	
+F8	2FF	
+370	37D	
+37F	1FFF	
+200C	200D	
+2070	218F	
+2C00	2FEF	
+3001	D7FF	
+F900	FDCF	
+FDF0	FFFD	
+10000	EFFFF	
 0041
 0042
 0043
@@ -1110,7 +1264,7 @@ FDF0  FFFD
 EOH
 }
 
-sub InXMLNameChar10 {
+sub InXMLNameChar10_1 {
 <<EOH;
 0041	005A	
 0061	007A	
@@ -1445,6 +1599,91 @@ AC00	D7A3
 EOH
 }
 
+sub InXMLNameChar10_5 {
+<<EOH;
+B7
+0300	036F	
+203F	2040	
+D8	F6	
+F8	2FF	
+370	37D	
+37F	1FFF	
+200C	200D	
+2070	218F	
+2C00	2FEF	
+3001	D7FF	
+F900	FDCF	
+FDF0	FFFD	
+10000	EFFFF	
+002D
+002E
+0030
+0031
+0032
+0033
+0034
+0035
+0036
+0037
+0038
+0039
+003A
+0041
+0042
+0043
+0044
+0045
+0046
+0047
+0048
+0049
+004A
+004B
+004C
+004D
+004E
+004F
+0050
+0051
+0052
+0053
+0054
+0055
+0056
+0057
+0058
+0059
+005A
+005F
+0061
+0062
+0063
+0064
+0065
+0066
+0067
+0068
+0069
+006A
+006B
+006C
+006D
+006E
+006F
+0070
+0071
+0072
+0073
+0074
+0075
+0076
+0077
+0078
+0079
+007A
+EOH
+}
+
 sub InXMLNameChar11 {
 <<EOH;
 00C0  00D6
@@ -1474,6 +1713,77 @@ FDF0  FFFD
 0037
 0038
 0039
+003A
+0041
+0042
+0043
+0044
+0045
+0046
+0047
+0048
+0049
+004A
+004B
+004C
+004D
+004E
+004F
+0050
+0051
+0052
+0053
+0054
+0055
+0056
+0057
+0058
+0059
+005A
+005F
+0061
+0062
+0063
+0064
+0065
+0066
+0067
+0068
+0069
+006A
+006B
+006C
+006D
+006E
+006F
+0070
+0071
+0072
+0073
+0074
+0075
+0076
+0077
+0078
+0079
+007A
+EOH
+}
+
+sub InXMLNameStartChar10_5 {
+<<EOH;
+C0	D6	
+D8	F6	
+F8	2FF	
+370	37D	
+37F	1FFF	
+200C	200D	
+2070	218F	
+2C00	2FEF	
+3001	D7FF	
+F900	FDCF	
+FDF0	FFFD	
+10000	EFFFF	
 003A
 0041
 0042
@@ -1782,7 +2092,7 @@ sub InXMLVersionNum {
 EOH
 }
 
-sub InXML_NCNameStartChar10 {
+sub InXML_NCNameStartChar10_1 {
 <<EOH;
 0041	005A	
 0061	007A	
@@ -1993,7 +2303,7 @@ AC00	D7A3
 EOH
 }
 
-sub InXML_NameStartChar10 {
+sub InXML_NameStartChar10_1 {
 <<EOH;
 0041	005A	
 0061	007A	
@@ -2277,19 +2587,31 @@ EOH
 
 *InXMLChar = \&InXMLChar11;
 
-*InXMLNCNameChar = \&InXMLNCNameChar11;
+*InXMLNCNameChar = \&InXMLNCNameChar10_5;
 
-*InXMLNCNameStartChar = \&InXMLNCNameStartChar11;
+*InXMLNCNameChar10 = \&InXMLNCNameChar10_5;
 
-*InXMLNameChar = \&InXMLNameChar11;
+*InXMLNCNameStartChar = \&InXMLNCNameStartChar10_5;
 
-*InXMLNameStartChar = \&InXMLNameStartChar11;
+*InXMLNCNameStartChar10 = \&InXMLNCNameStartChar10_5;
+
+*InXMLNameChar = \&InXMLNameChar10_5;
+
+*InXMLNameChar10 = \&InXMLNameChar10_5;
+
+*InXMLNameStartChar = \&InXMLNameStartChar10_5;
+
+*InXMLNameStartChar10 = \&InXMLNameStartChar10_5;
 
 *InXMLRestrictedChar = \&InXMLRestrictedChar11;
 
-*InXML_NCNameStartChar = \&InXMLNCNameStartChar11;
+*InXML_NCNameStartChar = \&InXMLNCNameStartChar10_5;
 
-*InXML_NameStartChar = \&InXMLNameStartChar11;
+*InXML_NCNameStartChar10 = \&InXMLNCNameStartChar10_5;
+
+*InXML_NameStartChar = \&InXMLNameStartChar10_5;
+
+*InXML_NameStartChar10 = \&InXMLNameStartChar10_5;
 
 *InXML_UnrestrictedChar = \&InXML_UnrestrictedChar11;
 
@@ -2337,9 +2659,17 @@ C<Letter> (::= C<BaseChar> / C<Ideographic>) defined in XML 1.0 spec (#84, <http
 
 =item C<InXMLNCNameChar>
 
-An alias for InXMLNCNameChar11.
+An alias for InXMLNCNameChar10_5.
 
 =item C<InXMLNCNameChar10>
+
+An alias for InXMLNCNameChar10_5.
+
+=item C<InXMLNCNameChar10_1>
+
+Characters are elements of C<NCNameChar> defined in original Namespace in XML spec (#5, <http://www.w3.org/TR/2006/REC-xml-names-20060816/#NT-NCNameChar>)
+
+=item C<InXMLNCNameChar10_5>
 
 Characters are elements of C<NCNameChar> defined in Namespace in XML spec (#5, <http://www.w3.org/TR/REC-xml-names#NT-NCNameChar>)
 
@@ -2349,7 +2679,15 @@ C<NCNameChar> defined in XML Namespace 1.1 spec
 
 =item C<InXMLNCNameStartChar>
 
-An alias for InXMLNCNameStartChar11.
+An alias for InXMLNCNameStartChar10_5.
+
+=item C<InXMLNCNameStartChar10>
+
+An alias for InXMLNCNameStartChar10_5.
+
+=item C<InXMLNCNameStartChar10_5>
+
+Characters can be the first char of C<NCName> defined in Namespace in XML spec (#4, <http://www.w3.org/TR/REC-xml-names#NT-NCName>)
 
 =item C<InXMLNCNameStartChar11>
 
@@ -2357,9 +2695,17 @@ C<NCNameStartChar> defined in XML Namespace 1.1 spec
 
 =item C<InXMLNameChar>
 
-An alias for InXMLNameChar11.
+An alias for InXMLNameChar10_5.
 
 =item C<InXMLNameChar10>
+
+An alias for InXMLNameChar10_5.
+
+=item C<InXMLNameChar10_1>
+
+Characters are elements of C<NameChar> defined in original XML 1.0 spec (#4, <http://www.w3.org/TR/2006/REC-xml-20060816/#NT-NameChar>)
+
+=item C<InXMLNameChar10_5>
 
 Characters are elements of C<NameChar> defined in XML 1.0 spec (#4, <http://www.w3.org/TR/REC-xml#NT-NameChar>)
 
@@ -2369,7 +2715,15 @@ C<NameChar> defined in XML 1.1 spec (#4a, <http://www.w3.org/TR/xml11#NT-NameCha
 
 =item C<InXMLNameStartChar>
 
-An alias for InXMLNameStartChar11.
+An alias for InXMLNameStartChar10_5.
+
+=item C<InXMLNameStartChar10>
+
+An alias for InXMLNameStartChar10_5.
+
+=item C<InXMLNameStartChar10_5>
+
+Characters can be the first char of C<Name> defined in XML 1.0 spec (#5, <http://www.w3.org/TR/REC-xml#NT-Name>)
 
 =item C<InXMLNameStartChar11>
 
@@ -2397,19 +2751,27 @@ Characters are elements of C<VersionNum> defined in First and Second Editions of
 
 =item C<InXML_NCNameStartChar>
 
-An alias for InXMLNCNameStartChar11.
+An alias for InXMLNCNameStartChar10_5.
 
 =item C<InXML_NCNameStartChar10>
 
-Characters can be the first char of C<NCName> defined in Namespace in XML spec (#4, <http://www.w3.org/TR/REC-xml-names#NT-NCName>)
+An alias for InXMLNCNameStartChar10_5.
+
+=item C<InXML_NCNameStartChar10_1>
+
+Characters can be the first char of C<NCName> defined in original Namespace in XML spec (#4, <http://www.w3.org/TR/2006/REC-xml-names-20060816/#NT-NCName>)
 
 =item C<InXML_NameStartChar>
 
-An alias for InXMLNameStartChar11.
+An alias for InXMLNameStartChar10_5.
 
 =item C<InXML_NameStartChar10>
 
-Characters can be the first char of C<Name> defined in XML 1.0 spec (#5, <http://www.w3.org/TR/REC-xml#NT-Name>)
+An alias for InXMLNameStartChar10_5.
+
+=item C<InXML_NameStartChar10_1>
+
+Characters can be the first char of C<Name> defined in original XML 1.0 spec (#5, <http://www.w3.org/TR/2006/REC-xml-20060816/#NT-Name>)
 
 =item C<InXML_UnrestrictedChar>
 
@@ -2442,8 +2804,8 @@ Some characters that affect text format but are suitable for use with markup (Ta
 
 =head1 EXAMPLE
 
- use Char::Class::XML;
- if ($s =~ /\p{InNameChar10}/) {
+ use Char::Class::XML qw(InXMLNCNameChar10_1);
+ if ($s =~ /\p{InXMLNCNameChar10_1}/) {
    print "Match!\n";
  }
 
@@ -2473,13 +2835,26 @@ Third Edition, 2004-02-04, <http://www.w3.org/TR/2004/REC-xml-20040204>.
 "XML 1.0 Third Edition Specification Errata",
 <http://www.w3.org/XML/xml-V10-3e-errata>.
 
+Fourth Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-20060816/>.
+
+Fifth Edition, 2008-11-26,
+<http://www.w3.org/TR/2008/REC-xml-20081126/>.
+
 =item XML Namespace 1.0
 
-"Namespaces in XML", W3C Recommendation, <http://www.w3.org/TR/REC-xml-names>.
+"Namespaces in XML 1.0", W3C Recommendation,
+<http://www.w3.org/TR/REC-xml-names>.
 
 First Edition, 1999-01-14, <http://www.w3.org/TR/1999/REC-xml-names-19990114>.
 
 "Namespaces in XML Errata", <http://www.w3.org/XML/xml-names-19990114-errata>.
+
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-names-20060816/>.
+
+Third Edition, 2009-12-08,
+<http://www.w3.org/TR/2009/REC-xml-names-20091208/>.
 
 =item XML 1.1
 
@@ -2492,6 +2867,9 @@ First Edition, 2004-02-04.  Edited 2004-04-15,
 "XML 1.1 First Edition Specification Errata",
 <http://www.w3.org/XML/xml-V11-1e-errata>.
 
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml11-20060816/>.
+
 =item XML Namespace 1.1
 
 "Namespaces in XML 1.1", W3C Recommendation,
@@ -2502,6 +2880,9 @@ First Edition, 2004-04-02,
 
 "Namespaces in XML 1.1 Errata",
 <http://www.w3.org/XML/2004/xml-names11-errata>.
+
+Second Edition, 2006-08-16,
+<http://www.w3.org/TR/2006/REC-xml-names11-20060816/>.
 
 =item Misc.
 
@@ -2515,7 +2896,7 @@ refers 2003-06-13 version of the W3C Note
 
 =head1 LICENSE
 
-Copyright 2008 Wakaba <w@suika.fam.cx>
+Copyright 2012 Wakaba <wakaba@suikawiki.org>
 
 This library and the library generated by it is free software;
 you can redistribute them and/or modify them under the same
