@@ -17,7 +17,8 @@ my @test = (
     ok (scalar ($s =~ /^\p{InXMLNameChar}+$/), '^{NameChar}+$');
     ok (scalar ($s =~ /^\p{InXMLNameChar}\p{InXMLNameChar}+$/), '^{NameChar}{NameChar}+$');
     ok (scalar ($s =~ /^\p{InXML_NCNameStartChar}\p{InXMLNameChar}*$/), '^{NameStartChar}{NameChar}*$');
-  }, 1..4,
+    ok ("\x{5000}" =~ /\p{InXMLNameChar}/, 'A non-ASCII character');
+  }, 1..5,
   sub {
     package foo;
     eval q{use Char::Class::XML qw/InXML_NameStartChar InXMLNameChar/; 1} or die $@;
