@@ -1,0 +1,4 @@
+Path::Class
+Test::Class
+Test::More
+Test::Simple

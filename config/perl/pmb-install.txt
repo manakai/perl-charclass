@@ -1,0 +1,10 @@
+Data::Dumper~2.139
+Path::Class~0.28
+Sub::Uplevel~0.24
+MRO::Compat~0.12
+ExtUtils::MakeMaker~6.64
+Test::Exception~0.31
+Test::Class~0.38
+Test::More~0.98
+Exporter~5.67
+Exporter::Lite~0.02
