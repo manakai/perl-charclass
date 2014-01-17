@@ -18,7 +18,8 @@ local/bin/pmbp.pl:
 pmbp-upgrade: local/bin/pmbp.pl
 	perl local/bin/pmbp.pl --update-pmbp-pl
 pmbp-update: pmbp-upgrade
-	perl local/bin/pmbp.pl --update
+	perl local/bin/pmbp.pl --update \
+	    --write-makefile-pl Makefile.PL
 pmbp-install: pmbp-upgrade
 	perl local/bin/pmbp.pl --install \
             --create-perl-command-shortcut perl \
