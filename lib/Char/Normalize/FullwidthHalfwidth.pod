@@ -17,10 +17,11 @@ The C<Char::Normalize::FullwidthHalfwidth> module provides a function
 that normalizes fullwidth/halfwidth compatibility characters into
 their canonical representations.
 
-=head1 FUNCTION
+=head1 FUNCTIONS
 
-This module provides a function, C<normalize_width>.  It can be
-imported to a package by standard C<Exporter> method, as:
+This module provides functions C<normalize_width> and
+C<combine_voiced_sound_marks>.  They can be imported to a package by
+C<use>ing the standard L<Exporter> modules like:
 
   use Char::Normalize::FullwidthHalfwidth qw/normalize_width/;
 
@@ -72,6 +73,16 @@ Replaced by a corresponding canonical character.
 
 =back
 
+=item combine_voiced_sound_marks (I<$scalarref>)
+
+Replace any sequence of (fullwidth) hiragana or katakana followed by a
+C<U+3099> C<COMBINING KATAKANA-HIRAGANA VOICED SOUND MARK> or
+C<U+309A> C<COMBINING KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK> by its
+precomposed form, if possible.
+
+In many cases you would like to apply this function just after the
+C<normalize_width> function.
+
 =back
 
 =head1 BUGS
@@ -84,20 +95,18 @@ this issue by extending the conversion table.
 
 =head1 AUTHOR
 
-Wakaba <w@suika.fam.cx>.
+Wakaba <wakaba@suikawiki.org>.
 
 =head1 HISTORY
 
 This module was originally developed as part of SuikaWiki
-L<http://suika.fam.cx/~wakaba/wiki/sw/n/SuikaWiki>.
+L<http://suika.suikawiki.org/~wakaba/wiki/sw/n/SuikaWiki>.
 
 =head1 LICENSE
 
-Copyright 2008 Wakaba <w@suika.fam.cx>
+Copyright 2008-2014 Wakaba <wakaba@suikawiki.org>.
 
-This program is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
-
-## $Date: 2008/11/24 04:25:10 $
