@@ -83,6 +83,13 @@ precomposed form, if possible.
 In many cases you would like to apply this function just after the
 C<normalize_width> function.
 
+=item $t = get_fwhw_normalized $s
+
+Return a normalized B<copy> of the argument string (not reference).
+
+It performes normalization performed by C<normalize_width> and
+C<combine_voiced_sound_marks>, as well as some additional convertions.
+
 =back
 
 =head1 BUGS

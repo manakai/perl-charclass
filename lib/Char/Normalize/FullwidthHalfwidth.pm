@@ -1,7 +1,8 @@
 package Char::Normalize::FullwidthHalfwidth;
 use strict;
+use warnings;
 use utf8;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
 
 use Exporter;
 push our @ISA, 'Exporter';
@@ -23,6 +24,17 @@ sub combine_voiced_sound_marks ($) {
   return $sref;
 } # combine_voiced_sound_marks
 
+push @EXPORT_OK, qw(get_fwhw_normalized);
+sub get_fwhw_normalized ($) {
+  my $s = $_[0];
+  $s =~ tr/\x{FF5E}\x{2212}/\x{301C}-/;
+  normalize_width \$s;
+  combine_voiced_sound_marks \$s;
+  return $s;
+} # get_fwhw_normalized
+
+1;
+
 =head1 LICENSE
 
 Copyright 2008-2014 Wakaba <wakaba@suikawiki.org>.
@@ -31,5 +43,3 @@ This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-
-1;
