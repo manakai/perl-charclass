@@ -1,0 +1,60 @@
+=head1 NAME
+
+Char::Transliterate::Kana - Hiragana/Katanaka convertions
+
+=head1 SYNOPSIS
+
+  use Char::Transliterate::Kana;
+  
+  $s = 'ねむいデス';
+  katakana_to_hiragana $s;
+  warn $s; # ねむいです
+  hiragana_to_katakana $s;
+  warn $s; # ネムイデス
+
+=head1 DESCRIPTION
+
+The C<Char::Transliterate::Kana> module defines two functions to
+convert hiragana and katakana characters in text.
+
+=head1 FUNCTIONS
+
+By default, these functions are exported:
+
+=over 4
+
+=item hiragana_to_katakana $string
+
+Destructively replace hiragana letters in the specified string into
+katakana.
+
+=itemkatakana_to_hiragana $string
+
+Destructively replace katakana letters in the specified string into
+hiragana.
+
+=back
+
+=head1 LIMITATIONS
+
+Halfwidth katakana letters are intentionally not supported.  They
+should be first converted to fullwidth letters by
+L<Char::Normalize::FullwidthHalfwidth>.
+
+Kana digraphs and additional small katakana letters are not converted,
+as their corresponding Hiragana or Katakana characters are not
+included in Unicode.  Likewise, circled, squared, or other decorated
+kana characters are not converted.
+
+=head1 AUTHOR
+
+Wakaba <wakabatan@hatena.ne.jp>.
+
+=head1 LICENSE
+
+Copyright 2014 Hatena <http://hatenacorp.jp/>.
+
+This library is free software; you can redistribute them and/or modify
+them under the same terms as Perl itself.
+
+=cut
