@@ -1,8 +1,0 @@
-Redirect 302 /www/charclass/release/latest-stable http://suika.fam.cx/www/charclass/release/charclass-1.0
-Redirect 302 /www/charclass/release/latest-stable.tar http://suika.fam.cx/www/charclass/release/charclass-1.0.tar
-Redirect 302 /www/charclass/release/latest-stable.tar.gz http://suika.fam.cx/www/charclass/release/charclass-1.0.tar.gz
-
-AddDescription "CharClass latest stable release" latest-stable
-AddDescription "CharClass 1.0 (July 19, 2007)" charclass-1.0
-
-## License: Public Domain.

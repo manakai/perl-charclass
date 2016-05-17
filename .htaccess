@@ -25,5 +25,9 @@ Redirect 301 /www/charclass/lib/Char/Class/Kana.html https://manakai.github.io/p
 Redirect 301 /www/charclass/lib/Char/Class/RFC1815.html https://manakai.github.io/pod/Char/Class/RFC1815
 Redirect 301 /www/charclass/lib/Char/Class/UCS.html https://manakai.github.io/pod/Char/Class/UCS
 Redirect 301 /www/charclass/lib/Char/Class/XML.html https://manakai.github.io/pod/Char/Class/XML
+Redirect 301 /www/charclass/release/latest-stable https://github.com/wakaba/perl-charclass/raw/9b8c92a90bb73b95f1480ef27e088625dc0c982d/release/charclass-1.0.tar.gz
+Redirect 301 /www/charclass/release/latest-stable.tar https://github.com/wakaba/perl-charclass/raw/9b8c92a90bb73b95f1480ef27e088625dc0c982d/release/charclass-1.0.tar.gz
+Redirect 301 /www/charclass/release/latest-stable.tar.gz https://github.com/wakaba/perl-charclass/raw/9b8c92a90bb73b95f1480ef27e088625dc0c982d/release/charclass-1.0.tar.gz
+Redirect 301 /www/charclass/release/charclass-1.0.tar.gz https://github.com/wakaba/perl-charclass/raw/9b8c92a90bb73b95f1480ef27e088625dc0c982d/release/charclass-1.0.tar.gz
 
 ## License: Public Domain.
