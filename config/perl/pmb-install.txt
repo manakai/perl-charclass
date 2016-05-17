@@ -2,7 +2,6 @@ Test::Exception~0.32
 AnyEvent~7.07
 Term::ANSIColor~4.02
 Test::Class~0.41
-Exporter::Lite~0.02
 ExtUtils::MakeMaker~6.86
 Data::Dumper~2.145
 Exporter~5.68

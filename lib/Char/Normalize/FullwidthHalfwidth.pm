@@ -2,12 +2,22 @@ package Char::Normalize::FullwidthHalfwidth;
 use strict;
 use warnings;
 use utf8;
-our $VERSION = '3.0';
+our $VERSION = '4.0';
+use Carp;
 
-use Exporter;
-push our @ISA, 'Exporter';
-
+our @EXPORT;
 our @EXPORT_OK = qw/normalize_width combine_voiced_sound_marks/;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
 
 sub normalize_width ($) {
   my $sref = shift;
@@ -37,7 +47,7 @@ sub get_fwhw_normalized ($) {
 
 =head1 LICENSE
 
-Copyright 2008-2014 Wakaba <wakaba@suikawiki.org>.
+Copyright 2008-2016 Wakaba <wakaba@suikawiki.org>.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

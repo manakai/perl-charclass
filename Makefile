@@ -1,10 +1,13 @@
 all:
 
-updatenightly: local/bin/pmbp.pl
+updatenightly: local/bin/pmbp.pl clean build
 	curl https://gist.githubusercontent.com/wakaba/34a71d3137a52abb562d/raw/gistfile1.txt | sh
 	git add modules t_deps/modules
 	perl local/bin/pmbp.pl --update
 	git add config lib/
+
+clean:
+	rm -fr local/*.txt
 
 ## ------ Setup ------
 
@@ -28,6 +31,12 @@ pmbp-install: pmbp-upgrade
 	perl local/bin/pmbp.pl --install \
             --create-perl-command-shortcut perl \
             --create-perl-command-shortcut prove
+
+## ------ Build ------
+
+build:
+	mkdir -p local
+	cd lib/Char/Prop/Unicode && $(MAKE) all
 
 ## ------ Tests ------
 

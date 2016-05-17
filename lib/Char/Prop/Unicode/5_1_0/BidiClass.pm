@@ -1,10 +1,9 @@
 package Char::Prop::Unicode::5_1_0::BidiClass;
 use strict;
 use warnings;
-our $VERSION = '1.1303018120';
+our $VERSION = '2.0';
 
-## This file is auto-generated (at 2011-04-17T05:28:40Z).
-## Do not edit by hand!
+## This file is auto-generated.  Do not edit by hand!
 
 our $UnicodeVersion = '5.1.0';
 our $VALUE = [
@@ -33,12 +32,22 @@ KKKKKKKKKHGHIGKKKKKKKKKKKKKKGGGHIJJDDDJJJJJCFCFFBBBBBBBBBBFJJJJJJ@@@@@@@@@@@@@@@
 EOH
 chop $DATA;
 
-
-use Exporter::Lite;
 our @EXPORT = qw(
   unicode_5_1_0_bidi_class_n
   unicode_5_1_0_bidi_class_c
 );
+
+use Carp;
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
 
 no warnings 'uninitialized';
 no warnings 'substr';

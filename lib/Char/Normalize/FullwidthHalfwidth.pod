@@ -21,15 +21,15 @@ their canonical representations.
 
 This module provides functions C<normalize_width> and
 C<combine_voiced_sound_marks>.  They can be imported to a package by
-C<use>ing the standard L<Exporter> modules like:
+specifying their names as arguments to the C<use> statement:
 
   use Char::Normalize::FullwidthHalfwidth qw/normalize_width/;
 
 Note that the C<use> statement does not export anything unless the
-function name was explicitly specified.
+function names were explicitly specified.
 
-Alternatively, you can invoke the function in its fully qualified form
-as:
+Alternatively, you can invoke the functions in their fully-qualified
+forms:
 
   require Char::Normalize::FullwidthHalfwidth;
   Char::Normalize::FullwidthHalfwidth::normalize_width (\$scalarref);
@@ -107,11 +107,11 @@ Wakaba <wakaba@suikawiki.org>.
 =head1 HISTORY
 
 This module was originally developed as part of SuikaWiki
-L<http://suika.suikawiki.org/~wakaba/wiki/sw/n/SuikaWiki>.
+L<https://suika.suikawiki.org/~wakaba/wiki/sw/n/SuikaWiki>.
 
 =head1 LICENSE
 
-Copyright 2008-2014 Wakaba <wakaba@suikawiki.org>.
+Copyright 2008-2016 Wakaba <wakaba@suikawiki.org>.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

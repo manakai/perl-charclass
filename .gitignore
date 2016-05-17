@@ -11,3 +11,5 @@
 /config/perl/libs.txt
 /deps/
 lib/Char/Class/mozilla-pref.js
+pod2htmd.tmp
+pod2htmi.tmp

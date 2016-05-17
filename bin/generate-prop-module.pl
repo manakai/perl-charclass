@@ -80,10 +80,9 @@ use Data::Dumper;
 print "package Char::Prop::Unicode::$DEF->{class_name};
 use strict;
 use warnings;
-our \$VERSION = '1.@{[scalar time]}';
+our \$VERSION = '2.0';
 
-## This file is auto-generated (at @{[ sprintf '%04d-%02d-%02dT%02d:%02d:%02dZ', (gmtime)[5]+1900, (gmtime)[4]+1, (gmtime)[3,2,1,0] ]}).
-## Do not edit by hand!
+## This file is auto-generated.  Do not edit by hand!
 
 ";
 
@@ -104,19 +103,30 @@ for (0x0000..0x10FFFF) {
   print pack 'C', 0x40 + ($map->[$_] || 0);
 }
 
-print "
+print qq{
 EOH
 chop \$DATA;
-";
 
-print qq{
-
-use Exporter::Lite;
 our \@EXPORT = qw(
   unicode_$DEF->{function_name}_n
   unicode_$DEF->{function_name}_c
 );
+};
 
+print q{
+use Carp;
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+};
+print qq{
 no warnings 'uninitialized';
 no warnings 'substr';
 

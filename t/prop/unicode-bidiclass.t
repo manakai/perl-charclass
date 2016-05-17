@@ -66,8 +66,8 @@ sub _bn : Test(24) {
 } # _bn
 
 sub _al : Test(8) {
-  is unicode_bidi_class_n 0x0604, 'AL';
-  is unicode_bidi_class_n 0x0605, 'AL';
+  is unicode_bidi_class_n 0x0604, 'AN';
+  is unicode_bidi_class_n 0x0605, 'AN';
   is unicode_bidi_class_n 0x060B, 'AL';
   is unicode_bidi_class_n 0x060D, 'AL';
   is unicode_bidi_class_n 0x061B, 'AL';
