@@ -1,5 +1,8 @@
+git:
+  submodules: false
 language: perl
 perl:
+  - "5.22"
   - "5.18"
   - "5.8"
 before_install: git submodule update --init
@@ -10,5 +13,5 @@ notifications:
     - wakaba@suikawiki.org
   irc:
     channels:
-      - "irc.suikawiki.org#mechanize"
+      - "ircs://irc.suikawiki.org:6697#mechanize"
     use_notice: true
