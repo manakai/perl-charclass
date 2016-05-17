@@ -2,11 +2,7 @@ BINDIR = ../../../../bin/
 GENERATOR = $(BINDIR)/generate-prop-module.pl
 GENERATOR_PL = perl $(GENERATOR)
 
-POD2HTML = pod2html --css "http://suika.fam.cx/www/style/html/pod.css" \
-  --htmlroot "../../.."
-
-all: Age.pm BidiClass.pm 5_1_0/BidiClass.pm \
-  Age.html BidiClass.html 5_1_0/BidiClass.html
+all: Age.pm BidiClass.pm 5_1_0/BidiClass.pm
 
 Age.pm: ../../../../local/DerivedAge.txt $(GENERATOR)
 	$(GENERATOR_PL) Age < $< > $@
@@ -16,9 +12,6 @@ BidiClass.pm: ../../../../local/DerivedBidiClass.txt $(GENERATOR)
 
 5_1_0/BidiClass.pm: ../../../../local/DerivedBidiClass-5.1.0.txt $(GENERATOR)
 	$(GENERATOR_PL) 5_1_0::BidiClass < $< > $@
-
-%.html: %.pm
-	$(POD2HTML) $< > $@
 
 ../../../../local/DerivedAge.txt:
 	wget -O $@ http://www.unicode.org/Public/UNIDATA/DerivedAge.txt

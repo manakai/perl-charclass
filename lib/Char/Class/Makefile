@@ -1,22 +1,16 @@
 PERL = perl
 RM = rm -fv
 WGET = wget
-POD2HTML = pod2html --css "http://suika.fam.cx/www/style/html/pod.css" \
-  --htmlroot "../.."
 
 MODULES = Alphabet.pm Han.pm ISOIECTR10176.pm Hiragana.pm JISX0221.pm JISX4051.pm JISX4052.pm Kana.pm Katakana.pm RFC1815.pm UCS.pm XML.pm \
   JaInput.pm IDNBlacklist.pm
-HTML_DOCUMENTS = $(MODULES:.pm=.html)
 MKPMLIB = mkpm.pl
 
-all: $(MODULES) $(HTML_DOCUMENTS) clean-pod
+all: $(MODULES) clean-pod
 
 %.pm: %-src.upl $(MKPMLIB)
 	$(PERL) $< > $@
 	$(PERL) -c $@
-
-%.html: %.pm
-	$(POD2HTML) $< > $@
 
 Hiragana.pm: Kana-src.upl $(MKPMLIB)
 	$(PERL) $< --hiragana > $@

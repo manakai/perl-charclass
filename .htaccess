@@ -1,10 +1,29 @@
 AddCharset utf-8 .html .u8
 AddType application/atom+xml .atom
 
-Redirect 301 /www/charclass/charclass-commit.en.atom.u8 http://suika.suikawiki.org/gate/git/wi/charclass.git/atom
-Redirect 301 /www/charclass/charclass-commit.en.atom http://suika.suikawiki.org/gate/git/wi/charclass.git/atom
-Redirect 301 /www/charclass/charclass-commit.en http://suika.suikawiki.org/gate/git/wi/charclass.git/atom
-Redirect 301 /www/charclass/charclass-commit http://suika.suikawiki.org/gate/git/wi/charclass.git/atom
-Redirect 301 /www/charclass/lib/Char/Normalize/FullwidthHalfwidth.html https://github.com/wakaba/perl-charclass/blob/master/lib/Char/Normalize/FullwidthHalfwidth.pod
+Redirect 301 /www/charclass/charclass-commit.en.atom.u8 https://suika.suikawiki.org/gate/git/wi/charclass.git/atom
+Redirect 301 /www/charclass/charclass-commit.en.atom https://suika.suikawiki.org/gate/git/wi/charclass.git/atom
+Redirect 301 /www/charclass/charclass-commit.en https://suika.suikawiki.org/gate/git/wi/charclass.git/atom
+Redirect 301 /www/charclass/charclass-commit https://suika.suikawiki.org/gate/git/wi/charclass.git/atom
+Redirect 301 /www/charclass/readme.en.html https://manakai.github.io/pod/perl-charclass
+Redirect 301 /www/charclass/readme.en https://manakai.github.io/pod/perl-charclass
+Redirect 301 /www/charclass/readme https://manakai.github.io/pod/perl-charclass
+Redirect 301 /www/charclass/lib/Char/Normalize/FullwidthHalfwidth.html https://manakai.github.io/pod/Char/Normalize/FullwidthHalfwidth
+Redirect 301 /www/charclass/lib/Char/Prop/Unicode/Age.html https://manakai.github.io/pod/Char/Prop/Unicode/Age
+Redirect 301 /www/charclass/lib/Char/Prop/Unicode/BidiClass.html https://manakai.github.io/pod/Char/Prop/Unicode/BidiClass
+Redirect 301 /www/charclass/lib/Char/Prop/Unicode/5_1_0/BidiClass.html https://manakai.github.io/pod/Char/Prop/Unicode/5_1_0/BidiClass
+Redirect 301 /www/charclass/lib/Char/Class/Alphabet.html https://manakai.github.io/pod/Char/Class/Alphabet
+Redirect 301 /www/charclass/lib/Char/Class/Han.html https://manakai.github.io/pod/Char/Class/Han
+Redirect 301 /www/charclass/lib/Char/Class/IDNBlacklist.html https://manakai.github.io/pod/Char/Class/IDNBlacklist
+Redirect 301 /www/charclass/lib/Char/Class/JaInput.html https://manakai.github.io/pod/Char/Class/JaInput
+Redirect 301 /www/charclass/lib/Char/Class/ISOIECTR10176.html https://manakai.github.io/pod/Char/Class/ISOIECTR10176
+Redirect 301 /www/charclass/lib/Char/Class/JISX0221.html https://manakai.github.io/pod/Char/Class/JISX0221
+Redirect 301 /www/charclass/lib/Char/Class/JISX4051.html https://manakai.github.io/pod/Char/Class/JISX4051
+Redirect 301 /www/charclass/lib/Char/Class/JISX4052.html https://manakai.github.io/pod/Char/Class/JISX4052
+Redirect 301 /www/charclass/lib/Char/Class/Katakana.html https://manakai.github.io/pod/Char/Class/Katakana
+Redirect 301 /www/charclass/lib/Char/Class/Kana.html https://manakai.github.io/pod/Char/Class/Kana
+Redirect 301 /www/charclass/lib/Char/Class/RFC1815.html https://manakai.github.io/pod/Char/Class/RFC1815
+Redirect 301 /www/charclass/lib/Char/Class/UCS.html https://manakai.github.io/pod/Char/Class/UCS
+Redirect 301 /www/charclass/lib/Char/Class/XML.html https://manakai.github.io/pod/Char/Class/XML
 
 ## License: Public Domain.
