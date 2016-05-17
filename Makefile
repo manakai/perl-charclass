@@ -51,8 +51,8 @@ build-main: \
     lib/Char/Class/JISX4051.pm \
     lib/Char/Class/JISX4052.pm \
     lib/Char/Class/XML.pm \
-#    lib/Char/Class/JaInput.pm \
-#    lib/Char/Class/RFC1815.pm \
+    lib/Char/Class/JaInput.pm \
+    lib/Char/Class/RFC1815.pm \
 #    lib/Char/Class/UCS.pm
 	mkdir -p local
 	cd lib/Char/Prop/Unicode && $(MAKE) all
@@ -220,24 +220,26 @@ lib/Char/Class/JISX4052.pm: bin/generate-class-module.pl local/sets.json
 	$(PERL) -c $@
 lib/Char/Class/JaInput.pm: bin/generate-class-module.pl local/sets.json
 	$(PERL) $< JaInput JaInput \
-	    'Boin=$' \
-	    'Digit=$' \
-	    'EnglishSymbol=$' \
-	    'HiraganaMin=$' \
-	    'KanaSymbol=$' \
-	    'Katakana=$' \
-	    'KatakanaSymbol=$' \
-	    'KeyKatakana=$' \
-	    'Latin=$' \
-	    'LatinCapital=$' \
-	    'LatinSmall=$' \
-	    'Shiin=$' \
-	    'Yomi=$' \
+	    'Yomi=$$jisx4062-1998:yomi-char' \
+	    'Boin=$$jisx4063-2000:boin' \
+	    'Shiin=$$jisx4063-2000:shiin' \
+	    'Digit=$$jisx4064-2002:digit' \
+	    'Hiragana=$$jisx4064-2002:hiragana' \
+	    'HiraganaMin=$$jisx4064-2002:hiragana-required' \
+	    'Katakana=$$jisx4064-2002:katakana' \
+	    'KatakanaMin=$$jisx4064-2002:katakana-required' \
+	    'KanaSymbol=$$jisx4064-2002:kana-symbol' \
+	    'Latin=$$jisx4064-2002:latin' \
+	    'LatinCapital=$$jisx6002-1980:alpha-upper' \
+	    'LatinSmall=$$jisx6002-1980:alpha-lower' \
+	    'KeyKatakana=$$jisx6002-1980:katakana' \
+	    'EnglishSymbol=$$jisx6002-1980:special-alpha' \
+	    'KatakanaSymbol=$$jisx6002-1980:special-katakana' \
 	> $@
 	$(PERL) -c $@
 lib/Char/Class/RFC1815.pm: bin/generate-class-module.pl local/sets.json
 	$(PERL) $< RFC1815 RFC1815 \
-	    'ISO10646J1=$' \
+	    'ISO10646J1=$$rfc1815:ISO-10646-J-1' \
 	> $@
 	$(PERL) -c $@
 lib/Char/Class/UCS.pm: bin/generate-class-module.pl local/sets.json
@@ -270,6 +272,7 @@ lib/Char/Class/XML.pm: bin/generate-class-module.pl local/sets.json
 	    'NCNameChar11=$$xml11:NCNameChar' \
 	    'NCNameChar<-NCNameChar10_5' \
 	    '_NCNameStartChar10_1=$$xml10-4e:NCNameStartChar' \
+	    '_NameStartChar10_1=$$xml10-4e:NameStartChar' \
 	    'NameStartChar10_5=$$xml10-5e:NameStartChar' \
 	    'NameStartChar10<-NameStartChar10_5' \
 	    '_NameStartChar10<-NameStartChar10_5' \
@@ -282,16 +285,15 @@ lib/Char/Class/XML.pm: bin/generate-class-module.pl local/sets.json
 	    'NCNameStartChar<-NCNameStartChar10_5' \
 	    '_NCNameStartChar<-NCNameStartChar10_5' \
 	    'NCNameStartChar11=$$xml11:NCNameStartChar' \
+	    '_UnrestrictedChar10=$$xml10-5e:unrestricted-char' \
+	    '_UnrestrictedChar11=$$xml11:unrestricted-char' \
+	    '_UnrestrictedChar<-_UnrestrictedChar11' \
+	    'VersionNum=$$xml10-5e:VersionNum-char' \
 	    'PubidChar=$$xml10-5e:PubidChar' \
 	    '_deprecated_noncharacter=$$xml10-5e:discouraged' \
 	    '_unicode_xml_not_suitable=$$unicode-xml:not-suitable' \
 	    '_unicode_xml_suitable_format_character=$$unicode-xml:suitable' \
 	> $@
-	#'_UnrestrictedChar10<-Char10' \
-	#_UnrestrictedChar11 = Char11 - RestrictedChar11
-	#_UnrestrictedChar = _UnrestrictedChar11
-	#_NameStartChar10_1
-	#VersionNum
 	$(PERL) -c $@
 
 local/sets.json:
