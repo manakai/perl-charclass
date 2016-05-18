@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::JISX4051;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::JISX4051 - Regular Expression Character Classes - C<JISX4051>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InJISX4051AlphabeticExceptSpace InJISX4051AlphabeticSpace InJISX4051CharacterInDigits InJISX4051CharacterInUnitSymbol InJISX4051CloseBracket InJISX4051FullStop InJISX4051Hiragana InJISX4051JapaneseSpace InJISX4051LineStartKinsokuJapaneseCharacter InJISX4051MiddleDot InJISX4051MiscJapaneseCharacter InJISX4051OpenBracket InJISX4051PostShortenedSymbol InJISX4051PreShortenedSymbol InJISX4051SeparationSymbol InJISX4051UnseparatableCharacter InJISX4051WarichuuCloseBracket InJISX4051WarichuuOpenBracket);
 
 sub InJISX4051AlphabeticExceptSpace {
@@ -356,8 +357,8 @@ EOH
 
 =head1 EXAMPLE
 
- use Char::Class::JISX4051 qw(InJISX4051PreShortenedSymbol);
- if ($s =~ /\p{InJISX4051PreShortenedSymbol}/) {
+ use Char::Class::JISX4051 qw(InJISX4051AlphabeticExceptSpace);
+ if ($s =~ /\p{InJISX4051AlphabeticExceptSpace}/) {
    print "Match!\n";
  }
 

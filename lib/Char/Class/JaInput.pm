@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::JaInput;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::JaInput - Regular Expression Character Classes - C<JaInput>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InJaInputBoin InJaInputDigit InJaInputEnglishSymbol InJaInputHiragana InJaInputHiraganaMin InJaInputKanaSymbol InJaInputKatakana InJaInputKatakanaMin InJaInputKatakanaSymbol InJaInputKeyKatakana InJaInputLatin InJaInputLatinCapital InJaInputLatinSmall InJaInputShiin InJaInputYomi);
 
 sub InJaInputBoin {
@@ -218,8 +219,8 @@ EOH
 
 =head1 EXAMPLE
 
- use Char::Class::JaInput qw(InJaInputEnglishSymbol);
- if ($s =~ /\p{InJaInputEnglishSymbol}/) {
+ use Char::Class::JaInput qw(InJaInputBoin);
+ if ($s =~ /\p{InJaInputBoin}/) {
    print "Match!\n";
  }
 

@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::XML;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::XML - Regular Expression Character Classes - C<XML>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InXMLBaseChar InXMLChar10 InXMLChar11 InXMLCombiningChar InXMLDigit InXMLExtender InXMLIdeographic InXMLLetter InXMLNCNameChar10_1 InXMLNCNameChar10_5 InXMLNCNameChar11 InXMLNCNameStartChar10_5 InXMLNCNameStartChar11 InXMLNameChar10_1 InXMLNameChar10_5 InXMLNameChar11 InXMLNameStartChar10_5 InXMLNameStartChar11 InXMLPubidChar InXMLRestrictedChar11 InXMLS InXMLVersionNum InXML_NCNameStartChar10_1 InXML_NameStartChar10_1 InXML_UnrestrictedChar10 InXML_UnrestrictedChar11 InXML_deprecated_noncharacter InXML_unicode_xml_not_suitable InXML_unicode_xml_suitable_format_character InXMLChar InXMLNCNameChar InXMLNCNameChar10 InXMLNCNameStartChar InXMLNCNameStartChar10 InXMLNameChar InXMLNameChar10 InXMLNameStartChar InXMLNameStartChar10 InXMLRestrictedChar InXML_NCNameStartChar InXML_NCNameStartChar10 InXML_NameStartChar InXML_NameStartChar10 InXML_UnrestrictedChar);
 
 sub InXMLBaseChar {
@@ -2051,8 +2052,8 @@ An alias for InXML_UnrestrictedChar11.
 
 =head1 EXAMPLE
 
- use Char::Class::XML qw(InXML_NCNameStartChar10_1);
- if ($s =~ /\p{InXML_NCNameStartChar10_1}/) {
+ use Char::Class::XML qw(InXMLBaseChar);
+ if ($s =~ /\p{InXMLBaseChar}/) {
    print "Match!\n";
  }
 

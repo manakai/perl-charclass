@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::JISX4052;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::JISX4052 - Regular Expression Character Classes - C<JISX4052>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InJISX4052Alphabetic InJISX4052AlphabeticBasic InJISX4052AlphabeticRecommended InJISX4052Digits InJISX4052KanaCharacter InJISX4052Kenten);
 
 sub InJISX4052Alphabetic {
@@ -105,8 +106,8 @@ EOH
 
 =head1 EXAMPLE
 
- use Char::Class::JISX4052 qw(InJISX4052Kenten);
- if ($s =~ /\p{InJISX4052Kenten}/) {
+ use Char::Class::JISX4052 qw(InJISX4052Alphabetic);
+ if ($s =~ /\p{InJISX4052Alphabetic}/) {
    print "Match!\n";
  }
 

@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::UCS;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::UCS - Regular Expression Character Classes - C<UCS>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InUCSAeganNumbers InUCSAlphabeticPresentationForms InUCSAlternateFormatCharactersExtended InUCSArabicExtended InUCSArabicPresentationFormsA InUCSArabicPresentationFormsB InUCSArmenian InUCSArrows InUCSBasicArabic InUCSBasicGeorgian InUCSBasicGreek InUCSBasicHangul InUCSBasicHebrew InUCSBasicLatin InUCSBasicMyanmar InUCSBasicTibetan InUCSBengali InUCSBiDirectionalFormatEmbeddings InUCSBiDirectionalFormatMarks InUCSBlockElements InUCSBopomofo InUCSBoxDrawing InUCSBraillePatterns InUCSBuhid InUCSByzantineMusicalSymbols InUCSCharacterShapingSelectors InUCSCherokee InUCSCombiningDiacriticalMarks InUCSCombiningDiacriticalMarksForSymbols InUCSCombiningHalfMarks InUCSControlPictures InUCSCurrencySymbols InUCSCypriotSyllabary InUCSCyrillic InUCSCyrillicSupplementary InUCSDeseret InUCSDevanagari InUCSDingbats InUCSEnclosedAlphanumerics InUCSEnclosedCJKLettersAndMonths InUCSEthiopic InUCSEtruscan InUCSExtendedMyanmar InUCSFormatSeparators InUCSGeneralFormatCharacters InUCSGeneralPunctuation InUCSGeometricShapes InUCSGeorgianExtended InUCSGothic InUCSGreekExtended InUCSGreekSymbolsAndCoptic InUCSGujarati InUCSGurmukhi InUCSHalfwidthAndFullwidthForms InUCSHangulCompatibilityJamo InUCSHangulFillCharacters InUCSHangulJamo InUCSHangulSyllables InUCSHanunoo InUCSHebrewExtended InUCSHiragana InUCSIPAExtensions InUCSIdeographicDescriptionCharacters InUCSKangxiRadicals InUCSKannada InUCSKatakana InUCSKatakanaPhoneticExtensions InUCSKhmer InUCSLao InUCSLatin1Supplement InUCSLatinExtendedA InUCSLatinExtendedAdditional InUCSLatinExtendedB InUCSLetterlikeSymbols InUCSLimbu InUCSLinearBIdeograms InUCSLinearBSyllabary InUCSMalayalam InUCSMathematicalOperators InUCSMiscellaneousSymbols InUCSMiscellaneousTechnical InUCSMiscllaneousMathmaticalSymbols InUCSMongolian InUCSNumberForms InUCSNumericShapeSelectors InUCSOgham InUCSOpticalCharacterRecognition InUCSOriya InUCSOsmanya InUCSPart2 InUCSPrivateUseArea InUCSPrivateUseGroups InUCSPrivateUsePlanes InUCSRunic InUCSScriptSpecificFormatCharacters InUCSShavian InUCSSinhala InUCSSip InUCSSmallFormVariants InUCSSmp InUCSSpacingModifierLetters InUCSSpecials InUCSSpp InUCSSuperscriptsAndSubscripts InUCSSupplementalArrows InUCSSupplementalArrowsC InUCSSupplementalCJKCompatibility InUCSSupplementalHangulA InUCSSupplementalHangulB InUCSSupplementalMathmaticalOperators InUCSSyriac InUCSTagalog InUCSTagbanwa InUCSTags InUCSTaiLe InUCSTamil InUCSTelugu InUCSThaana InUCSThai InUCSTibetan InUCSUgaritic InUCSUnicode InUCSUnifiedCanadianAboriginalSyllabics InUCSVariationSelectors InUCSVariationSelectorsSupplement InUCSWesternMusicalSymbols InUCSYiRadicals InUCSYiSyllables InUCSYijingHexagramSymbols InUCSZeroWidthBoundaryIndicators InUCS_BMP InUCS_BMPFirstEdition InUCS_BMPSecondEdition InUCS_BMP_AMD7 InUCS_CJKCompatibility InUCS_CJKCompatibilityForms InUCS_CJKCompatibilityIdeographs InUCS_CJKCompatibilityIdeographsSupplement InUCS_CJKMiscellaneous InUCS_CJKRadicalsSupplement InUCS_CJKSymbolsAndPunctuation InUCS_CJKUnifiedIdeographs InUCS_CJKUnifiedIdeographsAll InUCS_CJKUnifiedIdeographsExtensionA InUCS_CJKUnifiedIdeographsExtensionB InUCS_MES1 InUCS_MES2 InUCS_MES3A InUCS_MES3B InUCS1 InUCS10 InUCS100 InUCS1000 InUCS1001 InUCS1002 InUCS1003 InUCS1004 InUCS1005 InUCS1007 InUCS1008 InUCS1009 InUCS101 InUCS1010 InUCS1011 InUCS1012 InUCS1013 InUCS104 InUCS105 InUCS106 InUCS10646 InUCS107 InUCS108 InUCS11 InUCS12 InUCS13 InUCS14 InUCS15 InUCS16 InUCS17 InUCS18 InUCS180 InUCS19 InUCS2 InUCS20 InUCS200 InUCS2000 InUCS2001 InUCS2002 InUCS201 InUCS202 InUCS203 InUCS204 InUCS205 InUCS206 InUCS207 InUCS21 InUCS22 InUCS23 InUCS24 InUCS25 InUCS250 InUCS251 InUCS26 InUCS27 InUCS28 InUCS281 InUCS282 InUCS283 InUCS284 InUCS29 InUCS299 InUCS3 InUCS30 InUCS300 InUCS3000 InUCS3001 InUCS3002 InUCS301 InUCS302 InUCS31 InUCS32 InUCS33 InUCS34 InUCS35 InUCS36 InUCS37 InUCS38 InUCS39 InUCS4 InUCS40 InUCS4000 InUCS41 InUCS42 InUCS43 InUCS44 InUCS45 InUCS46 InUCS47 InUCS48 InUCS49 InUCS5 InUCS50 InUCS500 InUCS501 InUCS51 InUCS52 InUCS53 InUCS54 InUCS55 InUCS56 InUCS57 InUCS58 InUCS6 InUCS60 InUCS61 InUCS62 InUCS63 InUCS64 InUCS65 InUCS66 InUCS67 InUCS68 InUCS69 InUCS7 InUCS70 InUCS71 InUCS72 InUCS73 InUCS74 InUCS75 InUCS76 InUCS77 InUCS78 InUCS79 InUCS8 InUCS80 InUCS81 InUCS82 InUCS83 InUCS84 InUCS85 InUCS86 InUCS87 InUCS88 InUCS89 InUCS9 InUCS90 InUCS91 InUCS92 InUCS93 InUCS94 InUCS95 InUCS96 InUCS97 InUCS98 InUCS99);
 
 sub InUCSAeganNumbers {
@@ -3320,8 +3321,8 @@ An alias for InUCSSupplementalMathmaticalOperators.
 
 =head1 EXAMPLE
 
- use Char::Class::UCS qw(InUCSCombiningDiacriticalMarksForSymbols);
- if ($s =~ /\p{InUCSCombiningDiacriticalMarksForSymbols}/) {
+ use Char::Class::UCS qw(InUCSAeganNumbers);
+ if ($s =~ /\p{InUCSAeganNumbers}/) {
    print "Match!\n";
  }
 

@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::Han;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::Han - Regular Expression Character Classes - C<Han>
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InHanJP_Hyougai2000 InHanJP_HyougaiSimplified2000 InHanJP_HyougaiStandard2000 InHanJP_Jimmei1951 InHanJP_Jimmei1976 InHanJP_Jimmei1981 InHanJP_Jimmei1990 InHanJP_Jimmei1997 InHanJP_Jouyou1981 InHanJP_Kyouiku1989 InHanJP_Kyouiku1st1989 InHanJP_Kyouiku2nd1989 InHanJP_Kyouiku3rd1989 InHanJP_Kyouiku4th1989 InHanJP_Kyouiku5th1989 InHanJP_Kyouiku6th1989 InHanJP_Touyou1949 InHanJP_TouyouDraft1954 InHanSenjimonJP InHanJP_Hyougai InHanJP_HyougaiSimplified InHanJP_HyougaiStandard InHanJP_Jimmei InHanJP_JimmeiKyoyou InHanJP_Jouyou InHanJP_Kyouiku InHanJP_Kyouiku1998 InHanJP_Kyouiku1st InHanJP_Kyouiku1st1998 InHanJP_Kyouiku2nd InHanJP_Kyouiku2nd1998 InHanJP_Kyouiku3rd InHanJP_Kyouiku3rd1998 InHanJP_Kyouiku4th InHanJP_Kyouiku4th1998 InHanJP_Kyouiku5th InHanJP_Kyouiku5th1998 InHanJP_Kyouiku6th InHanJP_Kyouiku6th1998 InHanJP_Touyou InHanSenjimon);
 
 sub InHanJP_Hyougai2000 {
@@ -10646,8 +10647,8 @@ An alias for InHanSenjimonJP.
 
 =head1 EXAMPLE
 
- use Char::Class::Han qw(InHanJP_Kyouiku1989);
- if ($s =~ /\p{InHanJP_Kyouiku1989}/) {
+ use Char::Class::Han qw(InHanJP_Hyougai2000);
+ if ($s =~ /\p{InHanJP_Hyougai2000}/) {
    print "Match!\n";
  }
 

@@ -9,7 +9,7 @@ my $json = json_bytes2perl $json_path->slurp;
 
 my $ModuleName = shift @ARGV // die "No module name";
 my $PrefixName = shift @ARGV // die "No prefix name";
-my $ModuleVersion = '2.0';
+my $ModuleVersion = '3.0';
 
 my %SET;
 my %SET_ALIAS;
@@ -47,18 +47,28 @@ for (@ARGV) {
 }
 
 sub header () {
-<<"EOH";
+  return qq{
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::$ModuleName;
 our \$VERSION = '$ModuleVersion';
-@{[
-#package main;
-]}
-use Exporter;
-use vars qw(\@EXPORT_OK \@ISA \$VERSION);
-\@ISA = qw(Exporter);
+use Carp;
+}.q{
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+}.qq{
 
 =head1 NAME
 
@@ -69,20 +79,8 @@ Char::Class::$ModuleName - Regular Expression Character Classes - C<$PrefixName>
 $PROP{pod_description}":'']}
 
 =cut
-
-sub import (\$;\@) {
-  my (\$self, \@sub) = (shift, \@_);
-  for (\@sub) {
-    no strict 'refs';
-    *{'main::'.\$_} = \\&{\$_};
-  }
-  \$Exporter::ExportLevel = 1;
-  \$self->SUPER::import (\@_);
-  \$Exporter::ExportLevel = 0;
-}
-
-EOH
-}
+};
+} # header
 
 sub table () {
   my $prefix = $PrefixName;
@@ -130,7 +128,7 @@ $r;
 }
 
 sub footer () {
-  my $example = [each %SET]->[0];
+  my $example = [sort keys %SET]->[0];
 my $r = <<EOH;
 @{[$PROP{pod_example}? "
 =head1 EXAMPLE

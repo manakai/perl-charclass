@@ -1,12 +1,25 @@
+
 ## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::ISOIECTR10176;
-our $VERSION = '2.0';
+our $VERSION = '3.0';
+use Carp;
 
-use Exporter;
-use vars qw(@EXPORT_OK @ISA $VERSION);
-@ISA = qw(Exporter);
+our @EXPORT;
+our @EXPORT_OK;
+
+sub import ($;@) {
+  my $from_class = shift;
+  my ($to_class, $file, $line) = caller;
+  no strict 'refs';
+  for (@_ ? @_ : @{$from_class . '::EXPORT'}) {
+    my $code = $from_class->can ($_)
+        or croak qq{"$_" is not exported by the $from_class module at $file line $line};
+    *{$to_class . '::' . $_} = $code;
+  }
+} # import
+
 
 =head1 NAME
 
@@ -14,18 +27,6 @@ Char::Class::ISOIECTR10176 - Regular Expression Character Classes - C<ISOIECTR10
 
 
 =cut
-
-sub import ($;@) {
-  my ($self, @sub) = (shift, @_);
-  for (@sub) {
-    no strict 'refs';
-    *{'main::'.$_} = \&{$_};
-  }
-  $Exporter::ExportLevel = 1;
-  $self->SUPER::import (@_);
-  $Exporter::ExportLevel = 0;
-}
-
 @EXPORT_OK = qw(InISOIECTR10176Arabic InISOIECTR10176Armenian InISOIECTR10176Bengali InISOIECTR10176Bopomofo InISOIECTR10176CJKUnifiedIdeographs InISOIECTR10176Cyrillic InISOIECTR10176Devanagari InISOIECTR10176Digits InISOIECTR10176Georian InISOIECTR10176Greek InISOIECTR10176Gujarati InISOIECTR10176Gurmukhi InISOIECTR10176Hangul InISOIECTR10176Hebrew InISOIECTR10176Hiragana InISOIECTR10176Kannada InISOIECTR10176Katakana InISOIECTR10176Lao InISOIECTR10176Latin InISOIECTR10176Malayalam InISOIECTR10176Oriya InISOIECTR10176Special InISOIECTR10176Tamil InISOIECTR10176Telugur InISOIECTR10176Thai InISOIECTR10176Tibetan);
 
 sub InISOIECTR10176Arabic {
@@ -74,6 +75,7 @@ EOH
 
 sub InISOIECTR10176CJKUnifiedIdeographs {
 <<EOH;
+4E00	9FA5	
 EOH
 }
 
@@ -471,8 +473,8 @@ EOH
 
 =head1 EXAMPLE
 
- use Char::Class::ISOIECTR10176 qw(InISOIECTR10176Thai);
- if ($s =~ /\p{InISOIECTR10176Thai}/) {
+ use Char::Class::ISOIECTR10176 qw(InISOIECTR10176Arabic);
+ if ($s =~ /\p{InISOIECTR10176Arabic}/) {
    print "Match!\n";
  }
 
