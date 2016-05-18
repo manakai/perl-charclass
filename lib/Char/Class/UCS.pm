@@ -1,9 +1,8 @@
-## This file is auto-generated (at 2008-11-24T04:21:28Z).
-## Do not edit by hand!
+## This file is auto-generated.  Do not edit by hand!
 use strict;
 
 package Char::Class::UCS;
-our $VERSION = '1.03';
+our $VERSION = '2.0';
 
 use Exporter;
 use vars qw(@EXPORT_OK @ISA $VERSION);
@@ -27,7 +26,7 @@ sub import ($;@) {
   $Exporter::ExportLevel = 0;
 }
 
-@EXPORT_OK = qw(InUCSAeganNumbers InUCSAlphabeticPresentationForms InUCSAlternateFormatCharactersExtended InUCSArabicExtended InUCSArabicPresentationFormsA InUCSArabicPresentationFormsB InUCSArmenian InUCSArrows InUCSBasicArabic InUCSBasicGeorgian InUCSBasicGreek InUCSBasicHangul InUCSBasicHebrew InUCSBasicLatin InUCSBasicMyanmar InUCSBasicTibetan InUCSBengali InUCSBiDirectionalFormatEmbeddings InUCSBiDirectionalFormatMarks InUCSBlockElements InUCSBopomofo InUCSBoxDrawing InUCSBraillePatterns InUCSBuhid InUCSByzantineMusicalSymbols InUCSCharacterShapingSelectors InUCSCherokee InUCSCombiningDiacriticalMarks InUCSCombiningDiacriticalMarksForSymbols InUCSCombiningHalfMarks InUCSControlPictures InUCSCurrencySymbols InUCSCypriotSyllabary InUCSCyrillic InUCSCyrillicSupplementary InUCSDeseret InUCSDevanagari InUCSDingbats InUCSEnclosedAlphanumerics InUCSEnclosedCJKLettersAndMonths InUCSEthiopic InUCSEtruscan InUCSExtendedMyanmar InUCSFormatSeparators InUCSGeneralFormatCharacters InUCSGeneralPunctuation InUCSGeometricShapes InUCSGeorgianExtended InUCSGothic InUCSGreekExtended InUCSGreekSymbolsAndCoptic InUCSGujarati InUCSGurmukhi InUCSHalfwidthAndFullwidthForms InUCSHangulCompatibilityJamo InUCSHangulFillCharacters InUCSHangulJamo InUCSHangulSyllables InUCSHanunoo InUCSHebrewExtended InUCSHiragana InUCSIPAExtensions InUCSIdeographicDescriptionCharacters InUCSKangxiRadicals InUCSKannada InUCSKatakana InUCSKatakanaPhoneticExtensions InUCSKhmer InUCSLao InUCSLatin1Supplement InUCSLatinExtendedA InUCSLatinExtendedAdditional InUCSLatinExtendedB InUCSLetterlikeSymbols InUCSLimbu InUCSLinearBIdeograms InUCSLinearBSyllabary InUCSMalayalam InUCSMathematicalOperators InUCSMiscellaneousSymbols InUCSMiscellaneousTechnical InUCSMiscllaneousMathmaticalSymbols InUCSMongolian InUCSNumberForms InUCSNumericShapeSelectors InUCSOgham InUCSOpticalCharacterRecognition InUCSOriya InUCSOsmanya InUCSPart2 InUCSPrivateUseArea InUCSPrivateUseGroups InUCSPrivateUsePlanes InUCSRunic InUCSScriptSpecificFormatCharacters InUCSShavian InUCSSinhala InUCSSip InUCSSmallFormVariants InUCSSmp InUCSSpacingModifierLetters InUCSSpecials InUCSSpp InUCSSuperscriptsAndSubscripts InUCSSupplementalArrows InUCSSupplementalArrowsC InUCSSupplementalCJKCompatibility InUCSSupplementalHangulA InUCSSupplementalHangulB InUCSSupplementalMathmaticalOperators InUCSSyriac InUCSTagalog InUCSTagbanwa InUCSTags InUCSTaiLe InUCSTamil InUCSTelugu InUCSThaana InUCSThai InUCSTibetan InUCSUgaritic InUCSUnicode InUCSUnifiedCanadianAboriginalSyllabics InUCSVariationSelectors InUCSVariationSelectorsSupplement InUCSWesternMusicalSymbols InUCSYiRadicals InUCSYiSyllables InUCSYijingHexagramSymbols InUCSZeroWidthBoundaryIndicators InUCS_BMP InUCS_BMPFirstEdition InUCS_BMPSecondEdition InUCS_BMP_AMD7 InUCS_CJKCompatibility InUCS_CJKCompatibilityForms InUCS_CJKCompatibilityIdeographs InUCS_CJKCompatibilityIdeographsSupplement InUCS_CJKMiscellaneous InUCS_CJKRadicalsSupplement InUCS_CJKSymbolsAndPunctuation InUCS_CJKUnifiedIdeographs InUCS_CJKUnifiedIdeographsAll InUCS_CJKUnifiedIdeographsExtensionA InUCS_CJKUnifiedIdeographsExtensionB InUCS_MES1 InUCS_MES2 InUCS_MES3A InUCS_MES3B InUCS1 InUCS10 InUCS100 InUCS1000 InUCS1001 InUCS1002 InUCS1003 InUCS1004 InUCS1005 InUCS1007 InUCS1008 InUCS1009 InUCS101 InUCS1010 InUCS1011 InUCS1012 InUCS1013 InUCS104 InUCS105 InUCS106 InUCS10646 InUCS107 InUCS108 InUCS11 InUCS12 InUCS13 InUCS14 InUCS15 InUCS16 InUCS17 InUCS18 InUCS180 InUCS19 InUCS2 InUCS20 InUCS200 InUCS2000 InUCS2001 InUCS2002 InUCS201 InUCS202 InUCS203 InUCS204 InUCS205 InUCS206 InUCS207 InUCS21 InUCS22 InUCS23 InUCS24 InUCS25 InUCS250 InUCS251 InUCS26 InUCS27 InUCS28 InUCS281 InUCS282 InUCS283 InUCS284 InUCS29 InUCS299 InUCS3 InUCS30 InUCS300 InUCS3000 InUCS3001 InUCS3002 InUCS301 InUCS302 InUCS31 InUCS32 InUCS33 InUCS34 InUCS35 InUCS36 InUCS37 InUCS38 InUCS39 InUCS4 InUCS40 InUCS4000 InUCS41 InUCS42 InUCS43 InUCS44 InUCS45 InUCS46 InUCS47 InUCS48 InUCS49 InUCS5 InUCS50 InUCS500 InUCS51 InUCS52 InUCS53 InUCS54 InUCS55 InUCS56 InUCS57 InUCS58 InUCS6 InUCS60 InUCS61 InUCS62 InUCS63 InUCS64 InUCS65 InUCS66 InUCS67 InUCS68 InUCS69 InUCS7 InUCS70 InUCS71 InUCS72 InUCS73 InUCS74 InUCS75 InUCS76 InUCS77 InUCS78 InUCS79 InUCS8 InUCS80 InUCS81 InUCS82 InUCS83 InUCS84 InUCS85 InUCS86 InUCS87 InUCS88 InUCS89 InUCS9 InUCS90 InUCS91 InUCS92 InUCS93 InUCS94 InUCS95 InUCS96 InUCS97 InUCS98 InUCS99);
+@EXPORT_OK = qw(InUCSAeganNumbers InUCSAlphabeticPresentationForms InUCSAlternateFormatCharactersExtended InUCSArabicExtended InUCSArabicPresentationFormsA InUCSArabicPresentationFormsB InUCSArmenian InUCSArrows InUCSBasicArabic InUCSBasicGeorgian InUCSBasicGreek InUCSBasicHangul InUCSBasicHebrew InUCSBasicLatin InUCSBasicMyanmar InUCSBasicTibetan InUCSBengali InUCSBiDirectionalFormatEmbeddings InUCSBiDirectionalFormatMarks InUCSBlockElements InUCSBopomofo InUCSBoxDrawing InUCSBraillePatterns InUCSBuhid InUCSByzantineMusicalSymbols InUCSCharacterShapingSelectors InUCSCherokee InUCSCombiningDiacriticalMarks InUCSCombiningDiacriticalMarksForSymbols InUCSCombiningHalfMarks InUCSControlPictures InUCSCurrencySymbols InUCSCypriotSyllabary InUCSCyrillic InUCSCyrillicSupplementary InUCSDeseret InUCSDevanagari InUCSDingbats InUCSEnclosedAlphanumerics InUCSEnclosedCJKLettersAndMonths InUCSEthiopic InUCSEtruscan InUCSExtendedMyanmar InUCSFormatSeparators InUCSGeneralFormatCharacters InUCSGeneralPunctuation InUCSGeometricShapes InUCSGeorgianExtended InUCSGothic InUCSGreekExtended InUCSGreekSymbolsAndCoptic InUCSGujarati InUCSGurmukhi InUCSHalfwidthAndFullwidthForms InUCSHangulCompatibilityJamo InUCSHangulFillCharacters InUCSHangulJamo InUCSHangulSyllables InUCSHanunoo InUCSHebrewExtended InUCSHiragana InUCSIPAExtensions InUCSIdeographicDescriptionCharacters InUCSKangxiRadicals InUCSKannada InUCSKatakana InUCSKatakanaPhoneticExtensions InUCSKhmer InUCSLao InUCSLatin1Supplement InUCSLatinExtendedA InUCSLatinExtendedAdditional InUCSLatinExtendedB InUCSLetterlikeSymbols InUCSLimbu InUCSLinearBIdeograms InUCSLinearBSyllabary InUCSMalayalam InUCSMathematicalOperators InUCSMiscellaneousSymbols InUCSMiscellaneousTechnical InUCSMiscllaneousMathmaticalSymbols InUCSMongolian InUCSNumberForms InUCSNumericShapeSelectors InUCSOgham InUCSOpticalCharacterRecognition InUCSOriya InUCSOsmanya InUCSPart2 InUCSPrivateUseArea InUCSPrivateUseGroups InUCSPrivateUsePlanes InUCSRunic InUCSScriptSpecificFormatCharacters InUCSShavian InUCSSinhala InUCSSip InUCSSmallFormVariants InUCSSmp InUCSSpacingModifierLetters InUCSSpecials InUCSSpp InUCSSuperscriptsAndSubscripts InUCSSupplementalArrows InUCSSupplementalArrowsC InUCSSupplementalCJKCompatibility InUCSSupplementalHangulA InUCSSupplementalHangulB InUCSSupplementalMathmaticalOperators InUCSSyriac InUCSTagalog InUCSTagbanwa InUCSTags InUCSTaiLe InUCSTamil InUCSTelugu InUCSThaana InUCSThai InUCSTibetan InUCSUgaritic InUCSUnicode InUCSUnifiedCanadianAboriginalSyllabics InUCSVariationSelectors InUCSVariationSelectorsSupplement InUCSWesternMusicalSymbols InUCSYiRadicals InUCSYiSyllables InUCSYijingHexagramSymbols InUCSZeroWidthBoundaryIndicators InUCS_BMP InUCS_BMPFirstEdition InUCS_BMPSecondEdition InUCS_BMP_AMD7 InUCS_CJKCompatibility InUCS_CJKCompatibilityForms InUCS_CJKCompatibilityIdeographs InUCS_CJKCompatibilityIdeographsSupplement InUCS_CJKMiscellaneous InUCS_CJKRadicalsSupplement InUCS_CJKSymbolsAndPunctuation InUCS_CJKUnifiedIdeographs InUCS_CJKUnifiedIdeographsAll InUCS_CJKUnifiedIdeographsExtensionA InUCS_CJKUnifiedIdeographsExtensionB InUCS_MES1 InUCS_MES2 InUCS_MES3A InUCS_MES3B InUCS1 InUCS10 InUCS100 InUCS1000 InUCS1001 InUCS1002 InUCS1003 InUCS1004 InUCS1005 InUCS1007 InUCS1008 InUCS1009 InUCS101 InUCS1010 InUCS1011 InUCS1012 InUCS1013 InUCS104 InUCS105 InUCS106 InUCS10646 InUCS107 InUCS108 InUCS11 InUCS12 InUCS13 InUCS14 InUCS15 InUCS16 InUCS17 InUCS18 InUCS180 InUCS19 InUCS2 InUCS20 InUCS200 InUCS2000 InUCS2001 InUCS2002 InUCS201 InUCS202 InUCS203 InUCS204 InUCS205 InUCS206 InUCS207 InUCS21 InUCS22 InUCS23 InUCS24 InUCS25 InUCS250 InUCS251 InUCS26 InUCS27 InUCS28 InUCS281 InUCS282 InUCS283 InUCS284 InUCS29 InUCS299 InUCS3 InUCS30 InUCS300 InUCS3000 InUCS3001 InUCS3002 InUCS301 InUCS302 InUCS31 InUCS32 InUCS33 InUCS34 InUCS35 InUCS36 InUCS37 InUCS38 InUCS39 InUCS4 InUCS40 InUCS4000 InUCS41 InUCS42 InUCS43 InUCS44 InUCS45 InUCS46 InUCS47 InUCS48 InUCS49 InUCS5 InUCS50 InUCS500 InUCS501 InUCS51 InUCS52 InUCS53 InUCS54 InUCS55 InUCS56 InUCS57 InUCS58 InUCS6 InUCS60 InUCS61 InUCS62 InUCS63 InUCS64 InUCS65 InUCS66 InUCS67 InUCS68 InUCS69 InUCS7 InUCS70 InUCS71 InUCS72 InUCS73 InUCS74 InUCS75 InUCS76 InUCS77 InUCS78 InUCS79 InUCS8 InUCS80 InUCS81 InUCS82 InUCS83 InUCS84 InUCS85 InUCS86 InUCS87 InUCS88 InUCS89 InUCS9 InUCS90 InUCS91 InUCS92 InUCS93 InUCS94 InUCS95 InUCS96 InUCS97 InUCS98 InUCS99);
 
 sub InUCSAeganNumbers {
 <<EOH;
@@ -43,7 +42,7 @@ EOH
 
 sub InUCSAlternateFormatCharactersExtended {
 <<EOH;
-0E0000	0E0FFF	
+E0000	E0FFF	
 EOH
 }
 
@@ -116,8 +115,7 @@ EOH
 sub InUCSBasicMyanmar {
 <<EOH;
 1000	104F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -130,8 +128,7 @@ EOH
 sub InUCSBengali {
 <<EOH;
 0980	09FF	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -180,7 +177,7 @@ EOH
 
 sub InUCSByzantineMusicalSymbols {
 <<EOH;
-01D000	01D0FF	
+1D000	1D0FF	
 EOH
 }
 
@@ -246,15 +243,14 @@ EOH
 
 sub InUCSDeseret {
 <<EOH;
-010400	01044F	
+10400	1044F	
 EOH
 }
 
 sub InUCSDevanagari {
 <<EOH;
 0900	097F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -284,7 +280,7 @@ EOH
 
 sub InUCSEtruscan {
 <<EOH;
-010300	01032F	
+10300	1032F	
 EOH
 }
 
@@ -302,11 +298,9 @@ EOH
 
 sub InUCSGeneralFormatCharacters {
 <<EOH;
-200B	200D	
+200B	200F	
+2028	202E	
 FEFF
-2028	2029	
-200E	200F	
-202A	202E	
 EOH
 }
 
@@ -330,7 +324,7 @@ EOH
 
 sub InUCSGothic {
 <<EOH;
-010330	01034F	
+10330	1034F	
 EOH
 }
 
@@ -349,16 +343,14 @@ EOH
 sub InUCSGujarati {
 <<EOH;
 0A80	0AFF	
-200C
-200D
+200C	200D	
 EOH
 }
 
 sub InUCSGurmukhi {
 <<EOH;
 0A00	0A7F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -433,8 +425,7 @@ EOH
 sub InUCSKannada {
 <<EOH;
 0C80	0CFF	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -453,8 +444,7 @@ EOH
 sub InUCSKhmer {
 <<EOH;
 1780	17FF	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -515,8 +505,7 @@ EOH
 sub InUCSMalayalam {
 <<EOH;
 0D00	0D7F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -577,8 +566,7 @@ EOH
 sub InUCSOriya {
 <<EOH;
 0B00	0B7F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -590,9 +578,9 @@ EOH
 
 sub InUCSPart2 {
 <<EOH;
-010000	01FFFD	
-020000	02FFFD	
-0E0000	0EFFFD	
+10000	1FFFD	
+20000	2FFFD	
+E0000	EFFFD	
 EOH
 }
 
@@ -604,51 +592,14 @@ EOH
 
 sub InUCSPrivateUseGroups {
 <<EOH;
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0036
-0037
-0046
-0046
-0046
-0046
-0046
-0046
-0046
+60000000	7FFFFFFF	
 EOH
 }
 
 sub InUCSPrivateUsePlanes {
 <<EOH;
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0030
-0031
-0045
-0046
-0046
-0046
-0046
-0046
-0046
-0046
-0046
-0046
-0046
-0046
+F0000	10FFFF	
+E00000	FFFFFF	
 EOH
 }
 
@@ -660,11 +611,10 @@ EOH
 
 sub InUCSScriptSpecificFormatCharacters {
 <<EOH;
+206A	206F	
+2FF0	2FFF	
 3164
 FFA0
-206A	206D	
-206E	206F	
-2FF0	2FFF	
 EOH
 }
 
@@ -682,7 +632,7 @@ EOH
 
 sub InUCSSip {
 <<EOH;
-020000	02FFFD	
+20000	2FFFD	
 EOH
 }
 
@@ -694,7 +644,7 @@ EOH
 
 sub InUCSSmp {
 <<EOH;
-010000	01FFFD	
+10000	1FFFD	
 EOH
 }
 
@@ -712,7 +662,7 @@ EOH
 
 sub InUCSSpp {
 <<EOH;
-0E0000	0EFFFD	
+E0000	EFFFD	
 EOH
 }
 
@@ -778,7 +728,7 @@ EOH
 
 sub InUCSTags {
 <<EOH;
-0E0000	0E007F	
+E0000	E007F	
 EOH
 }
 
@@ -791,16 +741,14 @@ EOH
 sub InUCSTamil {
 <<EOH;
 0B80	0BFF	
-200C
-200D
+200C	200D	
 EOH
 }
 
 sub InUCSTelugu {
 <<EOH;
 0C00	0C7F	
-200C
-200D
+200C	200D	
 EOH
 }
 
@@ -860,7 +808,7 @@ EOH
 
 sub InUCSWesternMusicalSymbols {
 <<EOH;
-01D100	01D1FF	
+1D100	1D1FF	
 EOH
 }
 
@@ -891,18 +839,16 @@ EOH
 
 sub InUCS_BMP {
 <<EOH;
-0000	D7FF
-E000	FFFD
+0000	D7FF	
+E000	FFFD	
 EOH
 }
 
 sub InUCS_BMPFirstEdition {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	01F5	
-01FA	01FF	
-0200	0217	
+00A0	01F5	
+01FA	0217	
 0250	02A8	
 02B0	02DE	
 02E0	02E9	
@@ -1016,7 +962,7 @@ sub InUCS_BMPFirstEdition {
 0B82	0B83	
 0B85	0B8A	
 0B8E	0B90	
-0B92	0B25	
+0B92	0B95	
 0B99	0B9A	
 0B9C
 0B9E	0B9F	
@@ -1157,6 +1103,8 @@ sub InUCS_BMPFirstEdition {
 3300	3376	
 337B	33DD	
 33E0	33FE	
+3400	9FA5	
+E000	FA2D	
 FB00	FB06	
 FB13	FB17	
 FB1E	FB36	
@@ -1165,9 +1113,7 @@ FB3E
 FB40	FB41	
 FB43	FB44	
 FB46	FBB1	
-FBD3	FBFF	
-FC00	FCFF	
-FD00	FD3F	
+FBD3	FD3F	
 FD50	FD8F	
 FD92	FDC7	
 FDF0	FDFB	
@@ -1189,19 +1135,13 @@ FFDA	FFDC
 FFE0	FFE6	
 FFE8	FFEE	
 FFFD
-3400	4DFF
-4E00	9FA5
-E000	F8FF
-F900	FA2D
 EOH
 }
 
 sub InUCS_BMPSecondEdition {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	01FF	
-0200	0233	
+00A0	0233	
 0250	02AD	
 02B0	02EE	
 0300	034E	
@@ -1427,8 +1367,7 @@ sub InUCS_BMPSecondEdition {
 12C8	12CE	
 12D0	12D6	
 12D8	12EE	
-12F0	12FF	
-1300	130E	
+12F0	130E	
 1310
 1312	1315	
 1318	131E	
@@ -1436,7 +1375,7 @@ sub InUCS_BMPSecondEdition {
 1348	135A	
 1361	137C	
 13A0	13F4	
-1600	1676	
+1401	1676	
 1680	169C	
 16A0	16F0	
 1780	17DC	
@@ -1517,12 +1456,15 @@ sub InUCS_BMPSecondEdition {
 3300	3376	
 337B	33DD	
 33E0	33FE	
+4E00	9FA5	
 A400	A48C	
 A490	A4A1	
 A4A4	A4B3	
 A4B5	A4C0	
 A4C2	A4C4	
 A4C6
+AC00	D7A3	
+E000	FA2D	
 FB00	FB06	
 FB13	FB17	
 FB1D	FB36	
@@ -1531,9 +1473,7 @@ FB3E
 FB40	FB41	
 FB43	FB44	
 FB46	FBB1	
-FBD3	FBFF	
-FC00	FCFF	
-FD00	FD3F	
+FBD3	FD3F	
 FD50	FD8F	
 FD92	FDC7	
 FDF0	FDFB	
@@ -1555,21 +1495,14 @@ FFDA	FFDC
 FFE0	FFE6	
 FFE8	FFEE	
 FFF9	FFFD	
-1401	15FF
-4E00	9FA5
-AC00	D7A3
-E000	F8FF
-F900	FA2D
 EOH
 }
 
 sub InUCS_BMP_AMD7 {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	01F5	
-01FA	01FF	
-0200	0217	
+00A0	01F5	
+01FA	0217	
 0250	02A8	
 02B0	02DE	
 02E0	02E9	
@@ -1684,7 +1617,7 @@ sub InUCS_BMP_AMD7 {
 0B82	0B83	
 0B85	0B8A	
 0B8E	0B90	
-0B92	0B25	
+0B92	0B95	
 0B99	0B9A	
 0B9C
 0B9E	0B9F	
@@ -1833,6 +1766,9 @@ sub InUCS_BMP_AMD7 {
 3300	3376	
 337B	33DD	
 33E0	33FE	
+4E00	9FA5	
+AC00	D7A3	
+E000	FA2D	
 FB00	FB06	
 FB13	FB17	
 FB1E	FB36	
@@ -1841,9 +1777,7 @@ FB3E
 FB40	FB41	
 FB43	FB44	
 FB46	FBB1	
-FBD3	FBFF	
-FC00	FCFF	
-FD00	FD3F	
+FBD3	FD3F	
 FD50	FD8F	
 FD92	FDC7	
 FDF0	FDFB	
@@ -1865,10 +1799,6 @@ FFDA	FFDC
 FFE0	FFE6	
 FFE8	FFEE	
 FFFD
-4E00	9FA5
-AC00	D7A3
-E000	F8FF
-F900	FA2D
 EOH
 }
 
@@ -1892,7 +1822,7 @@ EOH
 
 sub InUCS_CJKCompatibilityIdeographsSupplement {
 <<EOH;
-02F800	02FA1F	
+2F800	2FA1F	
 EOH
 }
 
@@ -1926,7 +1856,7 @@ sub InUCS_CJKUnifiedIdeographsAll {
 4E00	9FFF	
 FA0E	FA0F	
 FA11
-FA14	FA14	
+FA14
 FA1F
 FA21
 FA23	FA24	
@@ -1943,15 +1873,14 @@ EOH
 
 sub InUCS_CJKUnifiedIdeographsExtensionB {
 <<EOH;
-020000	02A71F	
+20000	2A71F	
 EOH
 }
 
 sub InUCS_MES1 {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	0113	
+00A0	0113	
 0116	012B	
 012E	014D	
 0150	017E	
@@ -1973,8 +1902,7 @@ EOH
 sub InUCS_MES2 {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	017F	
+00A0	017F	
 018F
 0192
 01B7
@@ -2116,33 +2044,12 @@ EOH
 sub InUCS_MES3A {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	017F	
-0180	024F	
-0250	02AF	
-02B0	02FF	
-0300	036F	
-0370	03CF	
-03D0	03FF	
-0400	04FF	
+00A0	04FF	
 0530	058F	
 10D0	10FF	
-1E00	1EFF	
-1F00	1FFF	
-2000	206F	
-2070	209F	
-20A0	20CF	
-20D0	20FF	
-2100	214F	
-2150	218F	
-2190	21FF	
-2200	22FF	
-2300	23FF	
+1E00	23FF	
 2440	245F	
-2500	257F	
-2580	259F	
-25A0	25FF	
-2600	26FF	
+2500	26FF	
 FB00	FB4F	
 FE20	FE2F	
 FFF0	FFFD	
@@ -2152,9 +2059,7 @@ EOH
 sub InUCS_MES3B {
 <<EOH;
 0020	007E	
-00A0	00FF	
-0100	01FF	
-0200	021F	
+00A0	021F	
 0222	0233	
 0250	02AD	
 02B0	02EE	
@@ -2410,7 +2315,9 @@ EOH
 
 *InUCS50 = \&InUCSHiragana;
 
-*InUCS500 = \&InUCSPrivateUseGroups;
+*InUCS500 = \&InUCSPrivateUsePlanes;
+
+*InUCS501 = \&InUCSPrivateUseGroups;
 
 *InUCS51 = \&InUCSKatakana;
 
@@ -2893,6 +2800,10 @@ An alias for InUCSIPAExtensions.
 An alias for InUCSHiragana.
 
 =item C<InUCS500>
+
+An alias for InUCSPrivateUsePlanes.
+
+=item C<InUCS501>
 
 An alias for InUCSPrivateUseGroups.
 
@@ -3409,24 +3320,17 @@ An alias for InUCSSupplementalMathmaticalOperators.
 
 =head1 EXAMPLE
 
- use Char::Class::UCS;
- if ($s =~ /\p{InIPAExtensions}/) {
+ use Char::Class::UCS qw(InUCSCombiningDiacriticalMarksForSymbols);
+ if ($s =~ /\p{InUCSCombiningDiacriticalMarksForSymbols}/) {
    print "Match!\n";
  }
 
-=head1 SEE ALSO
-
-L<Char::Class::JISX0221>
-
-L<Char::Class::RFC1815>
-
 =head1 LICENSE
 
-Copyright 2008 Wakaba <w@suika.fam.cx>
+Copyright 2016 Wakaba <wakaba@suikawiki.org>.
 
-This library and the library generated by it is free software;
-you can redistribute them and/or modify them under the same
-terms as Perl itself.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 

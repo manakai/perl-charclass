@@ -53,7 +53,7 @@ build-main: \
     lib/Char/Class/XML.pm \
     lib/Char/Class/JaInput.pm \
     lib/Char/Class/RFC1815.pm \
-#    lib/Char/Class/UCS.pm
+    lib/Char/Class/UCS.pm
 	mkdir -p local
 	cd lib/Char/Prop/Unicode && $(MAKE) all
 
@@ -242,10 +242,30 @@ lib/Char/Class/RFC1815.pm: bin/generate-class-module.pl local/sets.json
 	    'ISO10646J1=$$rfc1815:ISO-10646-J-1' \
 	> $@
 	$(PERL) -c $@
-lib/Char/Class/UCS.pm: bin/generate-class-module.pl local/sets.json
-	$(PERL) $< UCS UCS \
-	    'XXX' \
-	> $@
+local/ucs.sh: ucs-list.txt
+	echo exec $(PERL) bin/generate-class-module.pl UCS UCS \\ > $@
+	cat $< | perl -n -e 'sub n ($$) { $$x = ucfirst lc $$_[0]; $$x =~ s/[ -](.)/uc $$1/ge; $$x =~ s/Cjk/CJK/g; $$x =~ s/^CJK/_CJK/g; $$x } sub l ($$) { $$x = $$_[0]; $$x =~ s/ /-/g; $$x } s{^(\d+) (.+)}{qq{\x27$$1<-}.n($$2).qq{\x27 \\\n\x27}.n($$2).qq{=\x24isoiec10646:}.l($$2).qq{\x27 \\}}e; print $$_' >> $@
+	echo "'5<-IPAExtensions' \\" >> $@
+	echo "'IPAExtensions="'$$isoiec10646:ipa-extensions'"' \\" >> $@
+	echo "'300<-_BMP' \\" >> $@
+	echo "'_BMP="'$$isoiec10646:bmp'"' \\" >> $@
+	echo "'299<-_BMPFirstEdition' \\" >> $@
+	echo "'_BMPFirstEdition="'$$isoiec10646:bmp-first-edition-code-point'"' \\" >> $@
+	echo "'301<-_BMP_AMD7' \\" >> $@
+	echo "'_BMP_AMD7="'$$isoiec10646:bmp-amd-7'"' \\" >> $@
+	echo "'302<-_BMPSecondEdition' \\" >> $@
+	echo "'_BMPSecondEdition="'$$isoiec10646:bmp-second-edition'"' \\" >> $@
+	echo "'281<-_MES1' \\" >> $@
+	echo "'_MES1="'$$isoiec10646:mes1'"' \\" >> $@
+	echo "'282<-_MES2' \\" >> $@
+	echo "'_MES2="'$$isoiec10646:mes2'"' \\" >> $@
+	echo "'283<-_MES3A' \\" >> $@
+	echo "'_MES3A="'$$isoiec10646:mes3a'"' \\" >> $@
+	echo "'284<-_MES3B' \\" >> $@
+	echo "'_MES3B="'$$isoiec10646:mes3b'"' \\" >> $@
+	echo '' >> $@
+lib/Char/Class/UCS.pm: bin/generate-class-module.pl local/sets.json local/ucs.sh
+	sh local/ucs.sh > $@
 	$(PERL) -c $@
 lib/Char/Class/XML.pm: bin/generate-class-module.pl local/sets.json
 	$(PERL) $< XML XML \
@@ -316,5 +336,7 @@ test-deps: deps
 
 test-main:
 	$(PROVE) t/*/*.t
+
+always:
 
 ## License: Public Domain.
