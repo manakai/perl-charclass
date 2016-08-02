@@ -1,8 +1,8 @@
 package test::Char::Prop::Unicode::Age;
 use strict;
 use warnings;
-use Path::Class;
-use lib file (__FILE__)->dir->parent->parent->subdir ('lib')->stringify;
+use Path::Tiny;
+use lib path (__FILE__)->parent->parent->parent->child ('lib')->stringify;
 use base qw(Test::Class);
 use Char::Prop::Unicode::Age;
 use Test::More;
@@ -206,7 +206,7 @@ __PACKAGE__->runtests;
 
 =head1 LICENSE
 
-Copyright 2011 Wakaba <w@suika.fam.cx>.
+Copyright 2011-2016 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

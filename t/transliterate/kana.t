@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 use utf8;
-use Path::Class;
-use lib file (__FILE__)->dir->parent->parent->subdir ('lib')->stringify;
-use lib glob file (__FILE__)->dir->parent->parent->subdir ('t_deps', 'modules', '*', 'lib')->stringify;
+use Path::Tiny;
+use lib path (__FILE__)->parent->parent->parent->child ('lib')->stringify;
+use lib glob path (__FILE__)->parent->parent->parent->child ('t_deps', 'modules', '*', 'lib')->stringify;
 use Char::Transliterate::Kana;
 use Test::More;
 use Test::X1;
@@ -42,3 +42,12 @@ for my $test (
 }
 
 run_tests;
+
+=head1 LICENSE
+
+Copyright 2014-2016 Wakaba <wakaba@suikawiki.org>.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut

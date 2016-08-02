@@ -1,42 +1,50 @@
-package test::Char::Prop::Unicode::5_1_0::BidiClass;
 use strict;
 use warnings;
-use Path::Class;
-use lib file (__FILE__)->dir->parent->parent->subdir ('lib')->stringify;
-use base qw(Test::Class);
+use Path::Tiny;
+use lib glob path (__FILE__)->parent->parent->parent->child ('t_deps/modules/*/lib')->stringify;
 use Char::Prop::Unicode::5_1_0::BidiClass;
 use Test::More;
+use Test::X1;
 no warnings 'utf8';
 
-sub _version : Test(1) {
+test {
+  my $c = $_[0];
   is $Char::Prop::Unicode::5_1_0::BidiClass::UnicodeVersion, '5.1.0';
-} # _version
+  done $c;
+} n => 1, name => "version";
 
-sub _non_unicode : Test(4) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x110000, 'L';
   is unicode_5_1_0_bidi_class_n 0x110001, 'L';
 
   is unicode_5_1_0_bidi_class_c "\x{110000}", 'L';
   is unicode_5_1_0_bidi_class_c "\x{110001}", 'L';
-} # _non_unicode
+  done $c;
+} n => 4, name => "non_unicode";
 
-sub _l : Test(4) {
+test {
+  my $c = $_[0];
   is unicode_5_1_0_bidi_class_n 0x0041, 'L';
   is unicode_5_1_0_bidi_class_n 0x0042, 'L';
 
   is unicode_5_1_0_bidi_class_c "\x{0041}", 'L';
   is unicode_5_1_0_bidi_class_c "\x{0042}", 'L';
-} # _l
+  done $c;
+} n => 4, name => "l";
 
-sub _es : Test(4) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0xFE62, 'ES';
   is unicode_5_1_0_bidi_class_n 0xFE63, 'ES';
 
   is unicode_5_1_0_bidi_class_c "\x{FF0B}", 'ES';
   is unicode_5_1_0_bidi_class_c "\x{FF0D}", 'ES';
-} # _es
+  done $c;
+} n => 4, name => "es";
 
-sub _bn : Test(24) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x0000, 'BN';
   is unicode_5_1_0_bidi_class_n 0x0001, 'BN';
   is unicode_5_1_0_bidi_class_n 0x001A, 'BN';
@@ -62,9 +70,11 @@ sub _bn : Test(24) {
 
   is unicode_5_1_0_bidi_class_c "\x{0008}", 'BN';
   is unicode_5_1_0_bidi_class_c "\x{000E}", 'BN';
-} # _bn
+  done $c;
+} n => 24, name => "bn";
 
-sub _al : Test(8) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x0604, 'AL';
   is unicode_5_1_0_bidi_class_n 0x0605, 'AL';
   is unicode_5_1_0_bidi_class_n 0x060B, 'AL';
@@ -74,32 +84,37 @@ sub _al : Test(8) {
   is unicode_5_1_0_bidi_class_n 0x061D, 'AL';
 
   is unicode_5_1_0_bidi_class_c "\x{060B}", 'AL';
-} # _al
+  done $c;
+} n => 8, name => "al";
 
-sub _cs : Test(3) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x002C, 'CS';
   is unicode_5_1_0_bidi_class_n 0xFF1A, 'CS';
 
   is unicode_5_1_0_bidi_class_c "\x{002C}", 'CS';
-} # _cs
+  done $c;
+} n => 3, name => "cs";
 
-sub _unicode_6_0 : Test(2) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x065F, 'AL'; # NSM
 
   is unicode_5_1_0_bidi_class_c "\x{065F}", 'AL'; # NSM
-} # _unicode_6_0
+  done $c;
+} n => 2, name => "unicode_6_0";
 
-sub _misc : Test(1) {
+test {
+  my $c = shift;
   is unicode_5_1_0_bidi_class_n 0x1E800, 'L';
-} # _misc
+  done $c;
+} n => 1, name => "misc";
 
-__PACKAGE__->runtests;
-
-1;
+run_tests;
 
 =head1 LICENSE
 
-Copyright 2011 Wakaba <w@suika.fam.cx>.
+Copyright 2011-2016 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
