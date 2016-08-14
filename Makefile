@@ -2,7 +2,7 @@ all:
 
 updatenightly: local/bin/pmbp.pl clean build
 	curl https://gist.githubusercontent.com/wakaba/34a71d3137a52abb562d/raw/gistfile1.txt | sh
-	git add modules t_deps/modules
+	git add t_deps/modules
 	perl local/bin/pmbp.pl --update
 	git add config lib/
 
