@@ -14,7 +14,7 @@ Module::Metadata~1.000033
 Module::Runtime~0.014
 Path::Tiny~0.096
 Perl::OSType~1.010
-Scalar::Util~1.45
+Scalar::Util~1.46
 TAP::Harness~3.36
 Term::ANSIColor~4.05
 Test::Class~0.50
