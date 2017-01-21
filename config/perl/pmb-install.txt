@@ -1,7 +1,7 @@
 AnyEvent~7.13
 Carp~1.38
 Data::Dumper~2.161
-Filter::Util::Call~1.55
+Filter::Util::Call~1.56
 MRO::Compat~0.12
 Module::Runtime~0.014
 Path::Tiny~0.100
