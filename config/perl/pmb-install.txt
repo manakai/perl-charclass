@@ -9,4 +9,4 @@ Scalar::Util~1.49
 Term::ANSIColor~4.06
 Test::Class~0.50
 Test::Simple~1.302120
-Try::Tiny~0.29
+Try::Tiny~0.30
