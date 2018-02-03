@@ -34,12 +34,14 @@ sub InHiraganaAll {
 3041	3096	
 309D	309F	
 1B001
+2CF02
 EOH
 }
 
 sub InHiraganaDigraph {
 <<EOH;
 309F
+2CF02
 EOH
 }
 

@@ -40,6 +40,8 @@ sub InKanaAll {
 31F0	31FF	
 1B001
 2A708
+2CF00
+2CF02
 EOH
 }
 
@@ -48,6 +50,8 @@ sub InKanaDigraph {
 309F
 30FF
 2A708
+2CF00
+2CF02
 EOH
 }
 

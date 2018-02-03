@@ -36,6 +36,7 @@ sub InKatakanaAll {
 31F0	31FF	
 1B001
 2A708
+2CF00
 EOH
 }
 
@@ -43,6 +44,7 @@ sub InKatakanaDigraph {
 <<EOH;
 30FF
 2A708
+2CF00
 EOH
 }
 
