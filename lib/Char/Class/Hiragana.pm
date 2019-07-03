@@ -33,7 +33,8 @@ sub InHiraganaAll {
 <<EOH;
 3041	3096	
 309D	309F	
-1B001
+1B001	1B11E	
+1B150	1B152	
 2CF02
 EOH
 }
@@ -108,6 +109,7 @@ sub InHiraganaSmall {
 3087
 308E
 3095	3096	
+1B150	1B152	
 EOH
 }
 
