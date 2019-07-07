@@ -136,6 +136,7 @@ sub InHiraganaVoiced {
 3079
 307C
 3094
+309E
 EOH
 }
 

@@ -31,6 +31,7 @@ Char::Class::Katakana - Regular Expression Character Classes - C<Katakana>
 
 sub InKatakanaAll {
 <<EOH;
+3006
 30A1	30FA	
 30FD	30FF	
 31F0	31FF	
@@ -43,6 +44,7 @@ EOH
 
 sub InKatakanaDigraph {
 <<EOH;
+3006
 30FF
 2A708
 2CF00
@@ -141,6 +143,7 @@ sub InKatakanaVoiced {
 30DC
 30F4
 30F7	30FA	
+30FE
 EOH
 }
 

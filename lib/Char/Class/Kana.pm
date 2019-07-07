@@ -31,6 +31,7 @@ Char::Class::Kana - Regular Expression Character Classes - C<Kana>
 
 sub InKanaAll {
 <<EOH;
+3006
 3031	3035	
 303B
 3041	3096	
@@ -49,6 +50,7 @@ EOH
 
 sub InKanaDigraph {
 <<EOH;
+3006
 309F
 30FF
 2A708
@@ -174,6 +176,8 @@ EOH
 
 sub InKanaVoiced {
 <<EOH;
+3032
+3034
 304C
 304E
 3050
@@ -195,6 +199,7 @@ sub InKanaVoiced {
 3079
 307C
 3094
+309E
 30AC
 30AE
 30B0
@@ -217,6 +222,7 @@ sub InKanaVoiced {
 30DC
 30F4
 30F7	30FA	
+30FE
 EOH
 }
 
