@@ -8,5 +8,5 @@ Path::Tiny~0.108
 Scalar::Util~1.53
 Term::ANSIColor~4.06
 Test::Class~0.50
-Test::More~1.302168
+Test::Simple~1.302168
 Try::Tiny~0.30
