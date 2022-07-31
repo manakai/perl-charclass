@@ -14,12 +14,12 @@ BidiClass.pm: ../../../../local/DerivedBidiClass.txt $(GENERATOR)
 	$(GENERATOR_PL) 5_1_0::BidiClass < $< > $@
 
 ../../../../local/DerivedAge.txt:
-	wget -O $@ http://www.unicode.org/Public/UNIDATA/DerivedAge.txt
+	wget -O $@ https://www.unicode.org/Public/UNIDATA/DerivedAge.txt
 
 ../../../../local/DerivedBidiClass.txt:
-	wget -O $@ http://www.unicode.org/Public/UNIDATA/extracted/DerivedBidiClass.txt
+	wget -O $@ https://www.unicode.org/Public/UNIDATA/extracted/DerivedBidiClass.txt
 
 ../../../../local/DerivedBidiClass-5.1.0.txt:
-	wget -O $@ http://www.unicode.org/Public/5.1.0/ucd/extracted/DerivedBidiClass.txt
+	wget -O $@ https://www.unicode.org/Public/5.1.0/ucd/extracted/DerivedBidiClass.txt
 
 ## License: Public Domain.
