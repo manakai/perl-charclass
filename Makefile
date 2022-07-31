@@ -1,19 +1,21 @@
+CURL = curl
+WGET = wget
+GIT = git
+PERL = ./perl
+
 all:
 
 updatenightly: local/bin/pmbp.pl clean build
-	curl https://gist.githubusercontent.com/wakaba/34a71d3137a52abb562d/raw/gistfile1.txt | sh
+	$(CURL) -sSLf https://gist.githubusercontent.com/wakaba/34a71d3137a52abb562d/raw/gistfile1.txt | sh
 	git add t_deps/modules
 	perl local/bin/pmbp.pl --update
 	git add config lib/
+	$(CURL) -sSLf https://raw.githubusercontent.com/wakaba/ciconfig/master/ciconfig | RUN_GIT=1 REMOVE_UNUSED=1 perl
 
 clean: clean-json-ps
 	rm -fr local/*.txt
 
 ## ------ Setup ------
-
-WGET = wget
-GIT = git
-PERL = ./perl
 
 deps: git-submodules pmbp-install
 
