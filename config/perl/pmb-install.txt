@@ -1,7 +1,7 @@
 AnyEvent~7.17
 Carp~1.50
 Data::Dumper~2.183
-Filter::Util::Call~1.62
+Filter::Util::Call~1.63
 MRO::Compat~0.15
 Module::Build~0.4231
 Module::Runtime~0.016
@@ -9,5 +9,5 @@ Path::Tiny~0.122
 Scalar::Util~1.63
 Term::ANSIColor~5.01
 Test::Class~0.52
-Test::More~1.302191
+Test::Simple~1.302191
 Try::Tiny~0.31
