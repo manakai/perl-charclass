@@ -5,7 +5,7 @@ Filter::Util::Call~1.64
 MRO::Compat~0.15
 Module::Build~0.4231
 Module::Runtime~0.016
-Path::Tiny~0.122
+Path::Tiny~0.124
 Scalar::Util~1.63
 Term::ANSIColor~5.01
 Test::Builder~1.302191
